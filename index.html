@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e6edfa"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAETElEQVR4nO3dUU4jORSGUfdoNsG2hpU0C2EnbGvYxjyMhKIg6JC/yr7XOecRQaokf3HZRSn59c/vfwfc66/VJ0BvAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIvL36hPgAG+vT1c/eX55n3PoX74vrLXP6VyakJFLWGPf13PLL+QE1NWNcZzdkIBa+lEWpzYkoH7uCOK8hgREREDN3D2XnDQJCYiIgIgIiIiAiAiokwl3ln9KQG0UrGcIqIu8npP+sSogIgJqoOz0MwRUX+V6hoCKK17PEFBl9esZnokuK6xn2jPRAtrHtGguuYRVdMf0s6SeIaCCat5x/oqAarmvnlXTzxBQKe3qGQKqo2M9Q0CtLa9nCKiIRtuuKwJar9e264qAFmu69PkgoJW61zMEtNAG9QwB9VKtniGgVfpuu64IaIHW264rApptj6XPBwFNtVk9Q0D1Va5nPMITiZdv+rWDsc3C+dLOH/P71YAtGZUt6xkbX8K+GbD5m6Cdtl1X9pyBbhywOW/x/RbOlzacgW4fsAkTw971jP0C+umAFby4NKpnbBbQfTWc19CuC+dL+wSUdPD2+nR4RgXntjNsEtAho3XgkG+/9PmwQ0DLB/6QF+lYz9ggoGqXnoeqZ3QP6KR1xhlLom/0rWe0DujsMZ7zpTit6xl9A5ozQ9T5Wq6yWgY0c6hO/WLA7tPP6BjQ/MvEH5dED1vPaBfQ3fXko/XVoR+5ntEroHDueX55z6ei5M8vz+SQ16mgTUBHXbmObegBt11XegR07DgdtSR6zG3XlQYPlJ30Ll8y/JtNP6N+QGdfI9xxDpW+hE1YYUwb1C3rGZUDmrY+nTC0u9YzygY0eXdz6gBvXM+oGdCSvXF+l+gxlQto7Z2VwxvaPspaAVW4L1c5x4IKBVShngNf9hHqGXXuA9Wp59Ldd4kepJ5RZAaqWc/dR3mcekaFgMrWM/9YHS0OqHg9dxzx0YJbuQZqUc+lP57wo9UzFgbUrp7/vb0+Pb+8X518hRNbZU1ATevhswVrIPXsZHZA6tnM1IDUs595AalnS5MCUs+uJgVU9klTQvMuYbc3oZ5Gpi6ibylDPb3M3sZ/34d62llwI/GrStTT0Zr/xn9uRT1NLXuc4+pzM1adBqGVzwMd9ck9LFTlmWiaWv9IK60JiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiMh/piFwdFVTEfcAAAAASUVORK5CYII="><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAETElEQVR4nO3dUU4jORSGUfdoNsG2hpU0C2EnbGvYxjyMhKIg6JC/yr7XOecRQaokf3HZRSn59c/vfwfc66/VJ0BvAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIvL36hPgAG+vT1c/eX55n3PoX74vrLXP6VyakJFLWGPf13PLL+QE1NWNcZzdkIBa+lEWpzYkoH7uCOK8hgREREDN3D2XnDQJCYiIgIgIiIiAiAiokwl3ln9KQG0UrGcIqIu8npP+sSogIgJqoOz0MwRUX+V6hoCKK17PEFBl9esZnokuK6xn2jPRAtrHtGguuYRVdMf0s6SeIaCCat5x/oqAarmvnlXTzxBQKe3qGQKqo2M9Q0CtLa9nCKiIRtuuKwJar9e264qAFmu69PkgoJW61zMEtNAG9QwB9VKtniGgVfpuu64IaIHW264rApptj6XPBwFNtVk9Q0D1Va5nPMITiZdv+rWDsc3C+dLOH/P71YAtGZUt6xkbX8K+GbD5m6Cdtl1X9pyBbhywOW/x/RbOlzacgW4fsAkTw971jP0C+umAFby4NKpnbBbQfTWc19CuC+dL+wSUdPD2+nR4RgXntjNsEtAho3XgkG+/9PmwQ0DLB/6QF+lYz9ggoGqXnoeqZ3QP6KR1xhlLom/0rWe0DujsMZ7zpTit6xl9A5ozQ9T5Wq6yWgY0c6hO/WLA7tPP6BjQ/MvEH5dED1vPaBfQ3fXko/XVoR+5ntEroHDueX55z6ei5M8vz+SQ16mgTUBHXbmObegBt11XegR07DgdtSR6zG3XlQYPlJ30Ll8y/JtNP6N+QGdfI9xxDpW+hE1YYUwb1C3rGZUDmrY+nTC0u9YzygY0eXdz6gBvXM+oGdCSvXF+l+gxlQto7Z2VwxvaPspaAVW4L1c5x4IKBVShngNf9hHqGXXuA9Wp59Ldd4kepJ5RZAaqWc/dR3mcekaFgMrWM/9YHS0OqHg9dxzx0YJbuQZqUc+lP57wo9UzFgbUrp7/vb0+Pb+8X518hRNbZU1ATevhswVrIPXsZHZA6tnM1IDUs595AalnS5MCUs+uJgVU9klTQvMuYbc3oZ5Gpi6ibylDPb3M3sZ/34d62llwI/GrStTT0Zr/xn9uRT1NLXuc4+pzM1adBqGVzwMd9ck9LFTlmWiaWv9IK60JiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiMh/piFwdFVTEfcAAAAASUVORK5CYII=">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<title>يوميات المتداول</title>
+<style>
+:root{--bg:#e6edfa;--card:#fff;--tx:#14161f;--mu:#7b8196;--pr:#5271e6;--gr:#2f9e44;--grb:#d3f5d8;--rd:#e03131;--rdb:#fae3e3;--or:#ff8a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+h1{font-size:26px}
+.mn{display:flex;align-items:center;gap:8px;font-weight:600}
+.mn button{background:none;border:0;font-size:22px;color:var(--tx);padding:4px 8px;cursor:pointer}
+main{flex:1;overflow-y:auto;padding:0 14px 90px}
+.card{background:var(--card);border-radius:22px;padding:18px;margin-bottom:12px}
+.big{font-size:42px;font-weight:700;direction:ltr;text-align:right}
+.pos{color:var(--pr)}.neg{color:var(--rd)}
+.row{display:flex;justify-content:space-between;align-items:center}
+.cv{width:100%;background:var(--pr);color:#fff;border:0;border-radius:20px;padding:18px;font-size:20px;font-weight:700;margin-bottom:12px;display:flex;justify-content:space-between;cursor:pointer}
+.two{display:flex;gap:10px;margin-top:14px}
+.pill{flex:1;border-radius:16px;padding:14px;font-size:18px;direction:ltr;text-align:center}
+.pill.l{background:var(--rdb);color:var(--rd)}.pill.w{background:var(--grb);color:var(--gr)}
+.t{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(128,128,128,.18)}
+.t:last-child{border:0}
+.t small{color:var(--mu);display:block}
+.t b{direction:ltr}.t .x{background:none;border:0;color:var(--mu);font-size:18px;margin-inline-start:10px;cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal div{aspect-ratio:1;border-radius:10px;font-size:11px;padding:4px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(128,128,128,.08)}
+.cal .w{background:var(--grb);color:var(--gr)}.cal .l{background:var(--rdb);color:var(--rd)}
+.cal i{font-style:normal;font-size:10px;direction:ltr}
+.fab{position:fixed;inset-inline-start:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;border:0;color:#fff;font-size:30px;box-shadow:0 6px 16px rgba(0,0,0,.25);cursor:pointer;background:var(--pr)}
+nav{position:fixed;bottom:0;inset-inline:0;background:var(--card);display:flex;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;background:none;border:0;color:var(--mu);font-size:12px;padding:6px;cursor:pointer}
+nav button span{display:block;font-size:22px}
+nav .on{color:var(--pr);font-weight:700}
+dialog{border:0;border-radius:22px;padding:20px;width:min(92vw,420px);background:var(--card);color:var(--tx);margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+label{display:block;font-size:13px;color:var(--mu);margin:10px 0 4px}
+input,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(128,128,128,.35);background:transparent;color:var(--tx);font-size:16px}
+.seg{display:flex;gap:8px}.seg button{flex:1;padding:12px;border-radius:12px;border:2px solid transparent;font-size:16px;font-weight:700;cursor:pointer;background:var(--grb);color:var(--gr)}
+.seg button.loss{background:var(--rdb);color:var(--rd)}.seg .sel{border-color:currentColor}
+.go{width:100%;margin-top:16px;padding:14px;border:0;border-radius:14px;background:var(--pr);color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+.bar{height:14px;border-radius:8px;background:rgba(128,128,128,.2);overflow:hidden;margin:12px 0}.bar div{height:100%;background:var(--pr)}
+.empty{text-align:center;color:var(--mu);padding:20px}
+dialog{max-height:92vh;overflow-y:auto}
+.g2{display:flex;gap:10px}.g2>div{flex:1}
+textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(128,128,128,.35);background:transparent;color:var(--tx);font-size:16px;font-family:inherit;resize:none;min-height:70px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.chips button{border:0;background:var(--bg);color:var(--tx);border-radius:14px;padding:6px 12px;font-size:13px;cursor:pointer}
+.ims{display:flex;gap:8px}.ims label{flex:1;margin:0;aspect-ratio:1;border-radius:14px;border:2px dashed var(--pr);color:var(--pr);display:flex;align-items:center;justify-content:center;font-size:30px;background:center/cover no-repeat;cursor:pointer}
+.ims label.has{border-style:solid;font-size:0}.ims label{position:relative;overflow:hidden}.ims input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:0;border:0;padding:0}
+.dimg{width:100%;border-radius:14px;margin-top:8px;display:block}
+.dtx{background:var(--bg);border-radius:12px;padding:12px;margin-top:4px;white-space:pre-wrap}
+.cl{background:none;border:0;color:var(--mu);width:100%;padding:12px;font-size:15px;cursor:pointer}
+.ic{font-size:11px;color:var(--pr)}
+#dd{width:calc(100% - 28px);max-width:460px;margin:auto auto 6vh;padding:18px 20px;border-radius:30px}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:14px 4px;border-bottom:1px solid rgba(128,128,128,.2);font-size:17px}.dr span{color:var(--mu)}.dr b{direction:ltr}
+.thumbs{display:flex;gap:10px;margin-top:12px}.thumbs img{flex:1;min-width:0;height:130px;object-fit:cover;border-radius:12px;cursor:pointer}
+.acts{display:flex;gap:12px;margin-top:16px}.acts button{flex:1;border:0;border-radius:12px;padding:14px;color:#fff;font-size:17px;font-weight:700;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+#lb{padding:0;background:transparent;border:0;width:100vw;max-width:100vw}#lb img{width:100%;display:block}
+#toast{position:fixed;inset-inline:16px;bottom:calc(96px + env(safe-area-inset-bottom,0px));background:#222;color:#fff;border-radius:12px;padding:12px;font-size:14px;display:none;z-index:99;text-align:center}
+#dd{border-radius:34px;padding:22px 24px}
+#dd::backdrop{background:rgba(40,44,52,.72)}
+.dr{padding:17px 4px;font-size:20px}.dr span{color:var(--tx);font-weight:500}.dr b{font-size:21px;font-weight:600}
+.thumbs{justify-content:flex-start;flex-wrap:wrap;margin:22px 0 8px}.thumbs img{flex:0 0 calc(50% - 5px);height:150px;object-fit:contain;background:#fafafa;border-radius:6px;border:1px solid #eee}
+.acts{direction:ltr;justify-content:flex-start;gap:16px;margin-top:22px}.acts button{flex:0 0 42%;border-radius:6px;letter-spacing:2px;font-size:20px;padding:20px 0}
+.chips2{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{border:1.5px solid rgba(128,128,128,.4);background:transparent;color:var(--tx);border-radius:18px;padding:8px 14px;font-size:14px;cursor:pointer;font-family:inherit}
+.chip.sel{background:var(--pr);border-color:var(--pr);color:#fff}.chip.big{padding:10px 18px;font-size:15px}
+.seg button.open{background:rgba(82,113,230,.15);color:var(--pr)}
+.sel2{appearance:none;-webkit-appearance:none;width:100%;padding:13px 16px 13px 40px;border-radius:14px;border:1.5px solid rgba(82,113,230,.4);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235271e6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat left 14px center;font-size:16px;font-weight:600;color:var(--tx);font-family:inherit}
+.sel2:focus{outline:2px solid var(--pr)}
+
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.kp{background:var(--card);border-radius:20px;padding:14px;cursor:pointer;position:relative;overflow:hidden;transition:transform .12s,box-shadow .12s;-webkit-tap-highlight-color:transparent;border-top:3px solid var(--kc,var(--pr))}
+.kp:active,.card.ck:active{transform:scale(.97);box-shadow:0 0 0 3px rgba(82,113,230,.25)}
+.kp small{display:block;color:var(--mu);font-size:12px}.kp b{display:block;font-size:22px;margin-top:6px;direction:ltr;text-align:right}
+.kp i{font-style:normal;font-size:11px;color:var(--mu);display:block;margin-top:4px}
+.card.ck{cursor:pointer;transition:transform .12s}
+.hero{background:linear-gradient(160deg,#0b1127,#1b2a63);color:#e8edff;border-radius:22px;padding:18px;margin-bottom:12px}
+.hero small{color:#9aa7d6}
+.gz{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center}
+.gz>div{cursor:pointer;border-radius:16px;padding:6px;-webkit-tap-highlight-color:transparent}.gz>div:active{background:rgba(82,113,230,.1)}
+.lg{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.lg button{border:0;border-radius:14px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.oth{display:none;width:100%;margin-top:8px;padding:12px;border:1px solid rgba(128,128,128,.3);border-radius:12px;font-size:16px;background:var(--card);color:var(--tx)}
+#dlg,#dd,#fl{width:100%;max-width:560px;margin:auto auto 0;border-radius:22px 22px 0 0;overscroll-behavior:contain;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));animation:shUp .25s ease}
+@keyframes pgIn{from{transform:translateX(-28px);opacity:0}to{transform:none;opacity:1}}main.pg{animation:pgIn .22s ease}
+@keyframes shUp{from{transform:translateY(100%)}to{transform:none}}
+.grab{position:sticky;top:-20px;z-index:3;height:32px;margin:-14px 0 4px;display:flex;align-items:center;justify-content:center;touch-action:none;background:var(--card);cursor:grab}.grab::before{content:'';width:44px;height:5px;border-radius:3px;background:rgba(128,128,128,.45)}
+.bkb{background:none;border:0;font-size:28px;color:var(--tx);padding:2px 8px;cursor:pointer}
+.th{display:none;width:44px;height:44px;border-radius:10px;background-size:cover;background-position:center;margin-inline-end:10px;flex:none}
+
+/* ===== v7: header / calendar sheet / dropdown sections ===== */
+header{flex:none;padding:10px 14px 8px;gap:10px}
+.hl{display:flex;align-items:center;gap:10px;min-width:0}
+h1{font-size:23px;font-weight:800;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(82,113,230,.16);background:var(--card);color:var(--pr);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(40,60,140,.12);transition:transform .12s,background .12s;-webkit-tap-highlight-color:transparent}
+.hb:active{transform:scale(.9);background:var(--bg)}
+.hb svg{width:20px;height:20px;display:block}
+.hb.sm{width:34px;height:34px;border:0;box-shadow:none;background:transparent}
+.hb.sm svg{width:18px;height:18px}
+.hb:focus-visible,.cd:focus-visible,.cvb:focus-visible{outline:2px solid var(--pr);outline-offset:2px}
+.mpill{display:flex;align-items:center;flex:none;background:var(--card);border-radius:999px;padding:3px;border:1px solid rgba(82,113,230,.16);box-shadow:0 2px 8px rgba(40,60,140,.12)}
+.mpill #mlab{min-width:100px;text-align:center;font-weight:700;font-size:14px;white-space:nowrap;padding:0 4px}
+
+.sw{margin-bottom:10px}.sw .sel2{font-weight:700;font-size:16px}
+
+.cvb{width:100%;display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(82,113,230,.14);border-radius:20px;padding:12px 14px;margin-bottom:12px;cursor:pointer;color:var(--tx);font-family:inherit;text-align:start;box-shadow:0 2px 10px rgba(40,60,140,.07);-webkit-tap-highlight-color:transparent;transition:transform .12s}
+.cvb:active{transform:scale(.98)}
+.cvi{width:46px;height:46px;border-radius:14px;background:rgba(82,113,230,.12);color:var(--pr);display:flex;align-items:center;justify-content:center;flex:none}
+.cvi svg{width:24px;height:24px}
+.cvt{flex:1;min-width:0}.cvt b{display:block;font-size:17px}.cvt small{display:block;color:var(--mu);font-size:12.5px;margin-top:2px}
+.cvc{color:var(--mu);display:flex}.cvc svg{width:20px;height:20px}
+
+#cs{width:100%;max-width:560px;margin:auto auto 0;border-radius:26px 26px 0 0;padding:20px 16px calc(18px + env(safe-area-inset-bottom,0px));overscroll-behavior:contain;animation:shUp .25s ease;max-height:92vh;overflow-y:auto}
+#cs::backdrop{background:rgba(40,44,52,.6)}
+.csh{display:flex;justify-content:space-between;align-items:center;margin:4px 2px 12px}
+.csh h2{font-size:20px}.csh .ac{display:flex;align-items:center;gap:8px}
+.tdb{border:0;background:rgba(82,113,230,.12);color:var(--pr);border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.cs-x{background:var(--bg)!important;color:var(--tx)!important;box-shadow:none!important;border:0!important;width:36px!important;height:36px!important}
+.cnav{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:16px;padding:4px;margin-bottom:12px}
+.cnav .hb{box-shadow:none;border:0}.cnav .mt{font-weight:800;font-size:16px}
+.cst{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.cst div{background:var(--bg);border-radius:14px;padding:10px 6px;text-align:center}
+.cst small{display:block;color:var(--mu);font-size:11.5px}.cst b{display:block;font-size:15px;margin-top:3px;direction:ltr}
+.cwk,.cgr{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cwk{margin-bottom:6px;text-align:center;font-size:11px;color:var(--mu);font-weight:600}
+.cd{aspect-ratio:1/1.1;min-width:0;border-radius:12px;border:0;background:rgba(128,128,128,.08);color:var(--tx);padding:5px 2px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .1s}
+.cd:active{transform:scale(.93)}
+.cd span{font-size:12px;font-weight:600;line-height:1;min-width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.cd i{font-style:normal;font-size:10px;font-weight:700;direction:ltr;line-height:1}
+.cd.w{background:rgba(47,158,68,var(--a));color:#1b6e2f}.cd.l{background:rgba(224,49,49,var(--a));color:#a82020}
+.cd.td span{background:var(--pr);color:#fff}
+.cd.sl{box-shadow:0 0 0 2.5px var(--pr)}
+.cdz{pointer-events:none}
+.cdt{margin-top:16px;padding-top:12px;border-top:1px solid rgba(128,128,128,.2)}
+#swi{position:fixed;top:50%;width:44px;height:44px;margin-top:-22px;border-radius:50%;background:var(--pr);color:#fff;display:none;align-items:center;justify-content:center;z-index:60;pointer-events:none;box-shadow:0 4px 14px rgba(40,60,140,.35)}
+#swi svg{width:22px;height:22px}
+html,body{touch-action:pan-y}
+@media (prefers-reduced-motion:reduce){#dlg,#dd,#fl,#cs,main.pg{animation:none}}
+textarea{width:100%;border:1px solid rgba(128,128,128,.3);border-radius:12px;padding:10px;font:inherit;background:var(--card);color:var(--tx);resize:vertical}
+
+/* ===== PnL Pro World-Class Restructure & Dark Mode ===== */
+:root{
+  --bg:#f0f4fc;
+  --card:#ffffff;
+  --card2:#f7f9fe;
+  --tx:#0f172a;
+  --mu:#64748b;
+  --pr:#3b5bdb;
+  --pr2:#4c6ef5;
+  --gr:#16a34a;
+  --grb:#dcfce7;
+  --rd:#dc2626;
+  --rdb:#fee2e2;
+  --or:#d97706;
+  --orb:#fef3c7;
+  --bd:rgba(15,23,42,.08);
+  --sh:0 4px 20px -2px rgba(15,23,42,.06),0 2px 6px -1px rgba(15,23,42,.04);
+}
+html.dark{
+  --bg:#090d16;
+  --card:#111827;
+  --card2:#1e293b;
+  --tx:#f1f5f9;
+  --mu:#94a3b8;
+  --pr:#6366f1;
+  --pr2:#818cf8;
+  --gr:#22c55e;
+  --grb:rgba(34,197,94,.16);
+  --rd:#ef4444;
+  --rdb:rgba(239,68,68,.16);
+  --or:#f59e0b;
+  --orb:rgba(245,158,11,.16);
+  --bd:rgba(255,255,255,.08);
+  --sh:0 8px 28px -4px rgba(0,0,0,.45);
+}
+body{
+  background:var(--bg);
+  color:var(--tx);
+  font-family:'Segoe UI',system-ui,-apple-system,Tahoma,sans-serif;
+  transition:background .2s ease,color .2s ease;
+}
+header{
+  max-width:760px;
+  width:100%;
+  margin:0 auto;
+  padding:12px 16px 10px;
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+main{
+  max-width:760px;
+  width:100%;
+  margin:0 auto;
+  padding:4px 16px 105px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--bd);
+  box-shadow:var(--sh);
+  border-radius:22px;
+  padding:18px;
+  margin-bottom:14px;
+}
+.kp{
+  background:var(--card);
+  border:1px solid var(--bd);
+  box-shadow:var(--sh);
+}
+nav{
+  max-width:760px;
+  margin:0 auto;
+  left:0;
+  right:0;
+  border-top:1px solid var(--bd);
+  background:color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 -4px 20px rgba(0,0,0,.06);
+  z-index:35;
+}
+@media(min-width:640px){
+  nav{
+    bottom:12px;
+    border-radius:22px;
+    border:1px solid var(--bd);
+    padding:6px 8px;
+  }
+}
+.fab{
+  inset-inline-start:max(18px, calc(50vw - 360px));
+  background:linear-gradient(135deg,var(--pr),var(--pr2));
+  box-shadow:0 8px 24px rgba(59,91,219,.4);
+  z-index:36;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.fab:active{transform:scale(.92)}
+.h-acts{display:flex;align-items:center;gap:6px}
+.hb.ic-btn{width:38px;height:38px;font-size:17px;color:var(--tx);border-color:var(--bd);background:var(--card);box-shadow:var(--sh)}
+body.priv .big,body.priv .t b,body.priv .kp b,body.priv .pill,body.priv .cst b,body.priv .dr b,body.priv .priv-val{
+  filter:blur(8px);
+  user-select:none;
+  transition:filter .2s ease;
+}
+.pro-hero{
+  background:linear-gradient(145deg,#0f172a 0%,#1e293b 55%,#1e1b4b 100%);
+  color:#f8fafc;
+  border-radius:24px;
+  padding:20px;
+  margin-bottom:14px;
+  box-shadow:0 12px 32px -6px rgba(15,23,42,.35);
+  border:1px solid rgba(255,255,255,.1);
+  position:relative;
+  overflow:hidden;
+}
+.pro-hero::after{
+  content:'';
+  position:absolute;
+  top:-50px;
+  left:-50px;
+  width:180px;
+  height:180px;
+  background:radial-gradient(circle,rgba(99,102,241,.28) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pro-hero-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.pro-hero-stat small{display:block;color:#94a3b8;font-size:11.5px}
+.pro-hero-stat b{display:block;font-size:16px;margin-top:3px;direction:ltr;text-align:right;color:#fff}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11.5px;
+  font-weight:700;
+}
+.badge.buy{background:var(--grb);color:var(--gr)}
+.badge.sell{background:var(--rdb);color:var(--rd)}
+.badge.be{background:rgba(148,163,184,.2);color:var(--mu)}
+.badge.strk-w{background:rgba(34,197,94,.2);color:#4ade80}
+.badge.strk-l{background:rgba(239,68,68,.25);color:#f87171}
+.qbar{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:6px;
+  margin:8px 0 10px;
+  scrollbar-width:none;
+}
+.qbar::-webkit-scrollbar{display:none}
+.qchip{
+  flex:none;
+  border:1px solid var(--bd);
+  background:var(--card2);
+  color:var(--mu);
+  border-radius:999px;
+  padding:6px 13px;
+  font-size:12.5px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:inherit;
+  transition:all .15s ease;
+}
+.qchip.on{
+  background:var(--pr);
+  border-color:var(--pr);
+  color:#fff;
+}
+.sbox{
+  width:100%;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid var(--bd);
+  background:var(--card2);
+  color:var(--tx);
+  font-size:14px;
+  margin-bottom:8px;
+}
+.tilt-alert{
+  background:var(--rdb);
+  border:1.5px solid var(--rd);
+  color:var(--tx);
+  border-radius:20px;
+  padding:14px 16px;
+  margin-bottom:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.wi-card{
+  background:linear-gradient(135deg,color-mix(in srgb,var(--pr) 10%,var(--card)),var(--card));
+  border:1.5px solid color-mix(in srgb,var(--pr) 35%,transparent);
+}
+.hr-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(72px,1fr));
+  gap:6px;
+  margin-top:10px;
+}
+.hr-cell{
+  border-radius:12px;
+  padding:8px 6px;
+  text-align:center;
+  border:1px solid var(--bd);
+  cursor:pointer;
+}
+.seg button.be-btn{background:var(--card2);color:var(--mu)}
+#calcDlg{width:100%;max-width:520px;margin:auto auto 0;border-radius:24px 24px 0 0;padding:20px;background:var(--card);color:var(--tx);border:1px solid var(--bd);max-height:92vh;overflow-y:auto}
+html.dark input,html.dark select,html.dark textarea{background:var(--card2);border-color:var(--bd);color:var(--tx)}
+html.dark .dtx,html.dark .cst div,html.dark .cnav{background:var(--card2)}
+html.dark .thumbs img{background:#0f172a;border-color:var(--bd)}
+
+
+/* ===== Minimalist Clean UI Refinements ===== */
+body{
+  font-family:'Tajawal','Segoe UI',system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+}
+.card{
+  border-radius:20px;
+  padding:16px 18px;
+  margin-bottom:12px;
+  border:1px solid var(--bd);
+  box-shadow:0 2px 12px rgba(15,23,42,.04);
+}
+.pro-hero{
+  border-radius:24px;
+  padding:18px 20px;
+  margin-bottom:12px;
+  background:linear-gradient(155deg,#0f172a 0%,#1e293b 100%);
+}
+.uni-target{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.uni-target select{
+  background:rgba(255,255,255,.08);
+  color:#f8fafc;
+  border:1px solid rgba(255,255,255,.15);
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  width:auto;
+}
+.uni-target select option{
+  background:#0f172a;
+  color:#f8fafc;
+}
+.adv-toggle{
+  width:100%;
+  margin-top:12px;
+  padding:11px 14px;
+  border-radius:14px;
+  border:1px dashed var(--bd);
+  background:var(--card2);
+  color:var(--pr);
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.t{
+  padding:13px 2px;
+  border-bottom:1px solid var(--bd);
+}
+nav button{
+  font-family:inherit;
+  font-size:12.5px;
+  font-weight:600;
+  padding:8px 4px;
+}
+nav button span{
+  font-size:20px;
+  margin-bottom:2px;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="hl"><button id="bk" class="hb" onclick="goBack()" style="display:none" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button><h1 id="ttl">يوميات المتداول</h1></div>
+  <div class="h-acts">
+    <button class="hb ic-btn" id="privBtn" onclick="tgPriv()" title="إخفاء/إظهار الأرقام" aria-label="إخفاء الأرقام">👁</button>
+    <button class="hb ic-btn" id="thmBtn" onclick="tgTheme()" title="الوضع الليلي/الفاتح" aria-label="المظهر">🌙</button>
+    <div class="mpill"><button class="hb sm" onclick="mv(-1)" aria-label="الشهر السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button><span id="mlab"></span><button class="hb sm" onclick="mv(1)" aria-label="الشهر التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button></div>
+  </div>
+</header>
+<main id="m"></main>
+<button class="fab" onclick="openAdd()" aria-label="إضافة صفقة">+</button>
+<nav id="nav"></nav>
+
+<dialog id="dlg"><div class="grab"></div>
+  <h2 id="dtt" style="font-size:20px;margin-bottom:8px">صفقة جديدة</h2>
+  <div class="chips2" id="acBox" style="display:none"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0"><label style="margin:0">⚡ قوالب سريعة</label><button type="button" class="qchip" onclick="saveTpl()" style="font-size:11.5px;padding:4px 10px">+ حفظ الإعدادات كقالب</button></div>
+  <div id="tplBar" class="qbar" style="margin-bottom:6px"></div>
+
+  <div class="g2">
+    <div>
+      <label>اتجاه الصفقة</label>
+      <div class="seg"><button type="button" id="dBuy" class="sel" style="padding:10px" onclick="setDir('Buy')">شراء (Buy) 📈</button><button type="button" id="dSell" class="loss" style="padding:10px" onclick="setDir('Sell')">بيع (Sell) 📉</button></div>
+    </div>
+    <div>
+      <label>نتيجة الصفقة</label>
+      <div class="seg"><button type="button" id="bw" style="padding:10px" onclick="setType('w')">رابحة +</button><button type="button" id="bl" class="loss" style="padding:10px" onclick="setType('l')">خاسرة −</button><button type="button" id="bbe" class="be-btn" style="padding:10px" onclick="setType('b')">تعادل 0</button></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:4px">
+    <div id="amBox"><label id="alab">كام الربح ($)</label><input id="amt" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00"></div>
+    <div>
+      <label>الزوج</label>
+      <select id="sym" class="sel2"><option value="XAUUSD">الذهب (XAUUSD)</option><option value="EURUSD">اليورو دولار (EURUSD)</option><option value="GBPUSD">الباوند دولار (GBPUSD)</option><option value="USDJPY">USDJPY</option><option value="GBPJPY">GBPJPY</option><option value="USDCAD">USDCAD</option><option value="AUDUSD">AUDUSD</option><option value="NZDUSD">NZDUSD</option><option value="USDCHF">USDCHF</option><option value="BTCUSD">BTCUSD</option><option value="US30">US30</option><option value="NAS100">NAS100</option></select>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:2px">
+    <div>
+      <label>الاستراتيجية</label>
+      <select id="sg" class="sel2" onchange="othChg(this,'sgO')"><option value="">اختر الاستراتيجية</option><option value="Smart Money Concepts">سمارت موني (SMC)</option><option value="Inner Circle Trader">آي سي تي (ICT)</option><option value="Price Action &amp; Market Structure">برايس أكشن وهيكلة السوق</option><option value="Supply &amp; Demand">عرض وطلب</option><option value="Breakout &amp; Retest">كسر وإعادة اختبار</option><option value="__o">أخرى (اكتب بنفسك)</option></select>
+      <input id="sgO" class="oth" placeholder="اكتب الاستراتيجية" maxlength="60">
+    </div>
+    <div>
+      <label>شروط / أسباب الدخول</label>
+      <select id="cfSel" class="sel2" onchange="oCf=this.value==='__o';othChg(this,'cfO');fCf=this.value&&!oCf?[this.value]:[]"></select>
+      <input id="cfO" class="oth" placeholder="اكتب شرط أو سبب الدخول" maxlength="60">
+    </div>
+  </div>
+
+  <button type="button" id="advBtn" class="adv-toggle" onclick="tgAdvDlg()">
+    <span>⚙️ تفاصيل إضافية وصور الشارت (SL/TP، الفريم، المشاعر)</span>
+    <span id="advArr">▾</span>
+  </button>
+
+  <div id="advFields" style="display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--bd)">
+    <div class="g2">
+      <div><label>وقف الخسارة بالنقاط (SL)</label><input id="slI" type="number" inputmode="decimal" step="any" placeholder="مثال: 20 نقطة" oninput="updRR()"></div>
+      <div><label>الهدف بالنقاط (TP)</label><input id="tpI" type="number" inputmode="decimal" step="any" placeholder="مثال: 60 نقطة" oninput="updRR()"></div>
+    </div>
+    <div class="g2">
+      <div><label>RR: العائد للمخاطرة</label><select id="rr" class="sel2"><option value="">اختر RR</option><option value="0.5">1 : 0.5</option><option value="1">1 : 1</option><option value="1.5">1 : 1.5</option><option value="2">1 : 2</option><option value="3">1 : 3</option><option value="4">1 : 4</option><option value="5+">1 : 5+</option></select></div>
+      <div><label>المخاطرة % من الرصيد</label><input id="rkI" type="number" inputmode="decimal" step="any" oninput="updRR()"></div>
+    </div>
+    <div id="rrPreview" class="dtx" style="font-size:13px;margin-top:8px;display:none"></div>
+    <div class="g2">
+      <div><label>الفريم الزمني</label><select id="tfSel" class="sel2"><option value="">اختر الفريم</option><option value="M1">M1</option><option value="M5">M5</option><option value="M15">M15</option><option value="M30">M30</option><option value="H1">H1</option><option value="H4">H4</option><option value="D1">D1</option></select></div>
+      <div><label>جودة الـ Setup</label><select id="sq" class="sel2"><option value="">اختر الجودة</option><option value="A+ Setup (Perfect)">A+ Setup (مثالي)</option><option value="B Setup (Good)">B Setup (جيد)</option><option value="C Setup (Poor/Impulsive)">C Setup (ضعيف / اندفاعي)</option></select></div>
+    </div>
+    <label>جلسة التداول</label><select id="ssSel" class="sel2" onchange="updSession()"><option value="">تلقائي (حسب وقت الدخول)</option><option value="Asian">الجلسة الآسيوية</option><option value="London">جلسة لندن</option><option value="Overlap">التداخل (لندن / نيويورك)</option><option value="NewYork">جلسة نيويورك</option><option value="OffHours">خارج الجلسات</option></select><div id="ssHint" style="font-size:13px;color:var(--mu);margin-top:4px"></div>
+    <div class="g2">
+      <div><label>الحالة النفسية</label><select id="emSel" class="sel2" onchange="oEm=this.value==='__o';othChg(this,'emO');fEm=oEm?'':this.value"></select><input id="emO" class="oth" placeholder="اكتب حالتك النفسية" maxlength="60"></div>
+      <div id="mtWrap"><label>تحليل الأخطاء</label><select id="mtSel" class="sel2" onchange="oMt=this.value==='__o';othChg(this,'mtO');fMt=oMt?'':this.value"></select><input id="mtO" class="oth" placeholder="اكتب تحليل الصفقة" maxlength="60"></div>
+    </div>
+    <label>الصور: الأولى قبل الصفقة، الثانية بعد، الثالثة إضافية</label>
+    <div class="ims"><label id="p0">+<input type="file" accept="image/*" onchange="pick(0,this)"></label><label id="p1">+<input type="file" accept="image/*" onchange="pick(1,this)"></label><label id="p2">+<input type="file" accept="image/*" onchange="pick(2,this)"></label></div>
+    <div style="margin-top:8px;position:relative;overflow:hidden;text-align:center;background:var(--bg);color:var(--pr);border-radius:12px;padding:12px;font-weight:700">اختر صور من الجهاز<input type="file" accept="image/*" multiple onchange="pickMany(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:0;cursor:pointer"></div>
+    <div id="imsg" style="font-size:13px;margin-top:6px;min-height:16px"></div>
+    <div class="g2"><div><label>التاريخ</label><input id="dt" type="date"></div><div><label>الوقت</label><input id="tm" type="time" oninput="updSession()"></div></div>
+    <div id="xdBox"><label>تاريخ الخروج</label><input id="xd" type="date"></div>
+    <div id="enExRow" class="g2" style="display:none"><div><label>سعر الدخول</label><input id="en" oninput="updRR()" type="number" inputmode="decimal" step="any"></div><div id="exBox"><label>سعر الخروج</label><input id="ex" type="number" inputmode="decimal" step="any"></div></div>
+    <div style="display:none"><span id="ckS">0</span><div id="ckBox"></div><textarea id="nbI"></textarea><textarea id="naI"></textarea></div>
+  </div>
+
+  <button class="go" onclick="save()">حفظ الصفقة</button>
+  <button class="cl" onclick="dlg.close()">إلغاء</button>
+</dialog>
+<dialog id="dd"><div class="grab"></div><div id="ddc"></div></dialog><dialog id="fl"><div class="grab"></div><div id="flc"></div></dialog><dialog id="cs"><div class="grab"></div><div id="csc"></div></dialog><dialog id="lb"><img id="lbi" alt=""></dialog><div id="toast"></div>
+
+<script>
+/* ===== PnL Analytics Engine & Smart Coach (Bundled & Self-Contained) ===== */
+/* PnL analytics core (STEP 1): TradeRecord adapter + AnalyticsEngine + ConditionsAnalyzer + SmartCoachEngine.
+   Pure logic only: no DOM access, no image handling. All identifiers are English; user-facing text is Arabic. */
+(function (root) {
+  'use strict';
+
+  /* ---------------- Constants & labels ---------------- */
+  const MIN_CELL_SAMPLE = 5;        // minimum trades in a group before we draw conclusions from it
+  const COACH_MIN_TRADES = 30;      // sample-size gate for the Smart Coach
+  const WIN_RATE_GAP = 15;          // percentage points gap needed to call a "strong vs weak" condition
+
+  const SESSION_LABELS = {
+    Asian: 'الجلسة الآسيوية',
+    London: 'جلسة لندن',
+    Overlap: 'التداخل (لندن / نيويورك)',
+    NewYork: 'جلسة نيويورك',
+    OffHours: 'خارج الجلسات'
+  };
+  const SESSION_OPTIONS = ['Asian', 'London', 'Overlap', 'NewYork', 'OffHours'];
+  const TIMEFRAME_OPTIONS = ['M1', 'M5', 'M15', 'M30', 'H1', 'H4', 'D1'];
+  const DAY_LABELS = {
+    Sunday: 'الأحد', Monday: 'الإثنين', Tuesday: 'الثلاثاء', Wednesday: 'الأربعاء',
+    Thursday: 'الخميس', Friday: 'الجمعة', Saturday: 'السبت'
+  };
+  const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  /* ---------------- Small helpers ---------------- */
+  const sum = a => a.reduce((x, y) => x + y, 0);
+  const mean = a => (a.length ? sum(a) / a.length : 0);
+  const pct = (n, d) => (d ? (n / d) * 100 : 0);
+  const r1 = x => Math.round(x * 10) / 10;
+  const r2 = x => Math.round(x * 100) / 100;
+  // Arabic count agreement: 3-10 take the plural, others the singular form.
+  const tw = n => n + (n >= 3 && n <= 10 ? ' صفقات' : ' صفقة');
+  const mw = n => n + (n >= 3 && n <= 10 ? ' مرات' : ' مرة');
+
+  // Standard normal CDF (Abramowitz-Stegun erf approximation).
+  function normCdf(z) {
+    const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2);
+    const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-(z * z) / 2);
+    return 0.5 * (1 + (z >= 0 ? y : -y));
+  }
+  const twoSidedP = z => 2 * (1 - normCdf(Math.abs(z)));
+
+  // Wilson 95% interval for a proportion (returns percentages).
+  function wilson(wins, n) {
+    if (!n) return { low: 0, high: 0 };
+    const z = 1.96, p = wins / n, z2 = z * z;
+    const c = (p + z2 / (2 * n)) / (1 + z2 / n);
+    const h = (z * Math.sqrt((p * (1 - p)) / n + z2 / (4 * n * n))) / (1 + z2 / n);
+    return { low: Math.max(0, (c - h) * 100), high: Math.min(100, (c + h) * 100) };
+  }
+
+  /* ---------------- Session logic (Egypt local time) ---------------- */
+  // The app stores the time the user typed (already Egypt local time, so DST is handled by the user's clock).
+  // 01:00-10:00 Asian | 10:00-15:00 London | 15:00-17:00 Overlap | 17:00-23:00 NewYork | else OffHours
+  function sessionFromTime(timeStr) {
+    const m = /^(\d{1,2}):(\d{2})/.exec(timeStr || '');
+    if (!m) return '';
+    const h = +m[1] + (+m[2]) / 60;
+    if (h >= 1 && h < 10) return 'Asian';
+    if (h >= 10 && h < 15) return 'London';
+    if (h >= 15 && h < 17) return 'Overlap';
+    if (h >= 17 && h < 23) return 'NewYork';
+    return 'OffHours';
+  }
+  function dayOfWeekFromDate(dateStr) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr || '');
+    if (!m) return '';
+    return DAY_NAMES[new Date(+m[1], +m[2] - 1, +m[3], 12).getDay()];
+  }
+
+  /* ---------------- TradeRecord adapter ---------------- */
+  // Maps the stored (short-key) trade object to a clean English record used by every engine.
+  // Legacy trades without the new fields are derived on the fly, so old data keeps working.
+  function toRecord(t) {
+    const status = t.st || (t.a > 0 ? 'Win' : t.a < 0 ? 'Loss' : 'Open');
+    const rawMistake = t.mistake_tag || t.ld || t.mt || '';
+    // 'None' = followed the plan. Legacy wins without a tag are treated as plan-compliant;
+    // legacy losses without a tag are 'Unknown' (excluded from adherence comparisons).
+    const mistakeTag = rawMistake || (status === 'Win' ? 'None' : status === 'Loss' ? 'Unknown' : 'Unknown');
+    return {
+      id: t.id,
+      account: t.ac || 'Personal',
+      instrument: t.instrument || t.s || '',
+      timeframe: t.timeframe || '',
+      entryDate: t.d || '',
+      entryTime: t.tm || '',
+      exitDate: t.xd || t.d || '',
+      dayOfWeek: t.day_of_week || dayOfWeekFromDate(t.d),
+      session: t.session || sessionFromTime(t.tm),
+      strategy: t.sg || '',
+      setupQuality: t.sq || '',
+      riskReward: t.rr || '',
+      emotion: t.em || '',
+      mistakeTag: mistakeTag,
+      status: status,
+      pnl: +t.a || 0,
+      raw: t
+    };
+  }
+  const closedOnly = recs => recs.filter(r => r.status !== 'Open');
+  const chronological = recs => recs.slice().sort((a, b) =>
+    (a.exitDate + (a.entryTime || '')).localeCompare(b.exitDate + (b.entryTime || '')) || a.id - b.id);
+
+  /* ---------------- AnalyticsEngine (Module 1) ---------------- */
+  const AnalyticsEngine = {
+    // Predicates reused by the clickable dashboard cards (STEP 2).
+    filters: {
+      all: () => true,
+      wins: r => r.pnl > 0,
+      losses: r => r.pnl < 0,
+      adherent: r => r.mistakeTag === 'None',
+      violations: r => r.mistakeTag !== 'None' && r.mistakeTag !== 'Unknown'
+    },
+
+    select(records, filterKey) {
+      return closedOnly(records).filter(this.filters[filterKey] || this.filters.all);
+    },
+
+    equityCurve(records) {
+      let eq = 0;
+      return chronological(closedOnly(records)).map(r => {
+        eq += r.pnl;
+        return { id: r.id, date: r.exitDate, pnl: r.pnl, equity: r2(eq) };
+      });
+    },
+
+    maxDrawdown(records) {
+      let peak = 0, eq = 0, maxDd = 0;
+      chronological(closedOnly(records)).forEach(r => {
+        eq += r.pnl;
+        if (eq > peak) peak = eq;
+        const dd = peak - eq;
+        if (dd > maxDd) maxDd = dd;
+      });
+      return { amount: r2(maxDd) }; // peak-to-trough drop in cumulative P/L ($)
+    },
+
+    // The trades between the equity peak and the trough of the maximum drawdown (for the clickable card).
+    drawdownTrades(records) {
+      const arr = chronological(closedOnly(records));
+      let eq = 0, peak = 0, peakIdx = -1, maxDd = 0, s = -1, e = -1;
+      arr.forEach((r, i) => {
+        eq += r.pnl;
+        if (eq > peak) { peak = eq; peakIdx = i; }
+        const dd = peak - eq;
+        if (dd > maxDd) { maxDd = dd; s = peakIdx + 1; e = i; }
+      });
+      return maxDd ? arr.slice(s, e + 1) : [];
+    },
+
+    summarize(records) {
+      const c = closedOnly(records);
+      const wins = c.filter(r => r.pnl > 0), losses = c.filter(r => r.pnl < 0);
+      const grossWin = sum(wins.map(r => r.pnl));
+      const grossLoss = Math.abs(sum(losses.map(r => r.pnl)));
+      const avgWin = mean(wins.map(r => r.pnl));
+      const avgLoss = mean(losses.map(r => r.pnl)); // negative number
+      const winRate = pct(wins.length, c.length);
+      const classified = c.filter(r => r.mistakeTag !== 'Unknown');
+      const adherent = classified.filter(AnalyticsEngine.filters.adherent);
+      return {
+        totalTrades: c.length,
+        wins: wins.length,
+        losses: losses.length,
+        breakeven: c.length - wins.length - losses.length,
+        winRate: r1(winRate),
+        netPnl: r2(sum(c.map(r => r.pnl))),
+        grossProfit: r2(grossWin),
+        grossLoss: r2(grossLoss),
+        avgWin: r2(avgWin),
+        avgLoss: r2(avgLoss),
+        profitFactor: grossLoss ? r2(grossWin / grossLoss) : (grossWin ? null : 0), // null = infinite (no losses)
+        expectancy: r2(mean(c.map(r => r.pnl))), // average P/L per trade = winRate*avgWin + lossRate*avgLoss
+        maxDrawdown: AnalyticsEngine.maxDrawdown(c),
+        planAdherence: r1(pct(adherent.length, classified.length)),
+        adherentCount: adherent.length,
+        classifiedCount: classified.length
+      };
+    }
+  };
+
+  /* ---------------- ConditionsAnalyzer (Module 2) ---------------- */
+  const ConditionsAnalyzer = {
+    // dimension: 'session' | 'instrument' | 'timeframe' | 'dayOfWeek' | 'strategy'
+    groupStats(records, dimension) {
+      const groups = {};
+      closedOnly(records).forEach(r => {
+        const k = r[dimension];
+        if (!k) return;
+        (groups[k] = groups[k] || []).push(r);
+      });
+      return Object.keys(groups).map(k => {
+        const g = groups[k], w = g.filter(r => r.pnl > 0), l = g.filter(r => r.pnl < 0);
+        const gl = Math.abs(sum(l.map(r => r.pnl)));
+        return {
+          key: k, n: g.length, wins: w.length,
+          winRate: r1(pct(w.length, g.length)),
+          netPnl: r2(sum(g.map(r => r.pnl))),
+          avgPnl: r2(mean(g.map(r => r.pnl))),
+          profitFactor: gl ? r2(sum(w.map(r => r.pnl)) / gl) : null
+        };
+      }).sort((a, b) => b.avgPnl - a.avgPnl);
+    },
+
+    // Strategy x (session | instrument | timeframe) matrix.
+    crossStats(records, rowDim, colDim) {
+      const out = {};
+      closedOnly(records).forEach(r => {
+        const a = r[rowDim], b = r[colDim];
+        if (!a || !b) return;
+        ((out[a] = out[a] || {})[b] = out[a][b] || []).push(r);
+      });
+      const res = {};
+      Object.keys(out).forEach(a => {
+        res[a] = Object.keys(out[a]).map(b => {
+          const g = out[a][b], w = g.filter(r => r.pnl > 0);
+          return { key: b, n: g.length, winRate: r1(pct(w.length, g.length)), netPnl: r2(sum(g.map(r => r.pnl))), avgPnl: r2(mean(g.map(r => r.pnl))) };
+        });
+      });
+      return res;
+    },
+
+    // Data-driven summary: strongest condition, weakest condition, costliest behavior (mistake tag or emotion).
+    highlights(records, opts) {
+      const L = Object.assign({
+        strategy: v => v, instrument: v => v, session: v => SESSION_LABELS[v] || v, timeframe: v => v,
+        dayOfWeek: v => DAY_LABELS[v] || v, mistake: v => v, emotion: v => v
+      }, (opts && opts.labels) || {});
+      const titles = { session: 'الجلسة', instrument: 'الزوج', timeframe: 'الفريم', dayOfWeek: 'اليوم', strategy: 'الاستراتيجية' };
+      const c = closedOnly(records), cand = [];
+      Object.keys(titles).forEach(dim => ConditionsAnalyzer.groupStats(c, dim).forEach(g => {
+        if (g.n >= MIN_CELL_SAMPLE) cand.push(Object.assign({ dim: dim }, g));
+      }));
+      const fmt = g => titles[g.dim] + ' «' + L[g.dim](g.key) + '»: ' + tw(g.n) + '، نسبة فوز ' + g.winRate + '%، متوسط ' + fmtMoney(g.avgPnl) + ' للصفقة (صافي ' + fmtMoney(g.netPnl) + ').';
+      cand.sort((x, y) => y.avgPnl * Math.sqrt(y.n) - x.avgPnl * Math.sqrt(x.n)); // favors larger samples over lucky small ones
+      const best = cand.length && cand[0].avgPnl > 0 ? cand[0] : null;
+      const worstC = cand.length ? cand[cand.length - 1] : null;
+      const worst = worstC && worstC !== best ? worstC : null;
+      // costliest behavior
+      const beh = [];
+      const byKey = (arr, pick, kind) => {
+        const m = {};
+        arr.forEach(r => { const k = pick(r); if (k) (m[k] = m[k] || []).push(r); });
+        Object.keys(m).forEach(k => { const g = m[k]; if (g.length >= 2) beh.push({ kind: kind, key: k, n: g.length, netPnl: r2(sum(g.map(r => r.pnl))) }); });
+      };
+      byKey(c, r => (r.mistakeTag !== 'None' && r.mistakeTag !== 'Unknown') ? r.mistakeTag : '', 'mistake');
+      byKey(c, r => r.emotion, 'emotion');
+      beh.sort((x, y) => x.netPnl - y.netPnl);
+      const cost = beh.length && beh[0].netPnl < 0 ? beh[0] : null;
+      return {
+        sampleSize: c.length,
+        strongest: best && { dim: best.dim, key: best.key, text: fmt(best) },
+        weakest: worst && { dim: worst.dim, key: worst.key, profitable: worst.avgPnl >= 0, text: fmt(worst) },
+        costliest: cost && Object.assign({}, cost, { text: (cost.kind === 'mistake' ? 'الخطأ «' : 'الدخول في حالة «') + L[cost.kind](cost.key) + '» تكرر ' + mw(cost.n) + ' وكلّفك ' + fmtMoney(cost.netPnl) + ' إجمالًا.' }),
+        caveat: c.length < COACH_MIN_TRADES ? 'العينة ' + tw(c.length) + ' فقط؛ اعتبر الأرقام مؤشرًا مبدئيًا.' : ''
+      };
+    },
+
+    /* opts.labels = { strategy(v), instrument(v), session(v), timeframe(v), dayOfWeek(v) } optional label resolvers */
+    discover(records, opts) {
+      const L = Object.assign({
+        strategy: v => v,
+        instrument: v => v,
+        session: v => SESSION_LABELS[v] || v,
+        timeframe: v => v,
+        dayOfWeek: v => DAY_LABELS[v] || v
+      }, (opts && opts.labels) || {});
+      const dimTitle = { session: 'الجلسة', instrument: 'الزوج', timeframe: 'الفريم', dayOfWeek: 'اليوم' };
+      const findings = [];
+
+      // 1) Best / worst condition inside each single dimension.
+      ['session', 'instrument', 'timeframe', 'dayOfWeek'].forEach(dim => {
+        const g = ConditionsAnalyzer.groupStats(records, dim).filter(x => x.n >= MIN_CELL_SAMPLE);
+        if (g.length < 2) return;
+        const best = g[0], worst = g[g.length - 1];
+        if (best.avgPnl <= worst.avgPnl) return;
+        findings.push({
+          type: 'single', dimension: dim, best: best, worst: worst,
+          text: 'أعلى أداء حسب ' + dimTitle[dim] + ': ' + L[dim](best.key) + ' (نسبة فوز ' + best.winRate + '%، متوسط ' +
+            fmtMoney(best.avgPnl) + ' للصفقة)، وأضعف أداء: ' + L[dim](worst.key) + ' (نسبة فوز ' + worst.winRate +
+            '%، متوسط ' + fmtMoney(worst.avgPnl) + ' للصفقة).'
+        });
+      });
+
+      // 2) Strategy x session, strategy x instrument, strategy x timeframe.
+      [['session', 'في', 'الجلسات'], ['instrument', 'على', 'الأزواج'], ['timeframe', 'على فريم', 'الفريمات']].forEach(cfg => {
+        const colDim = cfg[0], prep = cfg[1];
+        const cross = ConditionsAnalyzer.crossStats(records, 'strategy', colDim);
+        Object.keys(cross).forEach(strat => {
+          const cells = cross[strat].filter(x => x.n >= MIN_CELL_SAMPLE).sort((a, b) => b.avgPnl - a.avgPnl);
+          if (cells.length < 2) return;
+          const best = cells[0], worst = cells[cells.length - 1];
+          const gap = best.winRate - worst.winRate;
+          const signFlip = best.avgPnl > 0 && worst.avgPnl < 0;
+          if (best.avgPnl <= 0 || (gap < WIN_RATE_GAP && !signFlip)) return; // only call a condition 'efficient' if it is actually profitable
+          findings.push({
+            type: 'cross', strategy: strat, dimension: colDim, best: best, worst: worst,
+            text: 'استراتيجية ' + L.strategy(strat) + ' تعمل بكفاءة ' + prep + ' ' + L[colDim](best.key) + ' (نسبة فوز ' +
+              best.winRate + '% من ' + tw(best.n) + ') لكنها تضعف ' + prep + ' ' + L[colDim](worst.key) + ' (نسبة فوز ' +
+              worst.winRate + '% من ' + tw(worst.n) + ').'
+          });
+        });
+      });
+
+      return {
+        findings: findings,
+        enoughData: findings.length > 0,
+        emptyMessage: findings.length ? '' : 'لا توجد بيانات كافية بعد لاكتشاف ارتباطات موثوقة. يلزم ' + MIN_CELL_SAMPLE + ' صفقات على الأقل في كل حالة للمقارنة.'
+      };
+    }
+  };
+
+  function fmtMoney(x) { return (x < 0 ? '-' : '') + '$' + Math.abs(x).toFixed(2); }
+
+  /* ---------------- SmartCoachEngine (Module 3) ---------------- */
+  const SmartCoachEngine = {
+    INSUFFICIENT_MESSAGE: 'حجم العينة غير كافٍ لاستخراج استنتاجات إحصائية دقيقة. يرجى الاستمرار في تدوين صفقاتك للوصول إلى 30 صفقة على الأقل.',
+
+    _setStats(set) {
+      const w = set.filter(r => r.pnl > 0);
+      const pnls = set.map(r => r.pnl);
+      const m = mean(pnls);
+      const variance = pnls.length > 1 ? sum(pnls.map(x => (x - m) * (x - m))) / (pnls.length - 1) : 0;
+      const ci = wilson(w.length, set.length);
+      return {
+        n: set.length, wins: w.length,
+        winRate: r1(pct(w.length, set.length)),
+        winRateCI: { low: r1(ci.low), high: r1(ci.high) },
+        netPnl: r2(sum(pnls)), avgPnl: r2(m), variance: variance
+      };
+    },
+
+    // Two-proportion z-test on win rates.
+    _winRateP(a, b) {
+      if (!a.n || !b.n) return 1;
+      const p = (a.wins + b.wins) / (a.n + b.n);
+      const se = Math.sqrt(p * (1 - p) * (1 / a.n + 1 / b.n));
+      return se ? twoSidedP((a.wins / a.n - b.wins / b.n) / se) : 1;
+    },
+    // Welch test (normal approximation) on mean P/L per trade.
+    _pnlP(a, b) {
+      if (a.n < 2 || b.n < 2) return 1;
+      const se = Math.sqrt(a.variance / a.n + b.variance / b.n);
+      return se ? twoSidedP((a.avgPnl - b.avgPnl) / se) : 1;
+    },
+    _uncertainty(a, b, p) {
+      const small = Math.min(a.n, b.n);
+      if (small < MIN_CELL_SAMPLE) return { level: 'High', label: 'مرتفع جدًا' };
+      if (p < 0.05 && small >= 10) return { level: 'Low', label: 'منخفض' };
+      if (p < 0.2) return { level: 'Medium', label: 'متوسط' };
+      return { level: 'High', label: 'مرتفع' };
+    },
+
+    analyze(records) {
+      const c = closedOnly(records);
+      if (c.length < COACH_MIN_TRADES) {
+        return { status: 'insufficient', totalTrades: c.length, required: COACH_MIN_TRADES, message: SmartCoachEngine.INSUFFICIENT_MESSAGE };
+      }
+      const A = c.filter(r => r.mistakeTag === 'None');                                   // Set A: followed the plan
+      const B = c.filter(r => r.mistakeTag !== 'None' && r.mistakeTag !== 'Unknown');      // Set B: any mistake tag
+      const unclassified = c.length - A.length - B.length;
+      if (!A.length || !B.length) {
+        return {
+          status: 'one_sided', totalTrades: c.length, setA: A.length, setB: B.length,
+          message: 'لا يمكن إجراء المقارنة لأن إحدى المجموعتين فارغة (صفقات بدون أخطاء: ' + A.length + '، صفقات بها أخطاء: ' + B.length +
+            '). حدّد «تحليل الأخطاء» في صفقاتك لتفعيل التحليل السلوكي.'
+        };
+      }
+      const sa = SmartCoachEngine._setStats(A), sb = SmartCoachEngine._setStats(B);
+      const pWin = SmartCoachEngine._winRateP(sa, sb), pPnl = SmartCoachEngine._pnlP(sa, sb);
+      const unc = SmartCoachEngine._uncertainty(sa, sb, Math.min(pWin, pPnl));
+      const winGap = r1(sa.winRate - sb.winRate), avgGap = r2(sa.avgPnl - sb.avgPnl);
+
+      const paragraphs = [];
+      paragraphs.push('الصفقات الملتزمة بالخطة (المجموعة A): ' + tw(sa.n) + '، نسبة الفوز ' + sa.winRate + '%، صافي ' + fmtMoney(sa.netPnl) +
+        '، متوسط ' + fmtMoney(sa.avgPnl) + ' للصفقة. الصفقات التي شابها خطأ (المجموعة B): ' + tw(sb.n) + '، نسبة الفوز ' + sb.winRate +
+        '%، صافي ' + fmtMoney(sb.netPnl) + '، متوسط ' + fmtMoney(sb.avgPnl) + ' للصفقة.');
+      const dir = winGap > 0 ? 'أعلى' : winGap < 0 ? 'أقل' : 'مساوية';
+      paragraphs.push('الفارق في نسبة الفوز: ' + Math.abs(winGap) + ' نقطة مئوية (المجموعة A ' + dir + ' من B)، والفارق في متوسط الربح للصفقة: ' +
+        fmtMoney(avgGap) + '. القيمة الاحتمالية لفارق نسبة الفوز ≈ ' + r2(pWin) + '، ولفارق متوسط الربح ≈ ' + r2(pPnl) + '.');
+      paragraphs.push('مستوى عدم اليقين: ' + unc.label + '. ' + (unc.level === 'Low'
+        ? 'الفارق يبدو متسقًا إحصائيًا مع حجم العينة الحالي، مع بقاء احتمال التأثر بتغيّر ظروف السوق.'
+        : 'حجم العينة وتباين النتائج لا يسمحان بالجزم بأن الفارق حقيقي وليس صدفة؛ تعامل معه كمؤشر أولي فقط.') +
+        ' نطاق الثقة 95% لنسبة الفوز: A [' + sa.winRateCI.low + '% – ' + sa.winRateCI.high + '%]، B [' + sb.winRateCI.low + '% – ' + sb.winRateCI.high + '%].');
+      if (unclassified > 0) paragraphs.push('ملاحظة: ' + tw(unclassified) + ' بدون تصنيف أخطاء لم تُدرج في المقارنة.');
+
+      return {
+        status: 'ok', totalTrades: c.length, setA: sa, setB: sb,
+        winRateGap: winGap, avgPnlGap: avgGap, pWinRate: r2(pWin), pAvgPnl: r2(pPnl),
+        uncertainty: unc, unclassified: unclassified,
+        paragraphs: paragraphs,
+        questions: SmartCoachEngine._questions(B, sa, sb)
+      };
+    },
+
+    // Reflective, behavior-focused questions. Never trade advice.
+    _questions(setB, sa, sb) {
+      const q = [];
+      const losingB = setB.filter(r => r.pnl < 0);
+      if (losingB.length) q.push('ما الذي يدفعك لكسر قواعدك في هذه الصفقات الخاسرة؟');
+      const top = arr => {
+        const m = {};
+        arr.forEach(x => { if (x) m[x] = (m[x] || 0) + 1; });
+        const e = Object.entries(m).sort((a, b) => b[1] - a[1]);
+        return e.length ? { key: e[0][0], count: e[0][1] } : null;
+      };
+      const tag = top(setB.map(r => r.mistakeTag));
+      if (tag && tag.count >= 2) q.push('الخطأ الأكثر تكرارًا في سجلك تكرر ' + mw(tag.count) + '. ما الموقف أو الشعور الذي يسبق حدوثه عادةً؟');
+      const emo = top(setB.map(r => r.emotion));
+      if (emo && emo.count >= 2) q.push('تتكرر حالة نفسية بعينها في الصفقات التي شابها خطأ (' + mw(emo.count) + '). كيف كانت حالتك قبل الدخول، وماذا كنت تحتاج في تلك اللحظة؟');
+      if (sb.winRate > sa.winRate) q.push('نسبة فوزك في الصفقات المخالفة للخطة ليست أقل من الملتزمة بها. هل تعتقد أن العينة الحالية تعكس الواقع، أم أن النتائج القصيرة تخدعك؟');
+      q.push('لو راجعت آخر صفقة خالفت فيها خطتك، ما اللحظة التي اتخذت فيها القرار فعليًا؟');
+      return q;
+    }
+  };
+
+  /* ---------------- Export ---------------- */
+  root.PnLAnalytics = {
+    toRecord, sessionFromTime, dayOfWeekFromDate,
+    AnalyticsEngine, ConditionsAnalyzer, SmartCoachEngine,
+    SESSION_LABELS, SESSION_OPTIONS, TIMEFRAME_OPTIONS, DAY_LABELS,
+    MIN_CELL_SAMPLE, COACH_MIN_TRADES
+  };
+  if (typeof module !== 'undefined') module.exports = root.PnLAnalytics;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+const AR=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+let S={trades:[],target:1000},tab='home',type='w',cur=new Date();cur.setDate(1);
+try{const r=localStorage.getItem('pnl_v1');if(r)S=JSON.parse(r)}catch(e){}
+let editId=null,curT=null,tt;
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.style.display='block';clearTimeout(tt);tt=setTimeout(()=>e.style.display='none',4000)}
+const persist=(skip)=>{try{localStorage.setItem('pnl_v1',JSON.stringify(S));if(!skip)gSchedule();return true}catch(e){toast('التخزين غير متاح أو ممتلئ. الصفقة محفوظة مؤقتًا في هذه الجلسة فقط.');return false}};
+window.onerror=m=>toast('خطأ: '+m);
+const f=n=>(n<0?'-':'')+Math.abs(n).toFixed(2)+' $';
+const ds=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today=ds(new Date());
+const inMonth=()=>TR().filter(t=>t.d.slice(0,7)===ds(cur).slice(0,7));
+const sum=a=>a.reduce((s,t)=>s+t.a,0);
+function othChg(el,id){document.getElementById(id).style.display=el.value==='__o'?'block':'none'}
+function OTHinit(t){const isIn=(L,x)=>L.some(y=>y[0]===x)||LEG.some(y=>y[0]===x),ct=t&&t.cf&&t.cf[0],mq=t&&(t.mistake_tag||t.ld||t.mt)||'';
+  sgO.value='';cfO.value='';emO.value='';mtO.value='';
+  if(t&&t.sg&&!isIn(SG,t.sg)){sg.value='__o';sgO.value=t.sg}
+  oCf=!!(ct&&!isIn(CF,ct));if(oCf){cfO.value=ct;fCf=[]}
+  oEm=!!(fEm&&!isIn(EM,fEm));if(oEm){emO.value=fEm;fEm=''}
+  oMt=!!(mq&&mq!=='None'&&!isIn(MT,mq));if(oMt){mtO.value=mq;fMt=''}}
+function OTHshow(){sgO.style.display=sg.value==='__o'?'block':'none';cfO.style.display=oCf?'block':'none';emO.style.display=oEm?'block':'none';mtO.style.display=oMt?'block':'none'}
+let pushed=false,lastTab='home';
+function render(){render0();const h=tab==='home';
+  if(!h&&!pushed){history.pushState({sub:1},'');pushed=true}else if(h&&pushed){pushed=false;if(history.state&&history.state.sub)history.back()}
+  if(lastTab!==tab){const mm=document.getElementById('m');mm.scrollTop=0;mm.classList.remove('pg');void mm.offsetWidth;if(!h)mm.classList.add('pg');lastTab=tab}
+  document.getElementById('nav').style.display='flex';
+  document.getElementById('bk').style.display=h?'none':'inline-flex';
+  document.querySelector('.fab').style.display=(h||tab==='bt')?'':'none';if(tab==='bt'&&btSub==='list')setTimeout(btThumbs,0)}
+window.addEventListener('popstate',()=>{const od=[...document.querySelectorAll('dialog[open]')];
+  if(od.length){od.forEach(d=>d.close());if(pushed)history.pushState({sub:1},'');return}
+  if(pushed){pushed=false;tab='home';render()}});
+function sheet(d){let y0=null,dy=0,act=false;
+  let hd=false;d.addEventListener('touchstart',e=>{hd=!!(e.target.closest&&e.target.closest('.grab'));if((hd||d.scrollTop<=0)&&e.touches.length===1){y0=e.touches[0].clientY;dy=0;act=false}else y0=null},{passive:true});
+  d.addEventListener('touchmove',e=>{if(y0==null)return;dy=e.touches[0].clientY-y0;if(dy>8&&(hd||d.scrollTop<=0)){act=true;d.style.animation='none';d.style.transition='none';d.style.transform='translateY('+dy+'px)'}else if(dy<=0){act=false;d.style.transform=''}},{passive:true});
+  d.addEventListener('touchend',()=>{if(y0==null)return;d.style.transition='transform .2s ease';
+    if(act&&dy>110){d.style.transform='translateY(100%)';setTimeout(()=>d.close(),190)}else d.style.transform='';y0=null;act=false});
+  d.addEventListener('close',()=>{d.style.transform='';d.style.transition='';d.style.animation=''})}
+['dlg','dd','fl','cs'].forEach(i=>{const el=document.getElementById(i);if(el)sheet(el)});
+let btSub='list',btSg='';
+const secSel=(opts,val)=>`<div class="sw"><select class="sel2" aria-label="القسم" onchange="goSec(this.value)">${opts.map(([k,l])=>`<option value="${k}"${val===k?' selected':''}>${l}</option>`).join('')}</select></div>`;
+function goSec(v){if(tab==='bt')btSub=v;else if(v==='stats')tab='stats';else{tab='dash';dashSub=v}render()}
+function btBar(){return secSel([['list','🧪 مختبر الباك تيست والصفقات'],['lab','🎲 محاكي مونت كارلو ومقارنة الحقيقي'],['perf','◐ منحنى الأداء والمؤشرات'],['ins','🔍 اكتشافات الشروط والساعات'],['coach','🧠 المدرب الذكي للاختبار'],['stats','🏆 التقييم الشامل للاستراتيجية']],btSub)}
+function btHtml(){
+  return btProRender();
+}
+async function btThumbs(){for(const t of TR()){const x=t.im&&t.im[0],e=document.getElementById('th'+t.id);if(x&&e){try{const b=await loadBlob(x);if(b){e.style.backgroundImage='url('+URL.createObjectURL(b)+')';e.style.display='block'}}catch(_){}}}}
+function mv(n){cur.setMonth(cur.getMonth()+n);render()}
+function render0(){
+  document.getElementById('mlab').textContent=AR[cur.getMonth()]+' '+cur.getFullYear();
+  document.getElementById('ttl').textContent={home:'يوميات المتداول',dash:'لوحة الأداء',stats:'الإحصائيات',target:'الهدف',set:'الإعدادات',bt:'الاختبار'}[tab];
+  document.getElementById('nav').innerHTML=[['home','⌂','الرئيسية'],['dash','◐','التحليلات'],['bt','⚗','الباك تيست'],['set','⚙','الإعدادات']].map(([k,i,l])=>`<button class="${(tab===k||(k==='home'&&tab==='target')||(k==='dash'&&tab==='stats'))?'on':''}" onclick="tab='${k}';render()"><span>${i}</span>${l}</button>`).join('');
+  const mt=inMonth(),tot=sum(mt),m=document.getElementById('m');
+  if(tab==='home'){
+    m.innerHTML=homeProHtml(mt,tot);
+  }else if(tab==='dash'){m.innerHTML=dashHtml()
+  }else if(tab==='bt'){m.innerHTML=btHtml()
+  }else if(tab==='stats'){m.innerHTML=strat()
+  }else if(tab==='target'){
+    m.innerHTML=targetProHtml(tot);
+  }else{
+    m.innerHTML=setHtml();
+  }
+}
+
+function strat(){
+  const T=closed(TR()).filter(t=>inPeriod({entryDate:t.d})).sort((a,b)=>a.d.localeCompare(b.d)||a.id-b.id),n=T.length;
+  if(n<3)return subBar()+'<div class="card"><div class="empty">محتاج 3 صفقات مغلقة على الأقل في الفترة دي عشان أقيّم استراتيجيتك. غيّر الفترة أو أضف صفقات.</div></div>';
+  const W=T.filter(t=>t.a>0),L=T.filter(t=>t.a<0),gp=sum(W),gl=Math.abs(sum(L)),tot=gp-gl;
+  const wr=W.length/n*100,pf=gl?gp/gl:(gp?99:0),aw=W.length?gp/W.length:0,al=L.length?gl/L.length:0,rr=al?aw/al:(aw?99:0),ex=tot/n;
+  let c=0,pk=0,dd=0,ls=0,mls=0;T.forEach(t=>{c+=t.a;pk=Math.max(pk,c);dd=Math.max(dd,pk-c);if(t.a<0){ls++;mls=Math.max(mls,ls)}else ls=0});
+  const sc=(pf>=2?40:pf>=1.5?32:pf>=1.2?24:pf>=1?15:5)+(wr>=60?25:wr>=50?20:wr>=40?14:6)+(rr>=2?20:rr>=1.5?16:rr>=1?11:5)+(n>=30?15:n>=10?9:4);
+  const gr=sc>=80?['ممتازة','var(--gr)']:sc>=60?['جيدة','var(--pr)']:sc>=40?['متوسطة','var(--or)']:['ضعيفة','var(--rd)'];
+  const pairs={};T.forEach(t=>{const k=NM[t.s]||t.s||'غير محدد';(pairs[k]=pairs[k]||[]).push(t)});
+  const pr=Object.entries(pairs).map(([k,a])=>[k,a.length,sum(a),a.filter(x=>x.a>0).length/a.length*100]).sort((x,y)=>y[2]-x[2]);
+  const E=EM.map(([v,l])=>{const a=T.filter(t=>t.em===v);return[l,a.length,sum(a)]}).filter(x=>x[1]);
+  const row=(a,b,cl)=>`<div class="t"><span>${a}</span><b style="${cl?'color:'+cl:''}">${b}</b></div>`;
+  const CFs=CF.map(([v,l])=>{const a=T.filter(t=>(t.cf||[]).includes(v));return[l,a.length,a.length?a.filter(t=>t.a>0).length/a.length*100:0,sum(a)]}).filter(x=>x[1]).sort((x,y)=>y[3]-x[3]);
+  const MTs=MT.map(([v,l])=>{const a=L.filter(t=>(t.ld||t.mt)===v);return[l,a.length,sum(a)]}).filter(x=>x[1]).sort((x,y)=>y[1]-x[1]);
+  const grp=(LIST,k)=>LIST.map(([v,l])=>{const a=T.filter(t=>t[k]===v);return[l,a.length,a.length?a.filter(t=>t.a>0).length/a.length*100:0,sum(a)]}).filter(x=>x[1]);
+  const SGs=grp(SG,'sg'),SQs=grp(SQ,'sq');
+  const gc=(ti,arr)=>arr.length?`<div class="card"><b>${ti}</b>`+arr.map(c=>row(c[0]+' <small style="color:var(--mu)">('+c[1]+' • '+c[2].toFixed(0)+'%)</small>',f(c[3]),c[3]<0?'var(--rd)':'var(--gr)')).join('')+`</div>`:'';
+  const sgCard=gc('الاستراتيجيات',SGs),sqCard=gc('جودة الـ Setup',SQs);
+  const cfCard=CFs.length?`<div class="card"><b>أسباب الدخول</b>`+CFs.map(c=>row(c[0]+' <small style="color:var(--mu)">('+c[1]+' • '+c[2].toFixed(0)+'%)</small>',f(c[3]),c[3]<0?'var(--rd)':'var(--gr)')).join('')+`</div>`:'';
+  const mtCard=MTs.length?`<div class="card"><b>تحليل الخسارة</b>`+MTs.map(c=>row(c[0]+' <small style="color:var(--mu)">('+c[1]+')</small>',f(c[2]),'var(--rd)')).join('')+`</div>`:'';
+  return subBar()+smartSummary(T)+dirCompCard(T)+`<div class="card" style="text-align:center"><div style="color:var(--mu)">تقييم الاستراتيجية (${n} صفقة)</div><div style="font-size:54px;font-weight:700;color:${gr[1]}">${sc}<small style="font-size:20px">/100</small></div><div style="font-size:20px;font-weight:700;color:${gr[1]}">${gr[0]}</div></div>
+  <div class="card"><b>الأرقام</b>`+row('نسبة الفوز',wr.toFixed(1)+'%')+row('معامل الربح (Profit Factor)',pf>=99?'∞':pf.toFixed(2))+row('متوسط الربح',f(aw),'var(--gr)')+row('متوسط الخسارة',f(-al),'var(--rd)')+row('عائد/مخاطرة',rr>=99?'∞':rr.toFixed(2))+row('متوسط كل صفقة',f(ex),ex<0?'var(--rd)':'var(--gr)')+row('أقصى تراجع',f(-dd),'var(--rd)')+row('أطول خسارة متتالية',mls)+row('صافي الربح',f(tot),tot<0?'var(--rd)':'var(--gr)')+`</div>
+  <div class="card"><b>الأزواج</b>`+pr.map(p=>row(p[0]+' <small style="color:var(--mu)">('+p[1]+' • '+p[3].toFixed(0)+'%)</small>',f(p[2]),p[2]<0?'var(--rd)':'var(--gr)')).join('')+`</div>`+(E.length?`<div class="card"><b>تأثير المشاعر</b>`+E.map(e=>row(e[0]+' <small style="color:var(--mu)">('+e[1]+')</small>',f(e[2]),e[2]<0?'var(--rd)':'var(--gr)')).join('')+`</div>`:'')+`${sgCard}${sqCard}${cfCard}${mtCard}`;
+}
+
+/* ===== Module 1: Performance Dashboard (SVG charts, every card clickable) ===== */
+const AE=PnLAnalytics.AnalyticsEngine;
+let dashPeriod='all';
+function inPeriod(r){
+  const d=r.entryDate;if(dashPeriod==='all')return true;
+  if(dashPeriod==='month')return d.slice(0,7)===ds(cur).slice(0,7);
+  if(dashPeriod==='year')return d.slice(0,4)===today.slice(0,4);
+  const c=new Date();c.setDate(c.getDate()-(+dashPeriod));return d>=ds(c);
+}
+const dashRecs=()=>TR().map(PnLAnalytics.toRecord).filter(inPeriod);
+const money=n=>(n<0?'-':'')+'$'+Math.abs(n).toFixed(2);
+const gCol=n=>n<0?'var(--rd)':'var(--gr)';
+function openList(key,title){const recs=dashRecs();showTrades(key==='drawdown'?AE.drawdownTrades(recs):AE.select(recs,key),title)}
+function showTrades(recList,title){
+  const L=recList.map(r=>r.raw).sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);
+  const tot=L.reduce((s,t)=>s+t.a,0);
+  flc.innerHTML=`<h2 style="font-size:20px">${title}</h2><div style="color:var(--mu);margin:4px 0 10px">${L.length} صفقة • الإجمالي <b style="direction:ltr;display:inline-block;color:${gCol(tot)}">${f(tot)}</b></div>`
+   +(L.length?L.map(t=>`<div class="t" onclick="fl.close();show(${t.id})" style="cursor:pointer"><div>${NM[t.s]||t.s||'صفقة'}<small>${t.d}${t.tm?' • '+t.tm:''}${t.sg?' • '+lbl(SG,t.sg):''}${t.rr?' • RR 1:'+t.rr:''}</small></div><b style="color:${gCol(t.a)}">${(t.a>0?'+':'')+f(t.a)}</b></div>`).join(''):'<div class="empty">لا توجد صفقات في هذه الفئة</div>')
+   +'<button class="cl" onclick="fl.close()">إغلاق</button>';
+  fl.showModal();fl.scrollTop=0;
+}
+const kp=(label,val,sub,col,key,title)=>`<div class="kp" role="button" onclick="openList('${key}','${title||label}')" style="--kc:${col}"><small>${label}</small><b style="color:${col}">${val}</b><i>${sub||'&nbsp;'}</i></div>`;
+function gauge(p,col,center,id){
+  p=Math.max(0,Math.min(100,p));
+  return `<svg viewBox="0 0 120 70" style="width:100%;max-width:170px"><defs><filter id="${id}" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path d="M10 62A50 50 0 0 1 110 62" pathLength="100" fill="none" stroke="rgba(128,128,128,.2)" stroke-width="10" stroke-linecap="round"/>
+  ${p>0?`<path d="M10 62A50 50 0 0 1 110 62" pathLength="100" fill="none" stroke="${col}" stroke-width="10" stroke-linecap="round" stroke-dasharray="${p} 100" filter="url(#${id})"/>`:''}
+  <text x="60" y="56" text-anchor="middle" font-size="21" font-weight="700" fill="currentColor" style="direction:ltr">${center}</text></svg>`;
+}
+function donut(wp,lp,centerTop,centerSub){
+  const seg=(len,off,col,key,t)=>len>0?`<circle cx="60" cy="60" r="40" fill="none" stroke="${col}" stroke-width="16" pathLength="100" stroke-dasharray="${Math.max(0,len-1)} ${100-Math.max(0,len-1)}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)" style="cursor:pointer" onclick="openList('${key}','${t}')"/>`:'';
+  return `<svg viewBox="0 0 120 120" style="width:100%;max-width:210px;display:block;margin:0 auto"><circle cx="60" cy="60" r="40" fill="none" stroke="rgba(128,128,128,.18)" stroke-width="16"/>
+  ${seg(wp,0,'#2f9e44','wins','الصفقات الرابحة')}${seg(lp,wp,'#e03131','losses','الصفقات الخاسرة')}
+  <text x="60" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">${centerTop}</text><text x="60" y="78" text-anchor="middle" font-size="9" fill="#7b8196">${centerSub}</text></svg>`;
+}
+function eqChart(recs){
+  const cv=AE.equityCurve(recs),pts=[{equity:0,date:'',id:null},...cv],W=340,H=170,P=14;
+  const ys=pts.map(p=>p.equity);let mn=Math.min(0,...ys),mx=Math.max(0,...ys);if(mx===mn){mx+=1;mn-=1}
+  const X=i=>P+(W-2*P)*(pts.length>1?i/(pts.length-1):0),Y=v=>P+(H-2*P)*(1-(v-mn)/(mx-mn));
+  const line=pts.map((p,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(p.equity).toFixed(1)).join(' ');
+  const area=line+` L${X(pts.length-1).toFixed(1)} ${Y(mn).toFixed(1)} L${X(0).toFixed(1)} ${Y(mn).toFixed(1)} Z`;
+  const last=pts[pts.length-1].equity,col=last>=0?'#3dd68c':'#ff6b6b';
+  window._eq={pts,W,P,X,Y,col};
+  return `<svg id="eqSvg" viewBox="0 0 ${W} ${H}" style="width:100%;direction:ltr;display:block;touch-action:manipulation" onclick="eqTap(event)"><defs>
+   <linearGradient id="eqG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".45"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient>
+   <filter id="eqGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+   <line x1="${P}" x2="${W-P}" y1="${Y(0).toFixed(1)}" y2="${Y(0).toFixed(1)}" stroke="#9aa7d6" stroke-opacity=".4" stroke-dasharray="4 4"/>
+   <path d="${area}" fill="url(#eqG)"/><path d="${line}" fill="none" stroke="${col}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" filter="url(#eqGlow)"/>
+   <circle id="eqDot" cx="${X(pts.length-1).toFixed(1)}" cy="${Y(last).toFixed(1)}" r="5" fill="#fff" stroke="${col}" stroke-width="3"/></svg>`;
+}
+function eqTap(e){
+  const q=window._eq;if(!q)return;const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*q.W;
+  let i=Math.round((x-q.P)/(q.W-2*q.P)*(q.pts.length-1));i=Math.max(0,Math.min(q.pts.length-1,i));
+  const p=q.pts[i],d=document.getElementById('eqDot');d.setAttribute('cx',q.X(i).toFixed(1));d.setAttribute('cy',q.Y(p.equity).toFixed(1));
+  const tip=document.getElementById('eqTip');
+  tip.innerHTML=i?`<span>${p.date}</span> • الرصيد التراكمي <b style="direction:ltr;display:inline-block">${money(p.equity)}</b> • الصفقة <b style="direction:ltr;display:inline-block;color:${p.pnl<0?'#ff6b6b':'#3dd68c'}">${(p.pnl>0?'+':'')+money(p.pnl)}</b> ← اضغط للتفاصيل`:'نقطة البداية';
+  tip.onclick=p.id?()=>show(p.id):null;
+}
+function perfHtml(){
+  const rawRecs=dashRecs(),recs=applyWhatIf(rawRecs),m=AE.summarize(recs),n=m.totalTrades;
+  if(!n)return whatIfBar(rawRecs,recs)+'<div class="card"><div class="empty">لا توجد صفقات مغلقة تطابق هذا الفلتر في هذه الفترة.</div></div>';
+  const pfTxt=m.profitFactor===null?'∞':m.profitFactor.toFixed(2),pfNum=m.profitFactor===null?3:m.profitFactor;
+  const pfCol=pfNum>=1.5?'#2f9e44':pfNum>=1?'#ff8a00':'#e03131';
+  const adCol=m.planAdherence>=80?'#2f9e44':m.planAdherence>=60?'#ff8a00':'#e03131';
+  const wp=m.wins/n*100,lp=m.losses/n*100,viol=m.classifiedCount-m.adherentCount;
+  return whatIfBar(rawRecs,recs)+`<div class="kg">
+    ${kp('إجمالي الصفقات',n,'اضغط لعرض الكل','var(--pr)','all','كل الصفقات المغلقة')}
+    ${kp('نسبة الفوز',m.winRate+'%',m.wins+' رابحة من '+n,'#2f9e44','wins','الصفقات الرابحة')}
+    ${kp('صافي الربح/الخسارة',money(m.netPnl),'الإجمالي التراكمي',m.netPnl<0?'#e03131':'#2f9e44','all','كل الصفقات المغلقة')}
+    ${kp('الأمل الرياضي (Expectancy)',money(m.expectancy),'متوسط الربح للصفقة',m.expectancy<0?'#e03131':'#2f9e44','all','كل الصفقات المغلقة')}
+    ${kp('متوسط الربح',money(m.avgWin),'الصفقات الرابحة فقط','#2f9e44','wins','الصفقات الرابحة')}
+    ${kp('متوسط الخسارة',money(m.avgLoss),'الصفقات الخاسرة فقط','#e03131','losses','الصفقات الخاسرة')}
+  </div>
+  <div class="card"><b>توزيع الربح والخسارة</b><div style="margin-top:8px">${donut(wp,lp,m.winRate+'%','نسبة الفوز')}</div>
+    <div class="lg"><button style="background:var(--grb);color:var(--gr)" onclick="openList('wins','الصفقات الرابحة')">رابحة ${m.wins}</button><button style="background:var(--rdb);color:var(--rd)" onclick="openList('losses','الصفقات الخاسرة')">خاسرة ${m.losses}</button></div></div>
+  <div class="card"><div class="gz">
+    <div role="button" onclick="openList('all','كل الصفقات المغلقة')"><b>معامل الربح</b>${gauge(pfNum/3*100,pfCol,pfTxt,'gp')}<small style="color:var(--mu)">الربح ÷ الخسارة</small></div>
+    <div role="button" onclick="openList('adherent','صفقات بدون أخطاء')"><b>الالتزام بالخطة</b>${gauge(m.planAdherence,adCol,m.planAdherence+'%','ga')}<small style="color:var(--mu)">${m.adherentCount} من ${m.classifiedCount} صفقة مصنّفة</small></div></div>
+    <div class="lg"><button style="background:var(--grb);color:var(--gr)" onclick="openList('adherent','صفقات بدون أخطاء')">ملتزمة ${m.adherentCount}</button><button style="background:var(--rdb);color:var(--rd)" onclick="openList('violations','صفقات بها أخطاء')">مخالفة ${viol}</button></div></div>
+  <div class="kg">
+    ${kp('أقصى تراجع (Drawdown)',money(-m.maxDrawdown.amount),'اضغط لعرض صفقات التراجع','#e03131','drawdown','صفقات أقصى تراجع')}
+    ${kp('الصفقات المخالفة',viol,'تحتوي على تصنيف خطأ','#ff8a00','violations','صفقات بها أخطاء')}
+  </div>
+  ${proKp(recs)}<div class="hero"><div class="row"><b style="font-size:17px">منحنى رأس المال</b><div style="display:flex;gap:6px;align-items:center"><button type="button" class="qchip ${eqMode==='$'?'on':''}" style="padding:3px 10px;font-size:11.5px" onclick="setEqMode('$')">$ دولار</button><button type="button" class="qchip ${eqMode==='%'?'on':''}" style="padding:3px 10px;font-size:11.5px" onclick="setEqMode('%')">% نسبة</button></div></div>
+    <div id="eqTip" style="font-size:13px;color:#cfd8ff;margin:8px 0;min-height:34px;cursor:pointer">اضغط على المنحنى لاستعراض أي نقطة.</div>${eqChart(recs)}</div>`;
+}
+
+/* ===== Module 2 & 3: Insights (Discovery Engine) + Smart Coach ===== */
+const CA=PnLAnalytics.ConditionsAnalyzer,COACH=PnLAnalytics.SmartCoachEngine,MINC=PnLAnalytics.MIN_CELL_SAMPLE;
+let dashSub='perf',_cl=[];
+const periodSel=()=>`<label style="margin-top:0">الفترة</label><select class="sel2" style="margin-bottom:12px" onchange="dashPeriod=this.value;render()">${[['all','كل الفترات'],['month','الشهر المحدد ('+AR[cur.getMonth()]+' '+cur.getFullYear()+')'],['30','آخر 30 يومًا'],['90','آخر 90 يومًا'],['year','هذه السنة']].map(([v,l])=>`<option value="${v}"${dashPeriod===v?' selected':''}>${l}</option>`).join('')}</select>`;
+const subBar=()=>tab==='bt'?btBar():secSel([['perf','الأداء'],['ins','الاكتشافات'],['coach','المدرب'],['hes','ترددت فيها'],['stats','الإحصائيات']],tab==='stats'?'stats':dashSub)+periodSel();
+function dashHtml(){_cl=[];return subBar()+(dashSub==='hes'?hesHtml():dashSub==='ins'?insHtml():dashSub==='coach'?coachHtml():perfHtml())}
+function condLink(title,fn){_cl.push({title,fn});return `openCondI(${_cl.length-1})`}
+function openCondI(i){const c=_cl[i];showTrades(dashRecs().filter(r=>r.status!=='Open'&&c.fn(r)),c.title)}
+const SSL=v=>PnLAnalytics.SESSION_LABELS[v]||v,DYL=v=>PnLAnalytics.DAY_LABELS[v]||v;
+function dimCard(title,dim,labelFn,recs){
+  const g=CA.groupStats(recs,dim);if(!g.length)return '';
+  return `<div class="card"><b>${title}</b>`+g.map(x=>{const low=x.n<MINC;
+    return `<div onclick="${condLink(title+': '+labelFn(x.key),r=>r[dim]===x.key)}" style="cursor:pointer;padding:10px 0;border-bottom:1px solid rgba(128,128,128,.15);opacity:${low?.65:1}"><div class="row"><span>${labelFn(x.key)} <small style="color:var(--mu)">(${x.n})</small></span><b style="direction:ltr;color:${gCol(x.netPnl)}">${money(x.netPnl)}</b></div><div class="bar" style="height:8px;margin:6px 0"><div style="width:${x.winRate}%;background:${x.winRate>=50?'var(--gr)':'var(--rd)'}"></div></div><small style="color:var(--mu)">نسبة الفوز ${x.winRate}% • متوسط ${money(x.avgPnl)}${low?' • عينة صغيرة':''}</small></div>`}).join('')+'</div>';
+}
+function heatCard(recs){
+  const cross=CA.crossStats(recs,'strategy','session'),strats=Object.keys(cross);if(!strats.length)return '';
+  const cols=PnLAnalytics.SESSION_OPTIONS.filter(c=>strats.some(st=>cross[st].some(x=>x.key===c)));
+  const mx=Math.max(1,...strats.flatMap(st=>cross[st].map(x=>Math.abs(x.avgPnl))));
+  const cell=(st,c)=>{const x=cross[st].find(y=>y.key===c);if(!x)return '<td style="color:var(--mu)">-</td>';
+    const a=(.12+Math.abs(x.avgPnl)/mx*.45).toFixed(2),bg=x.n<MINC?'rgba(128,128,128,.12)':x.avgPnl>=0?`rgba(47,158,68,${a})`:`rgba(224,49,49,${a})`;
+    return `<td onclick="${condLink(lbl(SG,st)+' • '+SSL(c),r=>r.strategy===st&&r.session===c)}" style="background:${bg};cursor:pointer;border-radius:10px"><b>${x.winRate.toFixed(0)}%</b><br><small style="color:var(--mu)">${x.n} صفقة</small></td>`};
+  return `<div class="card"><b>الاستراتيجية × الجلسة</b><div style="color:var(--mu);font-size:12px;margin:4px 0 8px">النسبة = نسبة الفوز، واللون = متوسط الربح للصفقة (رمادي = عينة أقل من ${MINC})</div><div style="overflow-x:auto"><table style="border-collapse:separate;border-spacing:4px;text-align:center;font-size:13px;min-width:100%"><tr><th></th>${cols.map(c=>`<th style="font-weight:600;color:var(--mu)">${SSL(c)}</th>`).join('')}</tr>${strats.map(st=>`<tr><th style="text-align:right;font-weight:600">${lbl(SG,st)}</th>${cols.map(c=>cell(st,c)).join('')}</tr>`).join('')}</table></div></div>`;
+}
+function insHtml(){
+  _cl=[];const recs=dashRecs(),n=recs.filter(r=>r.status!=='Open').length;
+  if(!n)return '<div class="card"><div class="empty">لا توجد صفقات مغلقة في هذه الفترة لاكتشاف أفضل ظروف التداول.</div></div>';
+  const d=CA.discover(recs,{labels:{strategy:v=>lbl(SG,v),instrument:v=>NM[v]||v}});
+  const fc=d.findings.map(x=>{const fn=x.type==='cross'?(r=>r.strategy===x.strategy&&r[x.dimension]===x.best.key):(r=>r[x.dimension]===x.best.key);
+    return `<div class="dtx" onclick="${condLink('أفضل حالة',fn)}" style="margin-top:8px;cursor:pointer;border-inline-start:4px solid ${x.type==='cross'?'var(--pr)':'var(--gr)'}">${x.text}</div>`}).join('');
+  return `<div class="card"><b>اكتشافات من بياناتك</b>${fc||`<div class="empty">${d.emptyMessage}</div>`}<div style="color:var(--mu);font-size:12px;margin-top:10px">مبنية على صفقاتك المسجّلة فقط، وتتطلب ${MINC} صفقات على الأقل في كل حالة. هي وصف للماضي وليست توقعًا أو توصية.</div></div>`
+   +heatCard(recs)+dimCard('الجلسة','session',SSL,recs)+dimCard('الزوج','instrument',v=>NM[v]||v,recs)+dimCard('الفريم','timeframe',v=>v,recs)+dimCard('اليوم','dayOfWeek',DYL,recs)+hourlyHeatHtml(recs);
+}
+function coachHtml(){
+  const recs=dashRecs(),c=COACH.analyze(recs);
+  const note='<div style="color:var(--mu);font-size:12px;margin-top:10px">تحليل سلوكي وإحصائي لصفقاتك المسجّلة فقط، وليس توصية بالبيع أو الشراء.</div>';
+  if(c.status==='insufficient')return `<div class="card"><b>المدرب الذكي</b><div class="bar"><div style="width:${c.totalTrades/c.required*100}%"></div></div><div class="row" style="font-size:13px;color:var(--mu)"><span>${c.totalTrades} / ${c.required} صفقة</span></div><div class="dtx" style="margin-top:10px">${c.message}</div>${note}</div>`;
+  if(c.status==='one_sided')return `<div class="card"><b>المدرب الذكي</b><div class="dtx" style="margin-top:10px">${c.message}</div>${note}</div>`;
+  const col=c.uncertainty.level==='Low'?['var(--grb)','var(--gr)']:c.uncertainty.level==='Medium'?['#fff0d9','var(--or)']:['var(--rdb)','var(--rd)'];
+  const box=(t,k,x,cl,key,ttl)=>`<div class="kp" role="button" style="--kc:${cl}" onclick="openList('${key}','${ttl}')"><small>${t}</small><b style="color:${cl}">${x.winRate}%</b><i>${x.n} صفقة • صافي ${money(x.netPnl)}<br>متوسط ${money(x.avgPnl)}</i></div>`;
+  return `<div class="card"><div class="row"><b>المدرب الذكي</b><span style="background:${col[0]};color:${col[1]};padding:4px 12px;border-radius:14px;font-size:13px;font-weight:700">عدم اليقين: ${c.uncertainty.label}</span></div>
+   <div class="kg" style="margin:12px 0 0">${box('A • بدون أخطاء','A',c.setA,'#2f9e44','adherent','صفقات بدون أخطاء')}${box('B • بها أخطاء','B',c.setB,'#e03131','violations','صفقات بها أخطاء')}</div>
+   ${c.paragraphs.map(p=>`<div class="dtx" style="margin-top:8px">${p}</div>`).join('')}${note}</div>
+   <div class="card"><b>أسئلة للمراجعة الذاتية</b>${c.questions.map(q=>`<div class="dtx" style="margin-top:8px;border-inline-start:4px solid var(--pr)">${q}</div>`).join('')}</div>`;
+}
+
+
+function smartSummary(T){
+  const h=CA.highlights(T.map(PnLAnalytics.toRecord),{labels:{strategy:v=>lbl(SG,v),instrument:v=>NM[v]||v,mistake:v=>lbl(MT,v),emotion:v=>lbl(EM,v)}});
+  const row=(ti,x,col)=>`<div class="dtx" style="margin-top:8px;border-inline-start:4px solid ${col}"><b style="color:${col}">${ti}</b><div style="margin-top:4px">${x}</div></div>`;
+  let h2='';
+  h2+=h.strongest?row('أقوى نقطة',h.strongest.text,'var(--gr)'):row('أقوى نقطة','لسه مفيش حالة رابحة بعينة كافية (5 صفقات على الأقل في الحالة الواحدة).','var(--mu)');
+  h2+=h.weakest?row(h.weakest.profitable?'أقل نقطة ربحية':'أضعف نقطة',h.weakest.text,h.weakest.profitable?'var(--or)':'var(--rd)'):row('أضعف نقطة','محتاج حالات أكتر للمقارنة (5 صفقات على الأقل في الحالة).','var(--mu)');
+  h2+=h.costliest?row('أكتر سلوك مكلّفك',h.costliest.text,'var(--rd)'):row('أكتر سلوك مكلّفك','مفيش سلوك مسجّل بخسارة واضحة. سجّل «تحليل الأخطاء» و«الحالة النفسية» في صفقاتك عشان يتحسب.','var(--mu)');
+  return `<div class="card"><b>الملخص الذكي</b>${h2}${h.caveat?`<div style="color:var(--mu);font-size:12px;margin-top:10px">${h.caveat}</div>`:''}<div style="color:var(--mu);font-size:12px;margin-top:6px">أرقام من صفقاتك المسجّلة في الفترة المختارة، وصف وليس توصية.</div></div>`;
+}
+
+const CF=[['Support / Resistance','دعم ومقاومة'],['Liquidity Sweep','سيولة / Liquidity'],['Candlestick Pattern','نموذج شموع انعكاسي'],['Higher Timeframe Alignment','توافق فريمات زمنية'],['Fibonacci Zone','ارتداد فيبوناتشي'],['Indicator Confirmation','تأكيد من مؤشر']];
+const EM=[['Highly Focused / In the Zone','في قمة التركيز (In the Zone)'],['Overthinking / Hesitant','مبالغة في التحليل (تردد)'],['Chasing Price / FOMO','ملاحقة السعر (فومو)'],['Revenge Trading / Angry','تداول انتقامي (غضب)'],['Overconfident / Euphoric','ثقة مفرطة (نشوة)'],['Exhausted / Distracted','مُجهد / فاقد للتركيز']];
+const MT=[['Hit Stop Loss','ضرب وقف الخسارة (ستوب لوز)'],['Exited Early in Loss','خروج مبكر بخسارة (خوف)'],['Overleveraged / Risked too much','مخاطرة زائدة / لوت عالي'],['Moved Stop Loss Incorrectly','تحريك الستوب لوز بشكل خاطئ'],['Completely Ignored Trading Plan','عدم الالتزام بالخطة إطلاقاً']];
+const SG=[['Smart Money Concepts','سمارت موني (SMC)'],['Inner Circle Trader','آي سي تي (ICT)'],['Price Action & Market Structure','برايس أكشن وهيكلة السوق'],['Supply & Demand','عرض وطلب'],['Breakout & Retest','كسر وإعادة اختبار']];
+const SQ=[['A+ Setup (Perfect)','A+ Setup (مثالي)'],['B Setup (Good)','B Setup (جيد)'],['C Setup (Poor/Impulsive)','C Setup (ضعيف / اندفاعي)']];
+const LEG=[['Trendline Break / Retest','كسر أو إعادة اختبار الترند'],['Supply / Demand Zone','منطقة عرض أو طلب'],['Confident/Focused','واثق ومركز'],['FOMO / Impatient','طمع / متسرع'],['Revenge Trading','تداول انتقامي'],['Fearful / Hesitant','خائف / متردد'],['Calm','هادئ'],['None','بدون أخطاء'],['Overleveraged','مخاطرة زائدة / لوت عالي'],['Moved Stop Loss','تحريك الستوب لوز'],['Exited Too Early','خروج مبكر'],['Ignored Trading Plan','عدم الالتزام بالخطة']];
+const AC=[['Personal','حساب شخصي']];
+const STL=[['Open','مفتوحة'],['Win','رابحة'],['Loss','خاسرة']];
+const lbl=(L,v)=>(L.find(x=>x[0]===v)||LEG.find(x=>x[0]===v)||[v,v])[1];
+const stOf=t=>t.st||(t.a>0?'Win':t.a<0?'Loss':'Open');
+const acOf=t=>t.ac||'Personal';
+let btPair='',btTf='';
+const TR=()=>tab==='bt'?S.trades.filter(t=>t.bt&&(!btSg||t.sg===btSg)&&(!btPair||t.s===btPair)&&(!btTf||t.timeframe===btTf)):S.trades.filter(t=>!t.bt);
+const closed=a=>a.filter(t=>stOf(t)!=='Open');
+let fAc='Personal',fCf=[],fEm='',fMt='',oCf=false,oEm=false,oMt=false;
+function drawChips(){const c=(L,sel,fn)=>L.map(([v,l])=>`<button type="button" class="chip ${sel(v)?'sel':''}" onclick="${fn}('${v}')">${l}</button>`).join('');
+  acBox.innerHTML=c(AC,v=>fAc===v,'tgAc');const o=(L,cur,ph,fl)=>`<option value="">${ph}</option>`+L.map(([v,l])=>`<option value="${v}"${cur===v?' selected':''}>${l}</option>`).join('')+`<option value="__o"${fl?' selected':''}>أخرى (اكتب بنفسك)</option>`;cfSel.innerHTML=o(CF,fCf[0],'اختر سبب الدخول',oCf);emSel.innerHTML=o(EM,fEm,'اختر الحالة النفسية',oEm);mtSel.innerHTML=o([['None','بدون أخطاء (التزمت بالخطة)'],...MT],fMt,'اختر تحليل الصفقة',oMt)}
+function tgAc(v){fAc=v;drawChips()}
+function tgCf(v){fCf=fCf.includes(v)?fCf.filter(x=>x!==v):[...fCf,v];drawChips()}
+function tgEm(v){fEm=fEm===v?'':v;drawChips()}
+function tgMt(v){fMt=fMt===v?'':v;drawChips()}
+function setRR(x){const e=document.getElementById('rr');x=x==null?'':String(x);if(x&&![...e.options].some(o=>o.value===x)){const o=document.createElement('option');o.value=x;o.textContent='1 : '+x;e.appendChild(o)}e.value=x}
+function setType(t){type=t;bw.classList.toggle('sel',t==='w');bl.classList.toggle('sel',t==='l');const be=document.getElementById('bbe');if(be)be.classList.toggle('sel',t==='b');alab.textContent=t==='l'?'كام الخسارة ($)':t==='b'?'نتيجة التعادل ($)':'كام الربح ($)';if(t==='b')amt.value='0';drawChips()}
+const acctBar=()=>'';
+function ddInfo(){const lim=+S.ddLimit||0,td=closed(TR()).filter(t=>(t.xd||t.d)===today),pl=sum(td),loss=Math.max(0,-pl);return{lim,pl,loss,pct:lim?loss/lim*100:0}}
+function ddWidget(){return '';if((S.acct||'Personal')!=='Prop_Firm')return '';const d=ddInfo();
+  if(!d.lim)return `<div class="card" onclick="tab='set';render()" style="cursor:pointer"><b>حد الخسارة اليومي</b><div style="color:var(--mu);font-size:13px;margin-top:4px">اضغط هنا وحدد حد الخسارة اليومي لحساب التمويل.</div></div>`;
+  const hit=d.loss>=d.lim,near=!hit&&d.pct>=80,col=hit?'#e03131':near?'#f08c00':'var(--gr)';
+  return `<div class="card" style="border:2px solid ${col};${hit?'background:var(--rdb)':''}"><div class="row"><b>${hit?'⚠️ تجاوزت حد الخسارة اليومي!':near?'⚠️ قربت من حد الخسارة اليومي':'حد الخسارة اليومي'}</b><span style="color:var(--mu);font-size:13px;direction:ltr">${f(d.lim)}</span></div><div class="bar"><div style="width:${Math.min(100,d.pct)}%;background:${col}"></div></div><div class="row"><span style="direction:ltr;color:${d.pl<0?'var(--rd)':'var(--gr)'}">${f(d.pl)} اليوم</span><span style="color:${col};font-weight:700">${d.pct.toFixed(0)}%</span></div>${hit?'<div style="margin-top:8px;color:#e03131;font-weight:700">وقّف التداول النهاردة وحافظ على حسابك.</div>':''}</div>`}
+const tagsHtml=t=>{const c=(arr,cl)=>arr.length?`<div class="chips2" style="margin-top:6px">${arr.map(x=>`<span class="chip ${cl}" style="cursor:default">${x}</span>`).join('')}</div>`:'';let h='';
+  if((t.cf||[]).length)h+=`<div style="margin-top:14px;color:var(--mu)">أسباب الدخول</div>`+c(t.cf.map(v=>lbl(CF,v)),'sel');
+  if(t.em)h+=`<div style="margin-top:10px;color:var(--mu)">الحالة النفسية</div>`+c([lbl(EM,t.em)],'');
+  if(t.mistake_tag||t.ld||t.mt)h+=`<div style="margin-top:10px;color:var(--mu)">تحليل الأخطاء</div>`+c([lbl(MT,t.mistake_tag||t.ld||t.mt)],'');return h};
+const pdfTags=t=>{const L=(k,v)=>v?`<div style="margin-top:10px;color:#555;font-size:16px">${k}</div><div style="font-size:18px">${v}</div>`:'';return L('أسباب الدخول',(t.cf||[]).map(v=>lbl(CF,v)).join('، '))+L('الحالة النفسية',t.em?lbl(EM,t.em):'')+L('تحليل الأخطاء',(t.mistake_tag||t.ld||t.mt)?lbl(MT,t.mistake_tag||t.ld||t.mt):'')};
+function updSession(){const a=PnLAnalytics.sessionFromTime(tm.value);ssHint.textContent=ssSel.value?'':(a?'الجلسة التلقائية: '+PnLAnalytics.SESSION_LABELS[a]:'')}
+let imgs=[null,null,null];
+let _db;
+function idb(){return _db||(_db=new Promise((ok,no)=>{const r=indexedDB.open('pnl_img',1);r.onupgradeneeded=()=>r.result.createObjectStore('i');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))}
+async function iPut(id,b){const d=await idb();return new Promise((ok,no)=>{const t=d.transaction('i','readwrite');t.objectStore('i').put(b,id);t.oncomplete=ok;t.onerror=()=>no(t.error)})}
+async function iGet(id){const d=await idb();return new Promise((ok,no)=>{const q=d.transaction('i').objectStore('i').get(id);q.onsuccess=()=>ok(q.result);q.onerror=()=>no(q.error)})}
+const IB={};
+const newId=()=>'i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+async function loadBlob(x){if(x.startsWith('data:'))return (await fetch(x)).blob();if(IB[x])return IB[x];try{return await iGet(x)}catch(e){return null}}
+async function imgSrc(x){if(!x)return '';if(x.startsWith('data:'))return x;const b=await loadBlob(x);return b?URL.createObjectURL(b):''}
+function setImg(i,id,b){imgs[i]=id;IB[id]=b;const p=document.getElementById('p'+i);p.style.backgroundImage='url('+URL.createObjectURL(b)+')';p.classList.add('has')}
+function imsg(t,ok){const e=document.getElementById('imsg');e.textContent=t;e.style.color=ok?'var(--gr)':'var(--rd)'}
+async function takeImg(file,i){if(file.type&&!file.type.startsWith('image/')){imsg('الملف ده مش صورة.');return}
+  let buf;try{buf=await file.arrayBuffer()}catch(e){imsg('مقدرتش أقرأ الصورة. جرّب صورة تانية.');return}
+  setImg(i,newId(),new Blob([buf],{type:file.type||'image/jpeg'}));imsg('تم رفع الصورة بجودتها الأصلية ✓',1)}
+function pick(i,inp){const f=inp.files&&inp.files[0];if(!f)return;imsg('جاري رفع الصورة...',1);takeImg(f,i)}
+function pickMany(inp){const fs=[...(inp.files||[])].slice(0,3);if(!fs.length)return;imsg('جاري رفع الصور...',1);let free=[0,1,2].filter(i=>!imgs[i]);if(!free.length)free=[0,1,2];fs.forEach((f,k)=>{if(free[k]!=null)takeImg(f,free[k])})}
+const PAIRS=['XAUUSD','EURUSD','GBPUSD','USDJPY','GBPJPY','USDCAD','AUDUSD','NZDUSD','USDCHF','BTCUSD','US30','NAS100'];
+const DEFCK=['الاتجاه العام معايا','عند مستوى دعم/مقاومة واضح','تأكيد بشمعة أو مؤشر','وقف الخسارة محدد','R:R لا يقل عن 1:1.5','المخاطرة ضمن الحد','مفيش أخبار قوية','الجلسة مناسبة','حالتي النفسية هادية','مش بعوّض خسارة'];
+const CK=()=>S.ckl&&S.ckl.length?S.ckl:DEFCK;let fCk=[];
+const ckSc=t=>Math.round((t.ck||[]).length/CK().length*10);
+function drawCk(){ckBox.innerHTML=CK().map((c,i)=>`<button type="button" class="chip ${fCk.includes(i)?'sel':''}" onclick="tgCk(${i})">${esc(c)}</button>`).join('');ckS.textContent=Math.round(fCk.length/CK().length*10)}
+function tgCk(i){fCk=fCk.includes(i)?fCk.filter(x=>x!==i):[...fCk,i];drawCk()}
+function updRR(){
+  const a=Math.abs(+slI.value||0),b=Math.abs(+tpI.value||0),rk=+rkI.value||0,bal=+(tab==='bt'?S.btBal||10000:S.bal||0);
+  let rrVal=null;
+  if(a>0&&b>0){rrVal=Math.round((b/a)*100)/100;setRR(rrVal)}
+  const prv=document.getElementById('rrPreview');
+  if(!prv)return;
+  const parts=[];
+  if(a>0)parts.push(`الاستوب: <b>${a} نقطة</b>`);
+  if(b>0)parts.push(`الهدف: <b>${b} نقطة</b>`);
+  if(rrVal)parts.push(`العائد للمخاطرة: <b style="color:${rrVal>=1.5?'var(--gr)':'var(--or)'};direction:ltr;display:inline-block">1 : ${rrVal}</b>`);
+  if(bal&&rk){const rUsd=bal*rk/100;parts.push(`مبلغ المخاطرة: <b style="direction:ltr;display:inline-block">${f(rUsd)}</b>`);if(rrVal)parts.push(`ربح الهدف: <b style="color:var(--gr);direction:ltr;display:inline-block">+${f(rUsd*rrVal)}</b>`)}
+  if(parts.length){prv.style.display='block';prv.innerHTML=parts.join(' • ')}else{prv.style.display='none'}
+}
+function rOf(t){const b=+S.bal||0,k=+t.rk||0;if(!b||!k||stOf(t)==='Open')return null;const q=x=>(x.xd||x.d)+(x.tm||'');const eq=b+sum(S.trades.filter(x=>!x.bt&&acOf(x)===acOf(t)&&stOf(x)!=='Open'&&(q(x)<q(t)||(q(x)===q(t)&&x.id<t.id))));return eq>0?t.a/(eq*k/100):null}
+function alOf(t){const a=[];if(+t.rk>(+S.maxRk||2))a.push('مخاطرة أعلى من الحد');if(t.rr&&+t.rr<1)a.push('R:R أقل من 1:1');const m=t.mistake_tag||t.ld||t.mt;if(m&&m!=='None'&&m!=='Unknown')a.push('خطأ: '+lbl(MT,m));return a}
+function extraHtml(t){const R=rOf(t),al=alOf(t),r=(k,v)=>v?`<div class="dr"><span>${k}</span><b>${v}</b></div>`:'';
+  let h=r('وقف الخسارة (SL)',t.sl?t.sl+' نقطة':'')+r('الهدف (TP)',t.tp?t.tp+' نقطة':'')+r('المخاطرة',t.rk?t.rk+'%':'')+r('النتيجة (R)',R==null?'':(R>0?'+':'')+R.toFixed(2)+'R');
+  if(al.length)h+=`<div class="chips2" style="margin-top:10px">${al.map(x=>`<span class="chip" style="color:var(--rd);cursor:default">⚠ ${esc(x)}</span>`).join('')}</div>`;
+  return h}
+function hesHtml(){const H=S.hes||[],w=H.filter(x=>x.o==='w').length,l=H.length-w;
+  return `<div class="card"><b>صفقة ترددت فيها</b><label>الزوج</label><select id="hP" class="sel2">${PAIRS.map(p=>`<option>${p}</option>`).join('')}</select><label>سبب التردد</label><input id="hR" maxlength="80"><label>كانت هتبقى</label><select id="hO" class="sel2"><option value="w">ربح (فرصة فاتت)</option><option value="l">خسارة (قرار صح)</option></select><button class="go" onclick="addH()">إضافة</button></div>
+  <div class="two" style="margin:0 0 12px"><div class="pill w">${w} فاتتك</div><div class="pill l">${l} تردد صح</div></div>
+  <div class="card">${H.length?[...H].reverse().map(x=>`<div class="t"><div>${esc(x.p)}<small>${esc(x.d)} • ${esc(x.r||'')}</small></div><div><b style="color:${x.o==='w'?'var(--rd)':'var(--gr)'}">${x.o==='w'?'فاتتك':'تردد صح'}</b><button class="x" onclick="delH(${x.id})">✕</button></div></div>`).join(''):'<div class="empty">لسه مفيش صفقات ترددت فيها.</div>'}</div>`}
+function addH(){(S.hes=S.hes||[]).push({id:Date.now(),d:today,p:hP.value,r:hR.value.replace(/[<>"'&`]/g,'').slice(0,80),o:hO.value});persist();render()}
+function delH(id){S.hes=(S.hes||[]).filter(x=>x.id!==id);persist();render()}
+function proKp(recs){const c=recs.filter(r=>r.status!=='Open').sort((a,b)=>(a.exitDate+(a.entryTime||'')).localeCompare(b.exitDate+(b.entryTime||''))||a.id-b.id);if(!c.length)return '';
+  let ws=0,ls=0,mw=0,ml=0;c.forEach(r=>{ws=r.pnl>0?ws+1:0;ls=r.pnl<0?ls+1:0;mw=Math.max(mw,ws);ml=Math.max(ml,ls)});
+  const Rs=c.map(r=>rOf(r.raw)).filter(x=>x!=null),ck=c.filter(r=>r.raw.ck),av=a=>a.reduce((s,x)=>s+x,0)/a.length,P=c.map(r=>r.pnl),b=+S.bal||0,net=P.reduce((s,x)=>s+x,0);
+  const k=(t,v,u,col)=>`<div class="card"><small style="color:var(--mu)">${t}</small><div style="font-size:24px;font-weight:700;direction:ltr;color:${col||'inherit'}">${v}</div><small style="color:var(--mu)">${u}</small></div>`;
+  return `<div class="kg">${k('أطول سلسلة ربح',mw,'صفقات متتالية','#2f9e44')}${k('أطول سلسلة خسارة',ml,'صفقات متتالية','#e03131')}${k('أفضل صفقة',money(Math.max(...P)),'','#2f9e44')}${k('أسوأ صفقة',money(Math.min(...P)),'','#e03131')}${Rs.length?k('متوسط النتيجة (R)',av(Rs).toFixed(2)+'R',Rs.length+' صفقة'):''}${ck.length?k('متوسط درجة القائمة',av(ck.map(r=>ckSc(r.raw))).toFixed(1)+'/10','من 10'):''}${b?k('الرصيد الحالي',money(b+net),'نمو '+(net/b*100).toFixed(1)+'%',net<0?'#e03131':'#2f9e44'):''}</div>`}
+function openAdd(t){editId=t?t.id:null;dtt.textContent=t?'تعديل الصفقة':(tab==='bt'?'صفقة اختبار جديدة':'صفقة جديدة');const v=(k,x)=>{document.getElementById(k).value=x==null?'':x};
+  v('amt',t?Math.abs(t.a):'');v('en',t&&t.en);v('ex',t&&t.ex);dt.value=t?t.d:today;tm.value=t&&t.tm?t.tm:new Date().toTimeString().slice(0,5);sym.value=t&&t.s?t.s:'XAUUSD';
+  imsg('');imgs=[null,null,null];[0,1,2].forEach(i=>{const p=document.getElementById('p'+i);p.style.backgroundImage='';p.classList.remove('has');const x=t&&t.im&&t.im[i];if(x)loadBlob(x).then(b=>{if(b)setImg(i,x.startsWith('data:')?newId():x,b)})});fAc=t?acOf(t):(S.acct||'Personal');fCf=t&&t.cf?[...t.cf]:[];fEm=t&&t.em||'';xd.value=t?(t.xd||t.d):today;setRR(t&&t.rr);sq.value=t&&t.sq||'';sg.value=t&&t.sg||'';fMt=t&&(t.mistake_tag||t.ld||t.mt)||'';tfSel.value=t&&t.timeframe||'';ssSel.value=t&&t.session_auto===false?t.session:'';OTHinit(t);slI.value=t&&t.sl||'';tpI.value=t&&t.tp||'';rkI.value=t&&t.rk||'';nbI.value=t&&t.nb||'';naI.value=t&&t.na||'';fCk=t&&t.ck?[...t.ck]:[];drawCk();setDir(t&&t.dir?t.dir:'Buy');setType(t?(stOf(t)==='Loss'?'l':stOf(t)==='Breakeven'||t.a===0?'b':'w'):'w');drawTplBar();tgAdvDlg(!!(t&&(t.sl||t.tp||t.timeframe||t.em||t.mistake_tag||(t.im&&t.im.length))));updRR();updSession();OTHshow();dlg.showModal();dlg.scrollTop=0}
+async function save(){const v=type==='b'?0:parseFloat(amt.value);if(type!=='b'&&(!v||v<=0)){amt.focus();return}
+  const ids=imgs.filter(Boolean);
+  for(const id of ids){try{if(!(await iGet(id)))await iPut(id,IB[id])}catch(e){toast('تعذّر حفظ الصور على الجهاز.')}}
+  const cl=x=>String(x||'').replace(/[<>"'&`\\]/g,'').trim().slice(0,60),sgv=sg.value==='__o'?cl(sgO.value):sg.value,cfv=oCf?(cl(cfO.value)?[cl(cfO.value)]:[]):fCf,emv=oEm?cl(emO.value):fEm,mtv=oMt?cl(mtO.value):fMt;
+  const t={id:editId||Date.now(),a:type==='b'?0:(type==='w'?v:-v),dir:fDir||'Buy',s:sym.value,en:en.value,ex:ex.value,rr:rr.value,im:ids,d:dt.value||today,tm:tm.value,ac:fAc,st:type==='b'?'Breakeven':(type==='w'?'Win':'Loss'),xd:xd.value||dt.value||today,cf:cfv,em:emv,ld:(type==='l'&&mtv&&mtv!=='None')?mtv:'',mistake_tag:mtv,instrument:sym.value,timeframe:tfSel.value,
+    session:ssSel.value||PnLAnalytics.sessionFromTime(tm.value),session_auto:!ssSel.value,day_of_week:PnLAnalytics.dayOfWeekFromDate(dt.value||today),sq:sq.value,sg:sgv,sl:slI.value,tp:tpI.value,rk:rkI.value,nb:nbI.value.replace(/[<>]/g,'').slice(0,500),na:naI.value.replace(/[<>]/g,'').slice(0,500),ck:[...fCk]};
+  const old=S.trades.find(x=>x.id===t.id);if(old?old.bt:tab==='bt')t.bt=1;
+  const i=S.trades.findIndex(x=>x.id===t.id);if(i>=0)S.trades[i]=t;else S.trades.push(t);S.acct=fAc;persist();
+  cur=new Date(t.d+'T00:00');cur.setDate(1);dlg.close();tab=t.bt?'bt':'home';render()}
+const NM={XAUUSD:'الذهب XAUUSD',EURUSD:'اليورو دولار EURUSD',GBPUSD:'الباوند دولار GBPUSD'};
+let curSrc=[];
+async function show(id){const t=S.trades.find(x=>x.id===id);if(!t)return;curT=t;curSrc=await Promise.all((t.im||[]).map(imgSrc));
+  const r=(k,v,c)=>`<div class="dr"><span>${k}</span><b style="${c?'color:'+c:''}">${v}</b></div>`;
+  let pc='-';if(t.en&&t.ex&&+t.en){const p=Math.abs((t.ex-t.en)/t.en*100)*(t.a<0?-1:1);pc=(p>0?'+':'')+p.toFixed(2)+'%'}
+  ddc.innerHTML=r('الربح/الخسارة',stOf(t)==='Open'?'مفتوحة':(t.a>0?'+':'')+f(t.a),t.a<0?'var(--rd)':'var(--gr)')+r('الزوج',(NM[t.s]||t.s||'-')+' '+(t.dir==='Sell'?'<span class="badge sell">Sell 📉</span>':'<span class="badge buy">Buy 📈</span>'))+r('RR',t.rr?'1 : '+t.rr:'-')+r('الحساب',lbl(AC,acOf(t)))+r('الحالة',lbl(STL,stOf(t)))+(t.sg?r('الاستراتيجية',lbl(SG,t.sg)):'')+(t.sq?r('جودة الـ Setup',lbl(SQ,t.sq)):'')+r('الوقت',t.tm||'-')+r('التاريخ',t.d)+(t.xd?r('تاريخ الخروج',t.xd):'')
+  +tagsHtml(t)+extraHtml(t)+(t.r?`<div style="margin-top:16px;color:var(--mu)">سبب الدخول</div><div class="dtx">${esc(t.r)}</div>`:'')+(t.fe?`<div style="margin-top:10px;color:var(--mu)">مشاعري</div><div class="dtx">${esc(t.fe)}</div>`:'')
+  +(curSrc.some(Boolean)?`<div class="thumbs">${curSrc.map((u,i)=>u?`<img src="${u}" onclick="zoom(${i})" alt="صورة الصفقة">`:'').join('')}</div>`:'')
+  +`<div class="acts"><button style="background:var(--pr)" onclick="dd.close();openAdd(curT)">تعديل</button><button style="background:#ff4545" onclick="delAsk(this)">حذف</button></div>`;dd.showModal();dd.scrollTop=0}
+function zoom(i){lbi.src=curSrc[i];lb.showModal()}
+lb.onclick=()=>lb.close();dd.addEventListener('click',e=>{if(e.target===dd)dd.close()});
+function delAsk(b){if(b.dataset.s){del(curT.id);dd.close()}else{b.dataset.s=1;b.textContent='اضغط تاني للتأكيد'}}
+function clr(b){if(b.dataset.s){saveSnapshot('قبل مسح كل البيانات');const allT=S.trades||[];S.trash=[...allT.map(t=>({...t,delAt:new Date().toLocaleString('ar-EG')})),...(S.trash||[])].slice(0,100);S.del=[...(S.del||[]),...allT.map(t=>t.id)];S.trades=[];persist();render();toastUndo('تم نقل كل الصفقات إلى سلة المحذوفات ونقطة الاستعادة',()=>restoreAllTrash())}else{b.dataset.s=1;b.textContent='اضغط تاني للتأكيد'}}
+const esc=x=>(x||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function del(id){
+  const target=S.trades.find(t=>t.id===id);
+  if(target){
+    saveSnapshot('قبل حذف صفقة '+(target.s||''));
+    S.trash=[{...target,delAt:new Date().toLocaleString('ar-EG')},...(S.trash||[]).filter(x=>x.id!==id)].slice(0,100);
+  }
+  S.trades=S.trades.filter(t=>t.id!==id);
+  (S.del=S.del||[]).push(id);
+  persist();
+  render();
+  if(target)toastUndo('تم حذف الصفقة (محفوظة في سلة المحذوفات)',()=>restoreTrash(id));
+}
+
+const GK={cid:'pnl_gcid',on:'pnl_gon'},SC='https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.file';
+let gtok=null,gexp=0,gcl=null,gstat='',gtimer,gwait=null;
+const lsg=k=>{try{return localStorage.getItem(k)||''}catch(e){return ''}};
+const lss=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+function bkInfo(){const l=lsg('pnl_lastbk');if(!l)return ['لسه ماعملتش نسخة احتياطية.','var(--or)'];const d=Math.floor((Date.now()-new Date(l))/864e5);return ['آخر نسخة: '+new Date(l).toLocaleDateString('ar-EG')+(d>=7?' (من '+d+' يوم، يفضل تعمل نسخة جديدة)':''),d>=7?'var(--or)':'var(--gr)']}
+function setHtml(){return settingsProHtml()}
+
+async function saveOut(name,blob){
+  const C=window.Capacitor;
+  if(C&&C.isNativePlatform&&C.isNativePlatform()){
+    try{const b64=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(',')[1]);r.onerror=no;r.readAsDataURL(blob)});
+      const P=C.Plugins,w=await P.Filesystem.writeFile({path:name,data:b64,directory:'CACHE'});
+      await P.Share.share({title:name,url:w.uri,dialogTitle:'احفظ الملف'})}catch(e){}
+    return 'native'}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();return 'web'}
+let bkOpen=true;
+async function exportXls(){try{
+  const e=v=>String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const H=['التاريخ','الوقت','الأداة','الإطار','الحساب','النتيجة','الربح/الخسارة','الدخول','الخروج','RR','تاريخ الخروج','الخطأ'];
+  const T=S.trades.filter(t=>!t.bt).sort((x,y)=>(x.d||'')<(y.d||'')?-1:1);
+  let tot=0;const rows=T.map(t=>{tot+=+t.a||0;return '<tr>'+[t.d,t.tm,t.s,t.timeframe,t.ac,t.st,t.a,t.en,t.ex,t.rr,t.xd,t.mistake_tag].map(v=>'<td>'+e(v)+'</td>').join('')+'</tr>'}).join('');
+  const html='<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8"></head><body dir="rtl"><table border="1"><tr>'+H.map(h=>'<th>'+h+'</th>').join('')+'</tr>'+rows+'<tr><td colspan="6"><b>الإجمالي</b></td><td><b>'+tot+'</b></td><td colspan="5"></td></tr></table></body></html>';
+  const name='pnl-trades-'+today+'.xls';await saveOut(name,new Blob(['\ufeff'+html],{type:'application/vnd.ms-excel;charset=utf-8'}));
+  toast('تم تنزيل '+name+' ('+T.length+' صفقة)');
+}catch(err){toast('تعذّر التصدير: '+(err&&err.message||err))}}
+/* ===== Manual backup / restore (works without any Google setup) ===== */
+const blobToData=b=>new Promise(ok=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>ok('');r.readAsDataURL(b)});
+async function makeBackup(){const images={};
+  for(const t of S.trades)for(const x of (t.im||[])){if(!x||x.startsWith('data:')||images[x])continue;const b=await loadBlob(x);if(b){const u=await blobToData(b);if(u)images[x]=u}}
+  return {app:'pnl',v:1,saved:new Date().toISOString(),data:S,images};
+}
+async function backupNow(){toast('جاري تجهيز النسخة...');
+  try{const o=await makeBackup(),name='pnl-backup-'+today+'-'+new Date().toTimeString().slice(0,5).replace(':','')+'.json',file=new File([JSON.stringify(o)],name,{type:'application/json'});
+    if(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform()){await saveOut(name,file);lss('pnl_lastbk',new Date().toISOString());toast('اختار Drive أو تيليجرام أو الإيميل من القائمة');render();return}
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      try{await navigator.share({files:[file],title:'نسخة احتياطية - يوميات المتداول'});lss('pnl_lastbk',new Date().toISOString());toast('تمت المشاركة. اتأكد إنك اخترت Drive.');render();return}
+      catch(e){if(e&&e.name==='AbortError'){toast('اتلغت المشاركة، النسخة لسه ماتحفظتش.');return}}}
+    const a=document.createElement('a');a.href=URL.createObjectURL(file);a.download=name;document.body.appendChild(a);a.click();a.remove();
+    lss('pnl_lastbk',new Date().toISOString());toast('تم تنزيل '+name+' على الجهاز. ارفعه على Drive من تطبيق الملفات.');render();
+  }catch(e){toast('تعذّر إنشاء النسخة: '+(e&&e.message||e))}}
+async function restoreFile(inp){const file=inp.files&&inp.files[0];inp.value='';if(!file)return;
+  try{const o=JSON.parse(await file.text());if(!o||o.app!=='pnl'||!o.data||!Array.isArray(o.data.trades))throw new Error('الملف ده مش نسخة احتياطية من التطبيق');
+    const before=S.trades.length;
+    const rid=new Set(o.data.trades.map(t=>t.id));S.del=(S.del||[]).filter(x=>!rid.has(x));o.data.del=(o.data.del||[]).filter(x=>!rid.has(x));
+    for(const [id,u] of Object.entries(o.images||{})){if(await hasImg(id))continue;const b=await (await fetch(u)).blob();IB[id]=b;try{await iPut(id,b)}catch(e){}}
+    mergeIn(o.data);render();toast(S.trades.length>before?'تم الاسترجاع: '+(S.trades.length-before)+' صفقة (إجمالي '+S.trades.length+')':'كل صفقات الملف موجودة بالفعل (إجمالي '+S.trades.length+')');
+  }catch(e){toast('فشل الاسترجاع: '+(e&&e.message||e))}}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+function gSchedule(){if(lsg(GK.on)){clearTimeout(gtimer);gtimer=setTimeout(()=>gPush(),2500)}}
+function loadGIS(){return new Promise((ok,no)=>{if(window.google&&google.accounts&&google.accounts.oauth2)return ok();const e=document.createElement('script');e.src='https://accounts.google.com/gsi/client';e.onload=ok;e.onerror=no;document.head.appendChild(e)})}
+async function gInit(){const cid=lsg(GK.cid);if(!cid)throw new Error('اكتب Client ID الأول');await loadGIS();
+  gcl=google.accounts.oauth2.initTokenClient({client_id:cid,scope:SC,
+   callback:async r=>{const w=gwait;if(r.error){gstat='فشل تسجيل الدخول: '+r.error;gwait&&gwait(false);gwait=null;if(tab==='set')render();return}
+     gtok=r.access_token;gexp=Date.now()+(r.expires_in-60)*1000;lss(GK.on,'1');gstat='متصل';gwait&&gwait(true);gwait=null;if(!w)await gPull();if(tab==='set')render()},
+   error_callback:()=>{gwait&&gwait(false);gwait=null}})}
+async function gLogin(silent){try{if(!gcl)await gInit();gcl.requestAccessToken({prompt:silent?'none':''})}catch(e){const m=e&&e.message?e.message:'';toast(m||'مقدرتش أحمّل خدمة جوجل. تأكد من النت وإنك فاتح التطبيق من رابط حقيقي.')}}
+function gOut(){lss(GK.on,'');gtok=null;gstat='';render()}
+function gEnsure(){return new Promise(res=>{if(gtok&&Date.now()<gexp)return res(true);if(!gcl)return res(false);gwait=res;gcl.requestAccessToken({prompt:'none'});setTimeout(()=>{if(gwait){gwait(false);gwait=null}},6000)})}
+async function gApi(url,o){if(!(await gEnsure()))throw new Error('expired');const r=await fetch(url,{...o,headers:{...((o&&o.headers)||{}),Authorization:'Bearer '+gtok}});if(!r.ok)throw new Error('http '+r.status);return r}
+async function gFind(){const r=await gApi('https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id)&q='+encodeURIComponent("name='pnl-data.json'"));const j=await r.json();return j.files&&j.files[0]?j.files[0].id:null}
+function mergeIn(c){
+  const dl=new Set([...(S.del||[]),...(c.del||[])]),m={};
+  [...(c.trades||[]),...S.trades].forEach(t=>{m[t.id]=t});
+  S.del=[...dl];
+  S.trades=Object.values(m).filter(t=>!dl.has(t.id));
+  if(c.target!=null)S.target=c.target;
+  if(c.yTarget!=null)S.yTarget=c.yTarget;
+  if(c.bal!=null)S.bal=c.bal;
+  if(c.btBal!=null)S.btBal=c.btBal;
+  if(c.maxRk!=null)S.maxRk=c.maxRk;
+  if(Array.isArray(c.hes)){const hm={};[...c.hes,...(S.hes||[])].forEach(x=>{hm[x.id]=x});S.hes=Object.values(hm)}
+  if(Array.isArray(c.tpls)&&c.tpls.length)S.tpls=c.tpls;
+  if(Array.isArray(c.trash)){const tm={};[...c.trash,...(S.trash||[])].forEach(x=>{tm[x.id]=x});S.trash=Object.values(tm).slice(0,100)}
+  persist(true);
+}
+const gErr=e=>e.message==='expired'?'الجلسة انتهت. اضغط تسجيل الدخول بجوجل لإكمال المزامنة.':'خطأ مزامنة: '+e.message;
+async function gList(){const r=await gApi('https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&pageSize=1000&fields=files(id,name)');const j=await r.json(),m={};(j.files||[]).forEach(x=>{m[x.name]=x.id});return m}
+const imgIds=()=>[...new Set(S.trades.flatMap(t=>(t.im||[]).filter(x=>x&&!x.startsWith('data:'))))];
+async function hasImg(id){try{return !!(IB[id]||await iGet(id))}catch(e){return !!IB[id]}}
+async function gPull(manual){try{const L=await gList();
+  if(L['pnl-data.json']){const r=await gApi('https://www.googleapis.com/drive/v3/files/'+L['pnl-data.json']+'?alt=media');mergeIn(await r.json())}
+  for(const id of imgIds()){if(L['img-'+id]&&!(await hasImg(id))){const r=await gApi('https://www.googleapis.com/drive/v3/files/'+L['img-'+id]+'?alt=media');const b=await r.blob();IB[id]=b;try{await iPut(id,b)}catch(e){}}}
+  await gPush();render();if(manual)toast('تمت المزامنة')}catch(e){gstat=gErr(e);if(tab==='set')render()}}
+async function gPush(){try{const L=await gList(),id=L['pnl-data.json'],body=JSON.stringify(S);
+  if(id)await gApi('https://www.googleapis.com/upload/drive/v3/files/'+id+'?uploadType=media',{method:'PATCH',headers:{'Content-Type':'application/json'},body});
+  else{const fd=new FormData();fd.append('metadata',new Blob([JSON.stringify({name:'pnl-data.json',parents:['appDataFolder']})],{type:'application/json'}));fd.append('file',new Blob([body],{type:'application/json'}));await gApi('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart',{method:'POST',body:fd})}
+  for(const i of imgIds()){if(!L['img-'+i]&&await hasImg(i)){const b=IB[i]||await iGet(i),fd=new FormData();fd.append('metadata',new Blob([JSON.stringify({name:'img-'+i,parents:['appDataFolder']})],{type:'application/json'}));fd.append('file',b);await gApi('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart',{method:'POST',body:fd})}}
+  gstat='اتحفظ على Drive '+new Date().toLocaleTimeString('ar-EG');if(tab==='set')render()}catch(e){gstat=gErr(e);if(tab==='set')render()}}
+
+function loadJS(u){return new Promise((ok,no)=>{const e=document.createElement('script');e.src=u;e.onload=ok;e.onerror=()=>no(new Error('تعذّر تحميل مكتبة الـ PDF. تأكد من النت.'));document.head.appendChild(e)})}
+async function pdfLibs(){if(!window.jspdf)await loadJS('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');if(!window.html2canvas)await loadJS('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js')}
+function shrink(src,max){return new Promise(ok=>{const im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.92))};im.onerror=()=>ok('');im.src=src})}
+async function buildPdf(){const T=S.trades.filter(t=>!t.bt).sort((a,b)=>a.d.localeCompare(b.d)||a.id-b.id);if(!T.length)throw new Error('مفيش صفقات للتصدير.');
+  await pdfLibs();const {jsPDF}=window.jspdf,pdf=new jsPDF({unit:'mm',format:'a4'}),M=10,CW=190,PH=277;
+  const host=document.createElement('div');host.style.cssText='position:fixed;left:-10000px;top:0;width:794px;background:#fff;color:#111;font-family:system-ui,Tahoma,sans-serif;direction:rtl';document.body.appendChild(host);
+  const tot=sum(T),wn=T.filter(t=>t.a>0).length,bx='flex:1;background:#eef2ff;border-radius:14px;padding:14px;font-size:18px';
+  const blocks=[`<div style="padding:26px 24px 8px"><div style="font-size:34px;font-weight:700">تقرير الصفقات</div><div style="font-size:18px;color:#555;margin:6px 0 16px">${T[0].d} إلى ${T[T.length-1].d}</div><div style="display:flex;gap:12px"><div style="${bx}">صافي الربح/الخسارة<div style="font-size:28px;font-weight:700;direction:ltr;text-align:right;color:${tot<0?'#e03131':'#2f9e44'}">${f(tot)}</div></div><div style="${bx}">عدد الصفقات<div style="font-size:28px;font-weight:700">${T.length}</div></div><div style="${bx}">نسبة الفوز<div style="font-size:28px;font-weight:700">${(wn/T.length*100).toFixed(0)}%</div></div></div></div>`];
+  for(const t of T){const rw=(k,v)=>`<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #e6e9f2;font-size:18px"><span style="color:#555">${k}</span><b style="direction:ltr">${v}</b></div>`;
+    let pc='-';if(t.en&&t.ex&&+t.en){const p=Math.abs((t.ex-t.en)/t.en*100)*(t.a<0?-1:1);pc=(p>0?'+':'')+p.toFixed(2)+'%'}
+    blocks.push(`<div style="padding:12px 24px 0"><div style="border:1px solid #d5dcf2;border-radius:16px;padding:16px 18px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="font-size:24px">${NM[t.s]||t.s||'صفقة'}</b><b style="font-size:26px;direction:ltr;color:${t.a<0?'#e03131':'#2f9e44'}">${stOf(t)==='Open'?'مفتوحة':(t.a>0?'+':'')+f(t.a)}</b></div>`
+     +rw('الحساب',lbl(AC,acOf(t)))+rw('الحالة',lbl(STL,stOf(t)))+(t.sg?rw('الاستراتيجية',lbl(SG,t.sg)):'')+(t.sq?rw('جودة الـ Setup',lbl(SQ,t.sq)):'')+rw('التاريخ',t.d)+rw('الوقت',t.tm||'-')+rw('سعر الدخول',t.en||'-')+rw('سعر الخروج',t.ex||'-')+rw('RR',t.rr?'1 : '+t.rr:'-')+rw('نسبة الربح/الخسارة',pc)
+     +pdfTags(t)+(t.r?`<div style="margin-top:12px;color:#555;font-size:16px">سبب الدخول</div><div style="font-size:18px;white-space:pre-wrap;line-height:1.5">${esc(t.r)}</div>`:'')+(t.fe?`<div style="margin-top:10px;color:#555;font-size:16px">مشاعري</div><div style="font-size:18px;white-space:pre-wrap;line-height:1.5">${esc(t.fe)}</div>`:'')+`</div></div>`);
+    for(const x of (t.im||[])){const u=await imgSrc(x);const d=u?await shrink(u,1800):'';if(d)blocks.push(`<div style="padding:10px 24px 0"><img src="${d}" style="width:100%;display:block;border-radius:10px;border:1px solid #e6e9f2"></div>`)}}
+  let y=M,first=true;
+  try{for(const h of blocks){host.innerHTML=h;await Promise.all([...host.querySelectorAll('img')].map(i=>i.decode().catch(()=>{})));
+    const c=await html2canvas(host,{scale:2,backgroundColor:'#fff'});let w=CW,hh=c.height*CW/c.width;if(hh>PH){w=CW*PH/hh;hh=PH}
+    if(!first&&y+hh>M+PH){pdf.addPage();y=M}first=false;pdf.addImage(c.toDataURL('image/jpeg',.93),'JPEG',M+(CW-w)/2,y,w,hh);y+=hh+3}}
+  finally{host.remove()}
+  return pdf}
+async function gUploadPdf(blob,name){const fd=new FormData();fd.append('metadata',new Blob([JSON.stringify({name,mimeType:'application/pdf'})],{type:'application/json'}));fd.append('file',blob);await gApi('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart',{method:'POST',body:fd})}
+async function exportPdf(drive){toast('جاري تجهيز الـ PDF... ممكن ياخد دقيقة لو الصور كتير');
+  try{const pdf=await buildPdf(),name='pnl-report-'+today+'.pdf';
+    if(!drive){await saveOut(name,pdf.output('blob'));toast('تم تجهيز '+name);return}
+    if(!lsg(GK.on)){toast('سجّل دخول جوجل الأول من الإعدادات');return}
+    await gUploadPdf(pdf.output('blob'),name);toast('اترفع على Drive: '+name)}
+  catch(e){const m=e.message||'';toast(m==='expired'?'سجّل دخول جوجل الأول من الإعدادات':m.includes('403')?'اضغط تسجيل الدخول بجوجل تاني ووافق على صلاحية رفع الملفات':m)}}
+
+/* ===== Floating calendar sheet ===== */
+const WD=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],WDS=['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'];
+const IC_R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',IC_L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',IC_X='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+let csD=null;
+const kfmt=v=>Math.abs(v)>=1000?(v/1000).toFixed(1)+'k':String(Math.round(v));
+function openCal(){csD=ds(cur).slice(0,7)===today.slice(0,7)?today:null;drawCal();cs.showModal();cs.scrollTop=0}
+function calMv(n){cur.setDate(1);cur.setMonth(cur.getMonth()+n);csD=ds(cur).slice(0,7)===today.slice(0,7)?today:null;render();drawCal()}
+function calToday(){cur=new Date();cur.setDate(1);csD=today;render();drawCal()}
+function pickDay(k){csD=csD===k?null:k;drawCal();const e=document.getElementById('cdt');if(e)e.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function drawCal(){
+  const y=cur.getFullYear(),mo=cur.getMonth(),first=new Date(y,mo,1).getDay(),dn=new Date(y,mo+1,0).getDate(),by={};
+  TR().forEach(t=>{(by[t.d]=by[t.d]||[]).push(t)});
+  const vals=[];for(let d=1;d<=dn;d++){const a=by[ds(new Date(y,mo,d))];if(a)vals.push(sum(a))}
+  const mx=Math.max(1,...vals.map(Math.abs)),tot=sum(vals.map(a=>({a}))),wd=vals.filter(v=>v>0).length,ld=vals.filter(v=>v<0).length;
+  let c='';for(let i=0;i<first;i++)c+='<div class="cdz"></div>';
+  for(let d=1;d<=dn;d++){const k=ds(new Date(y,mo,d)),a=by[k],v=a?sum(a):0,cls=(v>0?'w':v<0?'l':'')+(k===today?' td':'')+(k===csD?' sl':''),al=(.14+Math.abs(v)/mx*.34).toFixed(2);
+    c+=`<button class="cd ${cls}" style="--a:${al}" onclick="pickDay('${k}')" aria-label="${d} ${AR[mo]}${a?' : '+f(v):''}"><span>${d}</span><i>${v?(v>0?'+':'')+kfmt(v):'&nbsp;'}</i></button>`}
+  let det='';
+  if(csD){const L=(by[csD]||[]).slice().sort((a,b)=>b.id-a.id),dd0=new Date(csD+'T00:00'),v=sum(L);
+    det=`<div class="cdt" id="cdt"><div class="row" style="margin-bottom:4px"><b style="font-size:17px">${WD[dd0.getDay()]} ${dd0.getDate()} ${AR[dd0.getMonth()]}</b><b style="direction:ltr;color:${L.length?gCol(v):'var(--mu)'}">${L.length?(v>0?'+':'')+f(v):f(0)}</b></div>`
+     +(L.length?L.map(t=>`<div class="t" onclick="cs.close();show(${t.id})" style="cursor:pointer"><div>${NM[t.s]||t.s||'صفقة'}<small>${t.tm||''}${t.sg?(t.tm?' • ':'')+lbl(SG,t.sg):''}${t.rr?' • RR 1:'+t.rr:''}</small></div><b style="color:${t.a<0?'var(--rd)':'var(--gr)'}">${stOf(t)==='Open'?'مفتوحة':(t.a>0?'+':'')+f(t.a)}</b></div>`).join(''):'<div class="empty" style="padding:14px">لا توجد صفقات في هذا اليوم</div>')+'</div>'}
+  else det='<div class="empty" style="padding:14px 0 4px;font-size:13px">اضغط على أي يوم لعرض صفقاته</div>';
+  csc.innerHTML=`<div class="csh"><h2>تقويم الأداء</h2><div class="ac"><button class="tdb" onclick="calToday()">اليوم</button><button class="hb sm cs-x" onclick="cs.close()" aria-label="إغلاق">${IC_X}</button></div></div>
+   <div class="cnav"><button class="hb sm" onclick="calMv(-1)" aria-label="الشهر السابق">${IC_R}</button><span class="mt">${AR[mo]} ${y}</span><button class="hb sm" onclick="calMv(1)" aria-label="الشهر التالي">${IC_L}</button></div>
+   <div class="cst"><div><small>صافي الشهر</small><b style="color:${vals.length?gCol(tot):'var(--mu)'}">${f(tot)}</b></div><div><small>أيام رابحة</small><b style="color:var(--gr)">${wd}</b></div><div><small>أيام خاسرة</small><b style="color:var(--rd)">${ld}</b></div></div>
+   <div class="cwk">${WDS.map(x=>`<span>${x}</span>`).join('')}</div><div class="cgr">${c}</div>${det}`;
+}
+cs.addEventListener('click',e=>{if(e.target===cs)cs.close()});
+
+/* ===== Edge-swipe back ===== */
+function goBack(){if(tab==='home')return;if(pushed)history.back();else{tab='home';render()}}
+(function(){
+  const m=document.getElementById('m'),ind=document.createElement('div');ind.id='swi';ind.innerHTML=IC_R;document.body.appendChild(ind);
+  const GO=70;const hs=el=>{for(;el&&el!==document.body&&el!==m;el=el.parentElement){if(el.scrollWidth>el.clientWidth+4){const o=getComputedStyle(el).overflowX;if(o==='auto'||o==='scroll')return true}}return false};let x0=0,y0=0,dir=0,on=false,lock=false,dist=0;
+  const reset=(anim)=>{m.style.transition=anim?'transform .2s ease,opacity .2s ease':'';m.style.transform='';m.style.opacity='';ind.style.display='none';if(anim)setTimeout(()=>{m.style.transition=''},220)};
+  addEventListener('touchstart',e=>{on=false;lock=false;if(tab==='home'||e.touches.length!==1||document.querySelector('dialog[open]'))return;
+    const t=e.touches[0];if(hs(e.target))return;dir=0;
+    x0=t.clientX;y0=t.clientY;dist=0;on=true},{passive:true});
+  addEventListener('touchmove',e=>{if(!on)return;const t=e.touches[0],rx=t.clientX-x0,dy=Math.abs(t.clientY-y0);
+    if(!lock){if(dy>14&&dy>Math.abs(rx)*.6){on=false;return}if(Math.abs(rx)>14&&Math.abs(rx)>dy*2){lock=true;dir=rx>0?1:-1}else return}
+    const dx=rx*dir;
+    if(e.cancelable)e.preventDefault();dist=Math.max(0,dx);
+    m.style.transition='none';m.style.transform='translateX('+(dir*Math.min(dist*.55,90))+'px)';m.style.opacity=String(1-Math.min(dist/420,.35));
+    const p=Math.min(dist/GO,1);ind.style.display='flex';ind.style[dir===1?'left':'right']=(Math.min(dist*.5,60)-46)+'px';ind.style[dir===1?'right':'left']='auto';
+    ind.style.transform='scale('+(.6+.4*p)+') '+(dir===1?'scaleX(-1)':'scaleX(1)');ind.style.opacity=String(.35+.65*p)},{passive:false});
+  const end=()=>{if(!on)return;on=false;if(lock&&dist>=GO){m.style.transition='transform .16s ease,opacity .16s ease';m.style.transform='translateX('+(dir*60)+'px)';m.style.opacity='0';ind.style.display='none';
+      setTimeout(()=>{reset(false);goBack()},150)}else reset(true);lock=false};
+  addEventListener('touchend',end);addEventListener('touchcancel',end);
+})();
+
+/* ===== PnL Pro World-Class Modules ===== */
+let fDir='Buy',hFilter='all',qText='',planOpen=false,whatIfMode='all',eqMode='$';
+
+function initThemeAndPriv(){
+  if(S.dark){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}
+  if(S.priv){document.body.classList.add('priv')}else{document.body.classList.remove('priv')}
+  const tb=document.getElementById('thmBtn'),pb=document.getElementById('privBtn');
+  if(tb)tb.textContent=S.dark?'☀️':'🌙';
+  if(pb)pb.textContent=S.priv?'🙈':'👁';
+}
+function tgTheme(){S.dark=!S.dark;persist(true);initThemeAndPriv()}
+function tgPriv(){S.priv=!S.priv;persist(true);initThemeAndPriv()}
+
+function setDir(d){
+  fDir=d==='Sell'?'Sell':'Buy';
+  const b=document.getElementById('dBuy'),s=document.getElementById('dSell');
+  if(b)b.classList.toggle('sel',fDir==='Buy');
+  if(s)s.classList.toggle('sel',fDir==='Sell');
+}
+
+/* --- Quick Trade Templates --- */
+function drawTplBar(){
+  const bar=document.getElementById('tplBar');if(!bar)return;
+  const tpls=S.tpls||[
+    {name:'ذهب M15 • SMC',s:'XAUUSD',tf:'M15',sg:'Smart Money Concepts',rk:'1'},
+    {name:'يورو M5 • ICT',s:'EURUSD',tf:'M5',sg:'Inner Circle Trader',rk:'1'},
+    {name:'ناسداك NY • كسر',s:'NAS100',tf:'M5',sg:'Breakout & Retest',rk:'1'}
+  ];
+  bar.innerHTML=tpls.map((tp,i)=>`<button type="button" class="qchip" onclick="applyTpl(${i})">⚡ ${esc(tp.name)}</button>`).join('');
+}
+function applyTpl(i){
+  const tpls=S.tpls||[
+    {name:'ذهب M15 • SMC',s:'XAUUSD',tf:'M15',sg:'Smart Money Concepts',rk:'1'},
+    {name:'يورو M5 • ICT',s:'EURUSD',tf:'M5',sg:'Inner Circle Trader',rk:'1'},
+    {name:'ناسداك NY • كسر',s:'NAS100',tf:'M5',sg:'Breakout & Retest',rk:'1'}
+  ];
+  const tp=tpls[i];if(!tp)return;
+  if(tp.s)sym.value=tp.s;
+  if(tp.tf)tfSel.value=tp.tf;
+  if(tp.sg){sg.value=tp.sg;OTHshow()}
+  if(tp.rk)rkI.value=tp.rk;
+  updRR();
+  toast('تم تطبيق قالب: '+tp.name);
+}
+function saveTpl(){
+  const name=(sym.value||'XAUUSD')+' '+(tfSel.value||'M15')+(sg.value&&sg.value!=='__o'?' • '+lbl(SG,sg.value).split(' ')[0]:'');
+  S.tpls=S.tpls||[
+    {name:'ذهب M15 • SMC',s:'XAUUSD',tf:'M15',sg:'Smart Money Concepts',rk:'1'},
+    {name:'يورو M5 • ICT',s:'EURUSD',tf:'M5',sg:'Inner Circle Trader',rk:'1'}
+  ];
+  S.tpls.unshift({name,s:sym.value,tf:tfSel.value,sg:sg.value,rk:rkI.value||'1'});
+  S.tpls=S.tpls.slice(0,6);
+  persist(true);drawTplBar();
+  toast('تم حفظ القالب السريع: '+name);
+}
+
+function setHFilter(f){hFilter=f;render()}
+function setQSearch(val){qText=val;const box=document.getElementById('homeTradeList');if(box)box.innerHTML=renderHomeTrades(inMonth())}
+
+/* --- Pro Strategy Lab & Backtesting Engine --- */
+let qBtSym='XAUUSD',qBtTf='M15',qBtSg='Smart Money Concepts',qBtCf='Liquidity Sweep',qBtDir='Buy',qBtSl=20,qBtTp=40,qBtRr='2',qBtRisk=100,qBtOpen=true,mcSeed=1;
+
+function setQBt(k,v){
+  if(k==='sym')qBtSym=v;
+  else if(k==='tf')qBtTf=v;
+  else if(k==='sg')qBtSg=v;
+  else if(k==='cf')qBtCf=v;
+  else if(k==='dir')qBtDir=v;
+  else if(k==='sl'){qBtSl=Math.max(1,+v||20);if(qBtSl&&qBtTp)qBtRr=String(Math.round((qBtTp/qBtSl)*100)/100)}
+  else if(k==='tp'){qBtTp=Math.max(1,+v||40);if(qBtSl&&qBtTp)qBtRr=String(Math.round((qBtTp/qBtSl)*100)/100)}
+  else if(k==='rr')qBtRr=v;
+  else if(k==='risk')qBtRisk=Math.max(1,+v||100);
+  render();
+}
+
+function quickBtLog(outcome){
+  const rVal=parseFloat(qBtRr)||2;
+  const rkUsd=Math.max(1,+qBtRisk||100);
+  const pnl=outcome==='w'?Math.round(rkUsd*rVal*100)/100:outcome==='l'?-rkUsd:0;
+  const nowTm=new Date().toTimeString().slice(0,5);
+  const t={
+    id:Date.now(),
+    bt:1,
+    a:pnl,
+    dir:qBtDir,
+    s:qBtSym,
+    en:'',
+    ex:'',
+    rr:String(rVal),
+    im:[],
+    d:today,
+    tm:nowTm,
+    ac:'Personal',
+    st:outcome==='w'?'Win':outcome==='l'?'Loss':'Breakeven',
+    xd:today,
+    cf:qBtCf?[qBtCf]:[],
+    em:'Highly Focused / In the Zone',
+    ld:'',
+    mistake_tag:'None',
+    instrument:qBtSym,
+    timeframe:qBtTf,
+    session:PnLAnalytics.sessionFromTime(nowTm),
+    session_auto:true,
+    day_of_week:PnLAnalytics.dayOfWeekFromDate(today),
+    sq:'A+ Setup (Perfect)',
+    sg:qBtSg,
+    sl:String(qBtSl||''),
+    tp:String(qBtTp||''),
+    rk:'1',
+    nb:'تسجيل سريع (Bar Replay)',
+    na:'',
+    ck:[0,1,2,3,4,5,6,7,8]
+  };
+  S.trades.push(t);
+  persist();
+  render();
+  toast(outcome==='w'?`✅ سُجّلت صفقة باك تيست رابحة (+${f(pnl)})`:outcome==='l'?`❌ سُجّلت صفقة باك تيست خاسرة (${f(pnl)})`:`⚖️ سُجّلت صفقة تعادل (0$)`);
+}
+
+function clrBt(btn){
+  if(btn.dataset.s){
+    saveSnapshot('قبل تصفير الباك تيست');
+    const btTrades=S.trades.filter(t=>t.bt);
+    const btIds=new Set(btTrades.map(t=>t.id));
+    S.trash=[...btTrades.map(t=>({...t,delAt:new Date().toLocaleString('ar-EG')})),...(S.trash||[])].slice(0,100);
+    S.del=[...(S.del||[]),...btIds];
+    S.trades=S.trades.filter(t=>!t.bt);
+    persist();
+    render();
+    toastUndo('تم نقل صفقات الباك تيست إلى سلة المحذوفات',()=>restoreAllTrash());
+  }else{
+    btn.dataset.s=1;
+    btn.textContent='اضغط مرة ثانية لتأكيد مسح الاختبار';
+  }
+}
+
+function btReadinessCard(cl,btCap){
+  if(!cl.length)return '';
+  const n=cl.length,wins=cl.filter(t=>t.a>0),losses=cl.filter(t=>t.a<0);
+  const wr=Math.round(wins.length/n*100);
+  const gp=sum(wins),gl=Math.abs(sum(losses)),pf=gl?gp/gl:(gp?9.9:0);
+  const net=gp-gl,exp=net/n;
+  const aw=wins.length?gp/wins.length:0,al=losses.length?gl/losses.length:0,realRr=al?aw/al:(aw?3:0);
+  let eq=0,pk=0,mdd=0;
+  [...cl].sort((a,b)=>a.d.localeCompare(b.d)||a.id-b.id).forEach(t=>{eq+=t.a;pk=Math.max(pk,eq);mdd=Math.max(mdd,pk-eq)});
+  const mddPct=btCap>0?(mdd/btCap*100):0;
+
+  // Readiness pillars (out of 100)
+  const pSample=Math.min(25,Math.round(n/20*25));
+  const pPf=pf>=2?30:pf>=1.5?24:pf>=1.2?16:pf>=1?8:0;
+  const pExp=exp>0?20:0;
+  const pDd=mddPct<=8?15:mddPct<=15?10:mddPct<=25?5:0;
+  const pRr=realRr>=1.5?10:realRr>=1?6:2;
+  const score=pSample+pPf+pExp+pDd+pRr;
+
+  let verdict,vCol,vBg;
+  if(n<10){
+    verdict='🟡 عينة غير كافية للحكم (تحتاج '+(10-n)+' صفقات إضافية على الأقل)';
+    vCol='var(--or)';vBg='var(--orb)';
+  }else if(score>=75&&pf>=1.4&&exp>0){
+    verdict='🟢 مؤهلة للتداول الحقيقي (Edge قوي ومثبت إحصائياً)';
+    vCol='var(--gr)';vBg='var(--grb)';
+  }else if(score>=50&&exp>0){
+    verdict='🟡 واعدة ولكن تحتاج تحسين أو عينة أكبر قبل المخاطرة';
+    vCol='var(--or)';vBg='var(--orb)';
+  }else{
+    verdict='🔴 غير جاهزة للتداول الحقيقي (تحتاج مراجعة شروط الدخول أو الـ R:R)';
+    vCol='var(--rd)';vBg='var(--rdb)';
+  }
+
+  return `<div class="card">
+    <div class="row"><b>🚦 مؤشر جاهزية الاستراتيجية للحساب الحقيقي</b><span class="badge" style="background:${vBg};color:${vCol};font-size:13px">${score}/100</span></div>
+    <div style="background:${vBg};color:${vCol};padding:10px 12px;border-radius:12px;font-weight:700;font-size:13px;margin:10px 0">${verdict}</div>
+    <div class="kg" style="margin-bottom:0">
+      <div style="background:var(--card2);padding:10px 12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">كفاية العينة (الهدف 20+)</small><b style="display:block;margin-top:4px;color:${n>=20?'var(--gr)':'var(--or)'}">${n} / 20 صفقة</b></div>
+      <div style="background:var(--card2);padding:10px 12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">متوسط R:R الفعلي المحقق</small><b style="display:block;margin-top:4px;direction:ltr;text-align:right;color:${realRr>=1.5?'var(--gr)':'var(--tx)'}">1 : ${realRr.toFixed(2)}</b></div>
+      <div style="background:var(--card2);padding:10px 12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">الأمل الرياضي للصفقة</small><b class="priv-val" style="display:block;margin-top:4px;direction:ltr;text-align:right;color:${exp>=0?'var(--gr)':'var(--rd)'}">${(exp>0?'+':'')+f(exp)}</b></div>
+      <div style="background:var(--card2);padding:10px 12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">أقصى تراجع من رأس المال</small><b class="priv-val" style="display:block;margin-top:4px;direction:ltr;text-align:right;color:${mddPct>12?'var(--rd)':'var(--gr)'}">${mddPct.toFixed(1)}% (${f(-mdd)})</b></div>
+    </div>
+  </div>`;
+}
+
+function btLabHtml(cl,btCap){
+  if(cl.length<3)return `<div class="card"><div class="empty">سجّل 3 صفقات باك تيست على الأقل لتشغيل محاكي مونت كارلو ومقارنة الأداء بالحساب الحقيقي.</div></div>`;
+  const wins=cl.filter(t=>t.a>0),losses=cl.filter(t=>t.a<0);
+  const wr=wins.length/cl.length;
+  const aw=wins.length?sum(wins)/wins.length:100;
+  const al=losses.length?Math.abs(sum(losses)/losses.length):100;
+
+  // Run 200 Monte Carlo simulations of 50 trades each
+  const runs=200,horizon=50;
+  const endings=[],maxDds=[],maxLStreaks=[];
+  let s=mcSeed*9301+49297;
+  const rnd=()=>{s=(s*9301+49297)%233280;return s/233280};
+  for(let r=0;r<runs;r++){
+    let eq=0,pk=0,dd=0,ls=0,mls=0;
+    for(let i=0;i<horizon;i++){
+      const win=rnd()<wr;
+      const pnl=win?aw:-al;
+      eq+=pnl;
+      if(eq>pk)pk=eq;
+      if(pk-eq>dd)dd=pk-eq;
+      if(!win){ls++;if(ls>mls)mls=ls}else ls=0;
+    }
+    endings.push(eq);maxDds.push(dd);maxLStreaks.push(mls);
+  }
+  endings.sort((a,b)=>a-b);
+  maxDds.sort((a,b)=>a-b);
+  maxLStreaks.sort((a,b)=>a-b);
+  const medEq=endings[Math.floor(runs*0.5)];
+  const bestEq=endings[Math.floor(runs*0.9)];
+  const worstEq=endings[Math.floor(runs*0.1)];
+  const dd95=maxDds[Math.floor(runs*0.95)];
+  const mls90=maxLStreaks[Math.floor(runs*0.9)];
+  const profProb=Math.round(endings.filter(x=>x>0).length/runs*100);
+
+  // Compare with Live trades (filtered by btSg if selected)
+  const liveCl=closed(S.trades.filter(t=>!t.bt&&(!btSg||t.sg===btSg)&&(!btPair||t.s===btPair)));
+  const lWins=liveCl.filter(t=>t.a>0),lLosses=liveCl.filter(t=>t.a<0);
+  const lWr=liveCl.length?Math.round(lWins.length/liveCl.length*100):null;
+  const lGp=sum(lWins),lGl=Math.abs(sum(lLosses)),lPf=lGl?(lGp/lGl).toFixed(2):(lGp?'∞':'0.00');
+  const lExp=liveCl.length?sum(liveCl)/liveCl.length:0;
+
+  const btGp=sum(wins),btGl=Math.abs(sum(losses)),btPf=btGl?(btGp/btGl).toFixed(2):(btGp?'∞':'0.00');
+  const btExp=sum(cl)/cl.length;
+
+  // Strategy Leaderboard across all backtest trades
+  const allBt=closed(S.trades.filter(t=>t.bt));
+  const bySg={};
+  allBt.forEach(t=>{const k=t.sg||'بدون استراتيجية';(bySg[k]=bySg[k]||[]).push(t)});
+  const sgRows=Object.entries(bySg).map(([k,arr])=>{
+    const w=arr.filter(x=>x.a>0),l=arr.filter(x=>x.a<0),gp=sum(w),gl=Math.abs(sum(l));
+    return {name:lbl(SG,k),n:arr.length,wr:Math.round(w.length/arr.length*100),pf:gl?(gp/gl).toFixed(2):'∞',net:sum(arr)};
+  }).sort((a,b)=>b.net-a.net);
+
+  return `<div class="card wi-card">
+    <div class="row"><b>🎲 محاكي مونت كارلو للـ 50 صفقة القادمة</b><button type="button" class="qchip on" onclick="mcSeed++;render()">🔄 محاكاة جديدة</button></div>
+    <div style="color:var(--mu);font-size:12.5px;margin:4px 0 10px">بناءً على نسبة فوزك (${Math.round(wr*100)}%) ومتوسط ربحك (${f(aw)}) مقابل خسارتك (${f(-al)})، قمنا بمحاكاة 200 مسار مستقبلي لـ 50 صفقة:</div>
+    <div class="kg" style="margin-bottom:8px">
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">احتمال الخروج بربح</small><b style="display:block;font-size:20px;margin-top:4px;color:${profProb>=70?'var(--gr)':profProb>=50?'var(--or)':'var(--rd)'}">${profProb}%</b></div>
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">متوسط الربح المتوقع (50 صفقة)</small><b class="priv-val" style="display:block;font-size:20px;margin-top:4px;direction:ltr;text-align:right;color:${medEq>=0?'var(--gr)':'var(--rd)'}">${(medEq>0?'+':'')+f(medEq)}</b></div>
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">أسوأ تراجع متوقع (95% ثقة)</small><b class="priv-val" style="display:block;font-size:18px;margin-top:4px;direction:ltr;text-align:right;color:var(--rd)">-${f(dd95)}</b></div>
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)"><small style="color:var(--mu)">أقصى خسائر متتالية متوقعة</small><b style="display:block;font-size:18px;margin-top:4px;color:var(--or)">${mls90} صفقات متتالية</b></div>
+    </div>
+    <div class="row" style="font-size:12.5px;color:var(--mu);padding-top:6px;border-top:1px solid var(--bd)">
+      <span>أفضل سيناريو (أعلى 10%): <b style="color:var(--gr);direction:ltr;display:inline-block">+${f(bestEq)}</b></span>
+      <span>أسوأ سيناريو (أقل 10%): <b style="color:${worstEq<0?'var(--rd)':'var(--tx)'};direction:ltr;display:inline-block">${f(worstEq)}</b></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <b>⚖️ مقارنة أداء الباك تيست بالتداول الحقيقي ${btSg?'('+esc(lbl(SG,btSg))+')':''}</b>
+    <div style="color:var(--mu);font-size:12.5px;margin:4px 0 10px">اكتشف هل تطبق الاستراتيجية في الحقيقي بنفس كفاءة الباك تيست أم تتأثر بالعامل النفسي:</div>
+    ${!liveCl.length?`<div class="empty" style="padding:12px">لا توجد صفقات حقيقية مسجلة ${btSg?'بهذه الاستراتيجية ':''}للمقارنة بعد.</div>`:`
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;text-align:right">
+        <thead><tr style="border-bottom:1px solid var(--bd);color:var(--mu)"><th style="padding:8px 4px">المعيار</th><th style="padding:8px 4px">الباك تيست (${cl.length})</th><th style="padding:8px 4px">الحقيقي (${liveCl.length})</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--bd)"><td style="padding:10px 4px">نسبة الفوز (Win Rate)</td><td style="padding:10px 4px;font-weight:700;color:var(--pr)">${Math.round(wr*100)}%</td><td style="padding:10px 4px;font-weight:700;color:${lWr>=Math.round(wr*100)-5?'var(--gr)':'var(--rd)'}">${lWr}%</td></tr>
+          <tr style="border-bottom:1px solid var(--bd)"><td style="padding:10px 4px">معامل الربح (Profit Factor)</td><td style="padding:10px 4px;font-weight:700;direction:ltr">${btPf}</td><td style="padding:10px 4px;font-weight:700;direction:ltr">${lPf}</td></tr>
+          <tr><td style="padding:10px 4px">متوسط الصفقة (Expectancy)</td><td class="priv-val" style="padding:10px 4px;font-weight:700;direction:ltr;color:${btExp>=0?'var(--gr)':'var(--rd)'}">${(btExp>0?'+':'')+f(btExp)}</td><td class="priv-val" style="padding:10px 4px;font-weight:700;direction:ltr;color:${lExp>=0?'var(--gr)':'var(--rd)'}">${(lExp>0?'+':'')+f(lExp)}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dtx" style="margin-top:10px;font-size:13px">${lWr<Math.round(wr*100)-10?'⚠️ نلاحظ أن نسبة فوزك في الحقيقي أقل بوضوح من الباك تيست؛ راجع التزامك بشروط الدخول وعدم التسرع أو تحريك الاستوب.':lWr>=Math.round(wr*100)?'✅ أداؤك في الحساب الحقيقي متطابق أو يتفوق على نتائج الباك تيست، مما يدل على انضباط تنفيذي ممتاز!':'📊 أداؤك في الحقيقي قريب جداً من نتائج الباك تيست، استمر بنفس الانضباط.'}</div>`}
+  </div>
+
+  ${sgRows.length?`<div class="card"><b>🏆 جدول مقارنة الاستراتيجيات المختبرة</b>`+sgRows.map((s,idx)=>`<div class="t"><div><b>#${idx+1} ${esc(s.name)}</b><small>${s.n} صفقة • نسبة الفوز ${s.wr}% • PF ${s.pf}</small></div><b style="color:${s.net<0?'var(--rd)':'var(--gr)'}">${(s.net>0?'+':'')+f(s.net)}</b></div>`).join('')+`</div>`:''}`;
+}
+
+function btProRender(){
+  const all=S.trades.filter(t=>t.bt);
+  const ss=[...new Set(all.map(t=>t.sg).filter(Boolean))];
+  const ps=[...new Set(all.map(t=>t.s).filter(Boolean))];
+  const tfs=[...new Set(all.map(t=>t.timeframe).filter(Boolean))];
+  if(btSg&&!ss.includes(btSg))btSg='';
+  if(btPair&&!ps.includes(btPair))btPair='';
+  if(btTf&&!tfs.includes(btTf))btTf='';
+
+  const btCap=+S.btBal||10000;
+
+  // Rapid Backtest Logger Widget (Always available so user can log in 1 click!)
+  const rapidCard=`<div class="card" style="border:1.5px solid color-mix(in srgb,var(--pr) 35%,transparent)">
+    <div class="row" style="cursor:pointer" onclick="qBtOpen=!qBtOpen;render()">
+      <div><b style="color:var(--pr)">⚡ مسجّل الباك تيست السريع (Bar Replay)</b><div style="font-size:12px;color:var(--mu);margin-top:2px">سجّل نتائج إعادة الشارت بضغطة واحدة (${qBtSym} • ${qBtTf} • 1:${qBtRr})</div></div>
+      <span style="color:var(--pr);font-weight:700">${qBtOpen?'▴ طي':'▾ فتح'}</span>
+    </div>
+    ${qBtOpen?`<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--bd)">
+      <div class="g2">
+        <div><label style="margin-top:0">الزوج</label><select class="sel2" onchange="setQBt('sym',this.value)">${PAIRS.map(p=>`<option value="${p}"${qBtSym===p?' selected':''}>${NM[p]||p}</option>`).join('')}</select></div>
+        <div><label style="margin-top:0">الفريم</label><select class="sel2" onchange="setQBt('tf',this.value)">${['M1','M5','M15','M30','H1','H4','D1'].map(x=>`<option value="${x}"${qBtTf===x?' selected':''}>${x}</option>`).join('')}</select></div>
+      </div>
+      <div class="g2" style="margin-top:6px">
+        <div><label style="margin-top:4px">الاستراتيجية</label><select class="sel2" onchange="setQBt('sg',this.value)">${SG.map(([v,l])=>`<option value="${v}"${qBtSg===v?' selected':''}>${l}</option>`).join('')}</select></div>
+        <div><label style="margin-top:4px">شروط / أسباب الدخول</label><select class="sel2" onchange="setQBt('cf',this.value)">${CF.map(([v,l])=>`<option value="${v}"${qBtCf===v?' selected':''}>${l}</option>`).join('')}</select></div>
+      </div>
+      <div class="g2" style="margin-top:6px">
+        <div><label style="margin-top:4px">وقف الخسارة بالنقاط (SL)</label><input type="number" inputmode="decimal" value="${qBtSl}" placeholder="مثال: 20" onchange="setQBt('sl',this.value)"></div>
+        <div><label style="margin-top:4px">الهدف بالنقاط (TP)</label><input type="number" inputmode="decimal" value="${qBtTp}" placeholder="مثال: 40" onchange="setQBt('tp',this.value)"></div>
+      </div>
+      <div class="g2" style="margin-top:6px">
+        <div><label style="margin-top:4px">الاتجاه (R:R = 1:${qBtRr})</label><div class="seg" style="margin-top:2px"><button type="button" class="${qBtDir==='Buy'?'sel':''}" style="padding:10px" onclick="setQBt('dir','Buy')">Buy 📈</button><button type="button" class="loss ${qBtDir==='Sell'?'sel':''}" style="padding:10px" onclick="setQBt('dir','Sell')">Sell 📉</button></div></div>
+        <div><label style="margin-top:4px">مبلغ المخاطرة للصفقة ($)</label><input type="number" inputmode="decimal" value="${qBtRisk}" onchange="setQBt('risk',this.value)"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button type="button" class="go" style="margin:0;flex:1.2;background:var(--gr);padding:12px 8px;font-size:15px" onclick="quickBtLog('w')">✅ هدف (+${Math.round(qBtRisk*(+qBtRr||2))}$)</button>
+        <button type="button" class="go" style="margin:0;flex:1.2;background:var(--rd);padding:12px 8px;font-size:15px" onclick="quickBtLog('l')">❌ ستوب (-${qBtRisk}$)</button>
+        <button type="button" class="go" style="margin:0;flex:0.8;background:var(--card2);color:var(--tx);border:1px solid var(--bd);padding:12px 6px;font-size:14px" onclick="quickBtLog('b')">⚖️ تعادل</button>
+      </div>
+      <button type="button" class="cl" style="padding:8px 0 0;font-size:13px;color:var(--pr);font-weight:600" onclick="openAdd()">+ أو اضغط هنا لتسجيل صفقة اختبار مفصلة مع صور الشارت</button>
+    </div>`:''}
+  </div>`;
+
+  const filterBar=all.length?`<div class="card" style="padding:12px 14px">
+    <div class="g2">
+      <div><label style="margin-top:0">فلتر الاستراتيجية</label><select class="sel2" onchange="btSg=this.value;render()"><option value="">كل الاستراتيجيات (${ss.length})</option>${ss.map(v=>`<option value="${esc(v)}"${btSg===v?' selected':''}>${esc(lbl(SG,v))}</option>`).join('')}</select></div>
+      <div><label style="margin-top:0">فلتر الزوج</label><select class="sel2" onchange="btPair=this.value;render()"><option value="">كل الأزواج (${ps.length})</option>${ps.map(v=>`<option value="${esc(v)}"${btPair===v?' selected':''}>${esc(NM[v]||v)}</option>`).join('')}</select></div>
+    </div>
+    <div class="g2" style="margin-top:6px">
+      <div><label style="margin-top:4px">فلتر الفريم</label><select class="sel2" onchange="btTf=this.value;render()"><option value="">كل الفريمات</option>${tfs.map(v=>`<option value="${esc(v)}"${btTf===v?' selected':''}>${esc(v)}</option>`).join('')}</select></div>
+      <div><label style="margin-top:4px">رأس مال الاختبار ($)</label><input type="number" inputmode="decimal" value="${btCap}" onchange="S.btBal=+this.value||10000;persist(true);render()"></div>
+    </div>
+  </div>`:'';
+
+  if(!all.length){
+    return btBar()+rapidCard+`<div class="card"><div class="empty">لا توجد صفقات باك تيست مسجلة بعد. استخدم المسجّل السريع أعلاه أثناء إعادة الشارت (Bar Replay) أو اضغط + لإضافة صفقة بصور الشارت.</div></div>`;
+  }
+
+  const T=TR().sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id),cl=closed(T),tot=sum(cl),W=cl.filter(t=>t.a>0).length,L=cl.filter(t=>t.a<0).length;
+  const wr=cl.length?Math.round(W/cl.length*100):0;
+  const gp=sum(cl.filter(t=>t.a>0)),gl=Math.abs(sum(cl.filter(t=>t.a<0))),pf=gl?(gp/gl).toFixed(2):(gp?'∞':'0.00');
+  const retPct=btCap?(tot/btCap*100).toFixed(1)+'%':'0%';
+
+  if(btSub==='stats')return filterBar+btBar()+strat();
+  if(btSub==='lab')return filterBar+btBar()+btReadinessCard(cl,btCap)+btLabHtml(cl,btCap);
+  if(btSub!=='list')return filterBar+subBar()+(btSub==='ins'?insHtml():btSub==='coach'?coachHtml():perfHtml());
+
+  return btBar()+rapidCard+filterBar+`
+  <div class="pro-hero">
+    <div class="row"><span style="color:#94a3b8;font-size:13.5px;font-weight:600">صافي ربح مختبر الباك تيست</span><span class="badge ${tot>=0?'strk-w':'strk-l'}" style="direction:ltr">${tot>=0?'+':''}${retPct} نمو</span></div>
+    <div class="big" style="color:${tot<0?'#f87171':'#4ade80'};font-size:38px;margin-top:4px">${(tot>0?'+':'')+f(tot)}</div>
+    <div class="pro-hero-grid">
+      <div class="pro-hero-stat"><small>نسبة الفوز</small><b>${wr}% <span style="font-size:11px;color:#94a3b8">(${W}W/${L}L)</span></b></div>
+      <div class="pro-hero-stat"><small>معامل الربح PF</small><b>${pf}</b></div>
+      <div class="pro-hero-stat"><small>نسبة الربح</small><b class="priv-val" style="color:${tot<0?'#f87171':'#4ade80'}">${(tot>0?'+':'')+retPct}</b></div>
+    </div>
+  </div>
+  ${btReadinessCard(cl,btCap)}
+  <div class="card">
+    <div class="row" style="margin-bottom:8px"><b>سجل صفقات الباك تيست (${T.length})</b><button type="button" class="qchip" style="color:var(--rd)" onclick="clrBt(this)">🗑️ تصفير الاختبار</button></div>
+    `+(T.length?T.map(t=>{
+      const dir=t.dir==='Sell'?'<span class="badge sell">Sell 📉</span>':'<span class="badge buy">Buy 📈</span>';
+      const isBe=stOf(t)==='Breakeven'||t.a===0;
+      return `<div class="t" onclick="show(${t.id})" style="cursor:pointer">
+        <div style="display:flex;align-items:center">
+          <span class="th" id="th${t.id}"></span>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><b>${NM[t.s]||t.s||'صفقة'}</b>${dir}${t.timeframe?`<span class="badge be">${esc(t.timeframe)}</span>`:''}</div>
+            <small>${t.d}${t.sg?' • '+esc(lbl(SG,t.sg)):''}${(t.cf&&t.cf[0])?' • '+esc(lbl(CF,t.cf[0])):''}${t.sl?' • SL '+t.sl+'ن':''}${t.tp?' • TP '+t.tp+'ن':''}${t.rr?' • RR 1:'+t.rr:''}${(t.im||[]).length?' • 📷 '+t.im.length:''}</small>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center"><b style="color:${isBe?'var(--mu)':t.a<0?'var(--rd)':'var(--gr)'}">${isBe?'تعادل 0$':(t.a>0?'+':'')+f(t.a)}</b><button class="x" onclick="event.stopPropagation();del(${t.id})" aria-label="حذف">✕</button></div>
+      </div>`;
+    }).join(''):'<div class="empty">لا توجد صفقات تطابق الفلتر المحدد.</div>')+`
+  </div>`;
+}
+
+let searchOpen=false,advDlgOpen=false;
+function tgSearch(){searchOpen=!searchOpen;render();if(searchOpen){const q=document.getElementById('qSearch');if(q)q.focus()}}
+function tgAdvDlg(force){
+  advDlgOpen=force!=null?force:!advDlgOpen;
+  const box=document.getElementById('advFields'),arr=document.getElementById('advArr');
+  if(box)box.style.display=advDlgOpen?'block':'none';
+  if(arr)arr.textContent=advDlgOpen?'▴':'▾';
+}
+
+function renderHomeTrades(mt){
+  let list=[...mt].sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);
+  if(hFilter==='win')list=list.filter(t=>t.a>0);
+  else if(hFilter==='loss')list=list.filter(t=>t.a<0);
+  else if(hFilter==='Buy')list=list.filter(t=>(t.dir||'Buy')==='Buy');
+  else if(hFilter==='Sell')list=list.filter(t=>t.dir==='Sell');
+  else if(hFilter!=='all')list=list.filter(t=>t.s===hFilter);
+  if(qText.trim()){
+    const q=qText.trim().toLowerCase();
+    list=list.filter(t=>(t.s||'').toLowerCase().includes(q)||(NM[t.s]||'').toLowerCase().includes(q)||(t.sg||'').toLowerCase().includes(q)||(lbl(SG,t.sg)||'').toLowerCase().includes(q));
+  }
+  if(!list.length)return `<div class="empty">لا توجد صفقات في هذا الشهر.${mt.length?' جرّب تغيير الفلتر أو البحث.':' اضغط + لإضافة أول صفقة.'}</div>`;
+  return list.map(t=>{
+    const dir=t.dir==='Sell'?'<span class="badge sell">Sell</span>':'<span class="badge buy">Buy</span>';
+    const isBe=stOf(t)==='Breakeven'||(stOf(t)!=='Open'&&t.a===0);
+    const pCol=isBe?'var(--mu)':t.a<0?'var(--rd)':'var(--gr)';
+    const pTxt=stOf(t)==='Open'?'مفتوحة':isBe?'تعادل 0$':(t.a>0?'+':'')+f(t.a);
+    return `<div class="t" onclick="show(${t.id})" style="cursor:pointer">
+      <div>
+        <div style="display:flex;align-items:center;gap:6px"><b>${NM[t.s]||t.s||'صفقة'}</b>${dir}${(t.im&&t.im.length)?'<span class="ic">📷 '+t.im.length+'</span>':''}</div>
+        <small style="margin-top:2px">${t.d}${t.sg?' • '+esc(lbl(SG,t.sg)):''}${t.rr?' • 1:'+t.rr:''}</small>
+      </div>
+      <div style="display:flex;align-items:center"><b style="color:${pCol};font-size:16.5px">${pTxt}</b><button class="x" onclick="event.stopPropagation();del(${t.id})" aria-label="حذف">✕</button></div>
+    </div>`;
+  }).join('');
+}
+
+function homeProHtml(mt,tot){
+  const td=TR().filter(t=>t.d===today),w=sum(td.filter(t=>t.a>0)),l=sum(td.filter(t=>t.a<0)),tdNet=w+l;
+  const cl=closed(mt),wins=cl.filter(t=>t.a>0).length,losses=cl.filter(t=>t.a<0).length;
+  const wr=cl.length?Math.round(wins/cl.length*100):0;
+  const gp=sum(cl.filter(t=>t.a>0)),gl=Math.abs(sum(cl.filter(t=>t.a<0))),pf=gl?(gp/gl).toFixed(2):(gp?'∞':'0.00');
+  const bal=+S.bal||0,baseCap=bal>0?bal:(+S.target>0?+S.target:1000),profitPct=(tot/baseCap*100).toFixed(1)+'%';
+  const curBal=bal+sum(closed(TR()));
+
+  const yrStr=String(cur.getFullYear()),yrTot=sum(TR().filter(t=>t.d&&t.d.slice(0,4)===yrStr));
+  const yTarget=S.yTarget!=null?+S.yTarget:((+S.target||1000)*12);
+  const mPct=S.target>0?Math.max(0,Math.min(100,tot/S.target*100)):0;
+  const yPct=yTarget>0?Math.max(0,Math.min(100,yrTot/yTarget*100)):0;
+  const isM=tgtMode==='month';
+  const curTgtVal=isM?tot:yrTot,curTgtGoal=isM?(+S.target||0):yTarget,curTgtPct=isM?mPct:yPct;
+
+  // Check Revenge Trading / Cool-down condition today
+  const tdSorted=[...td].sort((a,b)=>(a.tm||'').localeCompare(b.tm||'')||a.id-b.id);
+  let tdLossStreak=0;for(let i=tdSorted.length-1;i>=0;i--){if(tdSorted[i].a<0)tdLossStreak++;else if(tdSorted[i].a>0)break;}
+  const tiltHtml=tdLossStreak>=2?`<div class="tilt-alert"><div style="font-size:22px">🛡️</div><div><b style="color:var(--rd)">تنبيه الانضباط</b><div style="font-size:12.5px;margin-top:2px">سجّلت ${tdLossStreak} خسائر متتالية اليوم. خذ استراحة قصيرة لحماية رصيدك.</div></div></div>`:'';
+
+  const syms=[...new Set(mt.map(t=>t.s).filter(Boolean))];
+
+  return tiltHtml+`
+  <div class="pro-hero">
+    <div class="row">
+      <span style="color:#94a3b8;font-size:13.5px;font-weight:600">صافي ${AR[cur.getMonth()]} ${yrStr}</span>
+      <div style="display:flex;gap:6px">
+        <button type="button" class="qchip" style="background:rgba(255,255,255,.1);color:#fff;border:0;padding:5px 11px;font-size:12px" onclick="openCal()">📅 التقويم</button>
+        <button type="button" class="qchip" style="background:rgba(255,255,255,.1);color:#fff;border:0;padding:5px 11px;font-size:12px" onclick="tab='target';render()">🎯 الأهداف والرصيد</button>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:8px">
+      <div class="big" style="color:${tot<0?'#f87171':'#4ade80'};font-size:38px">${(tot>0?'+':'')+f(tot)}</div>
+      <div style="text-align:left">
+        <small style="color:#94a3b8;font-size:11.5px;display:block">أداء اليوم (${td.length})</small>
+        <b class="priv-val" style="direction:ltr;font-size:15px;color:${tdNet<0?'#f87171':tdNet>0?'#4ade80':'#e2e8f0'}">${(tdNet>0?'+':'')+f(tdNet)}</b>
+      </div>
+    </div>
+
+    <div class="pro-hero-grid" style="grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;padding-top:12px">
+      <div class="pro-hero-stat"><small>نسبة الفوز</small><b>${wr}%</b></div>
+      <div class="pro-hero-stat"><small>معامل الربح</small><b>${pf}</b></div>
+      <div class="pro-hero-stat"><small>نسبة الربح</small><b class="priv-val" style="color:${tot<0?'#f87171':'#4ade80'}">${(tot>0?'+':'')+profitPct}</b></div>
+      <div class="pro-hero-stat" onclick="tab='target';render()" style="cursor:pointer"><small>الرصيد الحالي</small><b class="priv-val" style="color:#38bdf8">${f(curBal)}</b></div>
+    </div>
+
+    <div class="uni-target">
+      <div class="row" style="gap:8px">
+        <select aria-label="نوع الهدف" onchange="setTgtMode(this.value)">
+          <option value="month"${isM?' selected':''}>🎯 هدف الشهر (${AR[cur.getMonth()]})</option>
+          <option value="year"${!isM?' selected':''}>🏆 الهدف السنوي (${yrStr})</option>
+        </select>
+        <span class="priv-val" style="font-size:13px;color:#cbd5e1;direction:ltr">${f(curTgtVal)} / ${f(curTgtGoal)} <b style="color:#4ade80">(${curTgtPct.toFixed(0)}%)</b></span>
+      </div>
+      <div class="bar" style="height:7px;margin:8px 0 0;background:rgba(255,255,255,.12)"><div style="width:${curTgtPct}%;background:linear-gradient(90deg,#6366f1,#22c55e)"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:${searchOpen?'10px':'4px'}">
+      <b style="font-size:16.5px">سجل الصفقات (${mt.length})</b>
+      <button type="button" class="qchip ${searchOpen||hFilter!=='all'||qText?'on':''}" style="padding:5px 11px;font-size:12px" onclick="tgSearch()">🔍 بحث وفلترة</button>
+    </div>
+    <div id="searchWrap" style="display:${searchOpen||hFilter!=='all'||qText?'block':'none'}">
+      <input id="qSearch" class="sbox" type="search" placeholder="ابحث بالزوج أو الاستراتيجية..." value="${esc(qText)}" oninput="setQSearch(this.value)">
+      <div class="qbar" style="margin:4px 0 8px">
+        ${[['all','الكل'],['win','رابحة +'],['loss','خاسرة −'],['Buy','Buy'],['Sell','Sell'],...syms.map(s=>[s,s])].map(([k,l])=>`<button type="button" class="qchip ${hFilter===k?'on':''}" onclick="setHFilter('${k}')">${l}</button>`).join('')}
+      </div>
+    </div>
+    <div id="homeTradeList">${renderHomeTrades(mt)}</div>
+  </div>`;
+}
+
+/* --- What-If Scenario Simulator & Equity % Mode --- */
+function setWhatIf(v){whatIfMode=v;render()}
+function setEqMode(m){eqMode=m;render()}
+function applyWhatIf(recs){
+  if(whatIfMode==='all')return recs;
+  if(whatIfMode==='adherent')return recs.filter(r=>!r.mistake||r.mistake==='None'||r.mistake==='Unknown');
+  if(whatIfMode==='nofomo')return recs.filter(r=>r.emotion!=='Chasing Price / FOMO'&&r.emotion!=='Revenge Trading / Angry'&&r.emotion!=='FOMO / Impatient'&&r.emotion!=='Revenge Trading');
+  if(whatIfMode==='aplus')return recs.filter(r=>r.raw&&r.raw.sq==='A+ Setup (Perfect)');
+  if(whatIfMode==='checklist')return recs.filter(r=>r.raw&&r.raw.ck&&ckSc(r.raw)>=(+S.minCk||7));
+  return recs;
+}
+function whatIfBar(rawRecs,simRecs){
+  const mRaw=AE.summarize(rawRecs),mSim=AE.summarize(simRecs),diff=mSim.netPnl-mRaw.netPnl;
+  const opts=[
+    ['all','الوضع الفعلي (كل الصفقات)'],
+    ['adherent','ماذا لو: تداولت بدون أخطاء فقط'],
+    ['nofomo','ماذا لو: حذفت صفقات الفومو والانتقام'],
+    ['aplus','ماذا لو: دخلت صفقات A+ المثالية فقط'],
+    ['checklist','ماذا لو: التزمت بدرجة قائمة الشروط']
+  ];
+  return `<div class="card wi-card">
+    <div class="row"><b style="color:var(--pr)">🔮 محاكي الأداء الذكي (What-If Simulator)</b><span class="badge be">${simRecs.length}/${rawRecs.length} صفقة</span></div>
+    <div style="color:var(--mu);font-size:12.5px;margin:4px 0 8px">شاهد كيف تتغير أرباحك ونسبة فوزك لو تخلصت من سلوكيات محددة:</div>
+    <select class="sel2" onchange="setWhatIf(this.value)">${opts.map(([k,l])=>`<option value="${k}"${whatIfMode===k?' selected':''}>${l}</option>`).join('')}</select>
+    ${whatIfMode!=='all'?`<div class="g2" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--bd)">
+      <div><small style="color:var(--mu)">صافي الربح الفعلي</small><div style="font-weight:700;direction:ltr;text-align:right">${money(mRaw.netPnl)} (${mRaw.winRate}%)</div></div>
+      <div><small style="color:var(--mu)">بعد تطبيق المحاكاة</small><div style="font-weight:700;direction:ltr;text-align:right;color:${mSim.netPnl>=mRaw.netPnl?'var(--gr)':'var(--tx)'}">${money(mSim.netPnl)} (${mSim.winRate}%) ${diff!==0?`<span style="font-size:12px;color:${diff>0?'var(--gr)':'var(--rd)'}">(${diff>0?'+':''}${money(diff)})</span>`:''}</div></div>
+    </div>`:''}
+  </div>`;
+}
+
+/* Override eqChart to support % mode when eqMode === '%' */
+const _origEqChart = eqChart;
+eqChart = function(recs){
+  if(eqMode!=='%')return _origEqChart(recs);
+  const base=+S.bal||1000;
+  const scaled=recs.map(r=>({...r,pnl:Math.round((r.pnl/base*100)*100)/100}));
+  return _origEqChart(scaled);
+};
+
+/* --- Hourly Performance Heatmap & Buy/Sell Comparison --- */
+function hourlyHeatHtml(recs){
+  const cl=recs.filter(r=>r.status!=='Open'&&r.entryTime);
+  if(!cl.length)return '';
+  const byH={};
+  cl.forEach(r=>{
+    const h=r.entryTime.slice(0,2);
+    if(!/^\d\d$/.test(h))return;
+    (byH[h]=byH[h]||[]).push(r);
+  });
+  const hrs=Object.keys(byH).sort();
+  if(!hrs.length)return '';
+  const mx=Math.max(1,...hrs.map(h=>Math.abs(byH[h].reduce((s,x)=>s+x.pnl,0))));
+  return `<div class="card"><b>⏰ الخريطة الحرارية للساعات (ساعاتك الذهبية)</b>
+    <div style="color:var(--mu);font-size:12px;margin:4px 0 8px">اضغط على أي ساعة لاستعراض الصفقات التي دخلتها في ذلك التوقيت.</div>
+    <div class="hr-grid">${hrs.map(h=>{
+      const arr=byH[h],tot=arr.reduce((s,x)=>s+x.pnl,0),wr=Math.round(arr.filter(x=>x.pnl>0).length/arr.length*100);
+      const al=(.14+Math.abs(tot)/mx*.38).toFixed(2);
+      const bg=tot>=0?`rgba(34,197,94,${al})`:`rgba(239,68,68,${al})`;
+      return `<div class="hr-cell" style="background:${bg}" onclick="${condLink('الساعة '+h+':00',r=>r.entryTime&&r.entryTime.slice(0,2)==='${h}')}">
+        <div style="font-size:12px;font-weight:700">${h}:00</div>
+        <div style="font-size:13px;font-weight:800;direction:ltr;color:${tot>=0?'var(--gr)':'var(--rd)'}">${(tot>0?'+':'')+Math.round(tot)}$</div>
+        <small style="font-size:10.5px;color:var(--mu)">${arr.length} ص • ${wr}%</small>
+      </div>`;
+    }).join('')}</div></div>`;
+}
+
+function dirCompCard(T){
+  const buys=T.filter(t=>(t.dir||'Buy')==='Buy'),sells=T.filter(t=>t.dir==='Sell');
+  if(!buys.length&&!sells.length)return '';
+  const bWr=buys.length?Math.round(buys.filter(t=>t.a>0).length/buys.length*100):0,bNet=sum(buys);
+  const sWr=sells.length?Math.round(sells.filter(t=>t.a>0).length/sells.length*100):0,sNet=sum(sells);
+  return `<div class="card"><b>📈 أداء الشراء (Buy) مقابل 📉 البيع (Sell)</b>
+    <div class="g2" style="margin-top:10px">
+      <div style="background:var(--card2);padding:12px;border-radius:16px;border:1px solid var(--bd)">
+        <div class="row"><span class="badge buy">Buy 📈</span><small style="color:var(--mu)">${buys.length} صفقة</small></div>
+        <div class="priv-val" style="font-size:20px;font-weight:700;margin-top:6px;direction:ltr;text-align:right;color:${bNet<0?'var(--rd)':'var(--gr)'}">${(bNet>0?'+':'')+f(bNet)}</div>
+        <small style="color:var(--mu)">نسبة الفوز: ${bWr}%</small>
+      </div>
+      <div style="background:var(--card2);padding:12px;border-radius:16px;border:1px solid var(--bd)">
+        <div class="row"><span class="badge sell">Sell 📉</span><small style="color:var(--mu)">${sells.length} صفقة</small></div>
+        <div class="priv-val" style="font-size:20px;font-weight:700;margin-top:6px;direction:ltr;text-align:right;color:${sNet<0?'var(--rd)':'var(--gr)'}">${(sNet>0?'+':'')+f(sNet)}</div>
+        <small style="color:var(--mu)">نسبة الفوز: ${sWr}%</small>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* --- CSV Import & 32-Trade Pro Demo Data --- */
+async function importCsvFile(inp){
+  const file=inp.files&&inp.files[0];inp.value='';if(!file)return;
+  try{
+    const txt=await file.text();
+    const lines=txt.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+    if(lines.length<2)throw new Error('ملف CSV فارغ أو غير صالح');
+    let added=0;
+    for(let i=1;i<lines.length;i++){
+      const cols=lines[i].split(/[,;\t]/).map(c=>c.replace(/^["']|["']$/g,'').trim());
+      if(cols.length<3)continue;
+      const dMatch=lines[i].match(/20\d\d[-./]\d\d[-./]\d\d/);
+      const d=dMatch?dMatch[0].replace(/[./]/g,'-'):today;
+      const symMatch=lines[i].toUpperCase().match(/XAUUSD|EURUSD|GBPUSD|USDJPY|GBPJPY|USDCAD|AUDUSD|NZDUSD|USDCHF|BTCUSD|US30|NAS100/);
+      const s=symMatch?symMatch[0]:'XAUUSD';
+      const dir=/sell|short|بيع/i.test(lines[i])?'Sell':'Buy';
+      const nums=cols.map(c=>parseFloat(c)).filter(n=>!isNaN(n));
+      if(!nums.length)continue;
+      const a=nums[nums.length-1];
+      const t={id:Date.now()+i,a,dir,s,en:'',ex:'',rr:'1.5',im:[],d,tm:'10:00',ac:'Personal',st:a>0?'Win':a<0?'Loss':'Breakeven',xd:d,cf:[],em:'',ld:'',mistake_tag:'None',instrument:s,timeframe:'M15',session:'London',session_auto:true,day_of_week:PnLAnalytics.dayOfWeekFromDate(d),sq:'A+ Setup (Perfect)',sg:'Smart Money Concepts',sl:'',tp:'',rk:'1',nb:'مستورد من CSV',na:'',ck:[0,1,2,3,4,5,6,7]};
+      S.trades.push(t);added++;
+    }
+    if(!added)throw new Error('لم يتم العثور على صفقات صالحة في الملف');
+    persist();render();toast('تم استيراد '+added+' صفقة بنجاح ✓');
+  }catch(e){toast('تعذّر الاستيراد: '+(e.message||e))}
+}
+
+
+let tgtMode='month';
+function setTgtMode(m){tgtMode=m==='year'?'year':'month';render()}
+function setBalPreset(v){
+  if(!v)return;
+  S.bal=+v||0;
+  persist();
+  render();
+  toast('تم تحديث الرصيد المبدئي: '+f(S.bal));
+}
+function setTgtPreset(mode,val){
+  if(!val)return;
+  const bal=+S.bal||1000;
+  let num=0;
+  if(String(val).endsWith('%')){
+    const pct=parseFloat(val);
+    num=Math.round(bal*(pct/100));
+  }else{
+    num=+val||0;
+  }
+  if(mode==='month'){
+    S.target=num;
+    toast('تم تحديد الهدف الشهري: '+f(num));
+  }else{
+    S.yTarget=num;
+    toast('تم تحديد الهدف السنوي: '+f(num));
+  }
+  persist();
+  render();
+}
+function targetProHtml(tot){
+  const initBal=+S.bal||0;
+  const allNet=sum(closed(TR()));
+  const curBal=initBal+allNet;
+  const totalGrowth=initBal>0?(allNet/initBal*100).toFixed(1)+'%':'0.0%';
+
+  const yrStr=String(cur.getFullYear());
+  const yrTot=sum(TR().filter(t=>t.d&&t.d.slice(0,4)===yrStr));
+  const mTarget=+S.target||0;
+  const yTarget=S.yTarget!=null?+S.yTarget:(mTarget*12||12000);
+
+  const isM=tgtMode==='month';
+  const curVal=isM?tot:yrTot;
+  const curTgt=isM?mTarget:yTarget;
+  const pct=curTgt>0?Math.max(0,Math.min(100,curVal/curTgt*100)):0;
+  const rem=Math.max(0,curTgt-curVal);
+  const tgtPctOfBal=initBal>0?(curTgt/initBal*100).toFixed(1)+'%':'-';
+
+  // Remaining days in month or remaining months in year
+  const daysInMonth=new Date(cur.getFullYear(),cur.getMonth()+1,0).getDate();
+  const remDays=Math.max(1,daysInMonth-new Date().getDate()+1);
+  const remMonths=Math.max(1,12-cur.getMonth());
+  const paceNeed=isM?(rem/remDays):(rem/remMonths);
+
+  const balPresets=[100,250,500,1000,2500,5000,10000,25000,50000,100000];
+  const mPresets=[['5%','5% من الرصيد المبدئي'],['10%','10% من الرصيد المبدئي (قياسي)'],['15%','15% من الرصيد المبدئي'],['20%','20% من الرصيد المبدئي'],['30%','30% من الرصيد المبدئي'],['50%','50% من الرصيد المبدئي'],['500','500 $ ثابت'],['1000','1,000 $ ثابت'],['2500','2,500 $ ثابت'],['5000','5,000 $ ثابت']];
+  const yPresets=[['50%','50% نمو سنوي من الرصيد'],['100%','100% مضاعفة الرصيد المبدئي (2x)'],['150%','150% نمو سنوي'],['200%','200% ثلاثة أضعاف الرصيد (3x)'],['300%','300% أربعة أضعاف الرصيد'],['5000','5,000 $ ثابت'],['12000','12,000 $ ثابت'],['25000','25,000 $ ثابت'],['50000','50,000 $ ثابت'],['100000','100,000 $ ثابت']];
+
+  return `
+  <div class="pro-hero">
+    <div class="row">
+      <span style="color:#94a3b8;font-size:13.5px;font-weight:600">💰 محفظة الحساب والرصيد المبدئي</span>
+      <span class="badge ${allNet>=0?'strk-w':'strk-l'}" style="direction:ltr">${allNet>=0?'+':''}${totalGrowth} إجمالي النمو</span>
+    </div>
+    <div class="pro-hero-grid" style="margin-top:12px;padding-top:12px">
+      <div class="pro-hero-stat"><small>الرصيد المبدئي</small><b class="priv-val">${f(initBal)}</b></div>
+      <div class="pro-hero-stat"><small>صافي الأرباح الكلي</small><b class="priv-val" style="color:${allNet<0?'#f87171':'#4ade80'}">${(allNet>0?'+':'')+f(allNet)}</b></div>
+      <div class="pro-hero-stat"><small>الرصيد الحالي</small><b class="priv-val" style="color:#38bdf8">${f(curBal)}</b></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b>💵 إعداد الرصيد المبدئي للحساب</b>
+    <div style="color:var(--mu);font-size:12.5px;margin:4px 0 10px">يُستخدم الرصيد المبدئي لحساب نسبة الربح المئوية ونمو المحفظة والأهداف بدقة:</div>
+    <div class="g2">
+      <div>
+        <label style="margin-top:0">اختر سريعاً من القائمة</label>
+        <select class="sel2" onchange="setBalPreset(this.value)">
+          <option value="">اختر شريحة الرصيد...</option>
+          ${balPresets.map(b=>`<option value="${b}"${initBal===b?' selected':''}>${b.toLocaleString('en-US')} $</option>`).join('')}
+        </select>
+      </div>
+      <div>
+        <label style="margin-top:0">أو اكتب الرصيد المبدئي ($)</label>
+        <input type="number" inputmode="decimal" placeholder="مثال: 1000" value="${initBal||''}" onchange="S.bal=+this.value||0;persist();render()">
+      </div>
+    </div>
+  </div>
+
+  <div class="card wi-card">
+    <div class="row" style="margin-bottom:8px">
+      <b>🎯 إدارة الأهداف (الشهري والسنوي)</b>
+      <span class="badge be" style="direction:ltr">${tgtPctOfBal!=='-'?'يمثل '+tgtPctOfBal+' من الرصيد':''}</span>
+    </div>
+    <label style="margin-top:0">اختر نوع الهدف من القائمة المنسدلة</label>
+    <select class="sel2" onchange="setTgtMode(this.value)" style="margin-bottom:14px">
+      <option value="month"${isM?' selected':''}>🎯 الهدف الشهري (${AR[cur.getMonth()]} ${yrStr}) — المستهدف: ${f(mTarget)}</option>
+      <option value="year"${!isM?' selected':''}>🏆 الهدف السنوي (عام ${yrStr}) — المستهدف: ${f(yTarget)}</option>
+    </select>
+
+    <div style="text-align:center;padding:8px 0 4px">
+      ${gauge(pct,isM?'var(--pr)':'#f59e0b',pct.toFixed(0)+'%','gtgt')}
+      <div class="big ${isM?'pos':''}" style="text-align:center;font-size:34px;color:${isM?'var(--pr)':'var(--or)'}">${f(curTgt)}</div>
+      <small style="color:var(--mu)">${isM?'المستهدف الشهري لـ '+AR[cur.getMonth()]:'المستهدف السنوي لعام '+yrStr}</small>
+    </div>
+
+    <div class="bar" style="height:12px;margin:12px 0"><div style="width:${pct}%;background:${isM?'linear-gradient(90deg,var(--pr),var(--gr))':'linear-gradient(90deg,#f59e0b,var(--gr))'}"></div></div>
+
+    <div class="kg" style="margin-top:10px;margin-bottom:10px">
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)">
+        <small style="color:var(--mu)">المحقق ${isM?'هذا الشهر':'هذا العام'}</small>
+        <b class="priv-val" style="display:block;font-size:19px;margin-top:4px;direction:ltr;text-align:right;color:${curVal<0?'var(--rd)':'var(--gr)'}">${(curVal>0?'+':'')+f(curVal)}</b>
+      </div>
+      <div style="background:var(--card);padding:12px;border-radius:14px;border:1px solid var(--bd)">
+        <small style="color:var(--mu)">المتبقي للوصول للهدف</small>
+        <b class="priv-val" style="display:block;font-size:19px;margin-top:4px;direction:ltr;text-align:right">${rem<=0?'تم التحقيق 🎉':f(rem)}</b>
+      </div>
+    </div>
+
+    <div class="dtx" style="font-size:13px;margin-bottom:12px">
+      ${rem<=0
+        ? `🎉 ممتاز! تجاوزت ${isM?'هدف الشهر':'الهدف السنوي'} بمقدار <b style="color:var(--gr);direction:ltr;display:inline-block">+${f(curVal-curTgt)}</b>.`
+        : isM
+          ? `المعدل المطلوب يومياً خلال الأيام المتبقية من الشهر: <b style="color:var(--pr);direction:ltr;display:inline-block">${f(paceNeed)} / يوم</b>`
+          : `المعدل المطلوب شهرياً خلال الشهور المتبقية من السنة: <b style="color:var(--or);direction:ltr;display:inline-block">${f(paceNeed)} / شهر</b>`
+      }
+    </div>
+
+    <div class="g2">
+      <div>
+        <label style="margin-top:0">${isM?'قائمة سريعة للهدف الشهري':'قائمة سريعة للهدف السنوي'}</label>
+        <select class="sel2" onchange="setTgtPreset('${isM?'month':'year'}',this.value)">
+          <option value="">اختر نسبة أو مبلغاً...</option>
+          ${(isM?mPresets:yPresets).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}
+        </select>
+      </div>
+      <div>
+        <label style="margin-top:0">${isM?'غيّر الهدف ($)': 'غيّر الهدف السنوي ($)'}</label>
+        <input type="number" inputmode="decimal" value="${curTgt}" onchange="${isM?'S.target=+this.value||0':'S.yTarget=+this.value||0'};persist();render()">
+      </div>
+    </div>
+  </div>`;
+}
+
+
+/* --- 3-Layer Backup, Auto-Snapshots & Trash Recovery System --- */
+let _undoFn=null;
+function toastUndo(msg,fn){
+  _undoFn=fn;
+  const e=document.getElementById('toast');
+  e.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span>${esc(msg)}</span><button type="button" onclick="runToastUndo()" style="background:var(--pr);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">↩️ تراجع فوري</button></div>`;
+  e.style.display='block';
+  clearTimeout(tt);
+  tt=setTimeout(()=>{e.style.display='none';_undoFn=null},7000);
+}
+function runToastUndo(){
+  const fn=_undoFn;_undoFn=null;
+  document.getElementById('toast').style.display='none';
+  if(fn)fn();
+}
+
+function restoreTrash(id){
+  const item=(S.trash||[]).find(x=>x.id===id);
+  if(!item)return;
+  const clean={...item};delete clean.delAt;
+  S.trash=(S.trash||[]).filter(x=>x.id!==id);
+  S.del=(S.del||[]).filter(x=>x!==id);
+  if(!S.trades.some(t=>t.id===id))S.trades.push(clean);
+  persist();render();
+  toast('✅ تم استرجاع الصفقة بنجاح!');
+}
+function restoreAllTrash(){
+  const tr=S.trash||[];
+  if(!tr.length)return;
+  const ids=new Set(tr.map(x=>x.id));
+  S.del=(S.del||[]).filter(x=>!ids.has(x));
+  tr.forEach(item=>{
+    const clean={...item};delete clean.delAt;
+    if(!S.trades.some(t=>t.id===clean.id))S.trades.push(clean);
+  });
+  S.trash=[];
+  persist();render();
+  toast('✅ تم استرجاع جميع الصفقات المحذوفة ('+tr.length+' صفقة)');
+}
+function emptyTrash(btn){
+  if(btn.dataset.s){
+    S.trash=[];persist(true);render();toast('تم إفراغ سلة المحذوفات نهائياً');
+  }else{
+    btn.dataset.s=1;btn.textContent='اضغط تاني لتأكيد الإفراغ النهائي';
+  }
+}
+
+function getSnapshots(){
+  try{return JSON.parse(localStorage.getItem('pnl_snapshots')||'[]')}catch(e){return []}
+}
+function saveSnapshot(reason){
+  try{
+    const snaps=getSnapshots();
+    const copy=JSON.parse(JSON.stringify(S));
+    delete copy.trash;
+    const snap={
+      id:Date.now(),
+      time:new Date().toLocaleString('ar-EG'),
+      reason:reason||'حفظ تلقائي',
+      count:(S.trades||[]).length,
+      net:sum((S.trades||[]).filter(t=>!t.bt)),
+      data:copy
+    };
+    snaps.unshift(snap);
+    localStorage.setItem('pnl_snapshots',JSON.stringify(snaps.slice(0,6)));
+  }catch(e){}
+}
+function restoreSnapshot(id){
+  const snaps=getSnapshots();
+  const snap=snaps.find(x=>x.id===id);
+  if(!snap||!snap.data)return;
+  S={...snap.data,trash:S.trash||[]};
+  persist();render();
+  toast('✅ تمت استعادة البيانات من نقطة الحفظ ('+snap.count+' صفقة)');
+}
+
+async function backupDownload(){
+  toast('جاري تجهيز ملف النسخة الاحتياطية الكاملة...');
+  try{
+    saveSnapshot('نسخة احتياطية يدوية');
+    const o=await makeBackup();
+    const name='trader-diary-backup-'+today+'-'+new Date().toTimeString().slice(0,5).replace(':','')+'.json';
+    const blob=new Blob([JSON.stringify(o)],{type:'application/json'});
+    await saveOut(name,blob);
+    lss('pnl_lastbk',new Date().toISOString());
+    toast('✅ تم حفظ ملف النسخة الاحتياطية الكاملة: '+name);
+    render();
+  }catch(e){toast('تعذّر حفظ النسخة: '+(e&&e.message||e))}
+}
+
+function settingsProHtml(){
+  const bk=bkInfo();
+  const liveCount=S.trades.filter(t=>!t.bt).length;
+  const btCount=S.trades.filter(t=>t.bt).length;
+  const imgCount=imgIds().length;
+  const trash=S.trash||[];
+  const snaps=getSnapshots();
+
+  return `
+  <div class="pro-hero">
+    <div class="row">
+      <span style="color:#94a3b8;font-size:13.5px;font-weight:600">🛡️ مركز حماية البيانات والنسخ الاحتياطي الشامل</span>
+      <span class="badge strk-w">حماية مفعّلة</span>
+    </div>
+    <div style="font-size:13px;color:#cbd5e1;margin-top:6px">تشمل النسخة الاحتياطية جميع صفقاتك، الصور، الرصيد المبدئي، الأهداف، وسجل الباك تيست في ملف واحد مشفر محلياً.</div>
+    <div class="pro-hero-grid" style="margin-top:12px;padding-top:12px">
+      <div class="pro-hero-stat"><small>الصفقات الحقيقية</small><b>${liveCount} صفقة</b></div>
+      <div class="pro-hero-stat"><small>صفقات الباك تيست</small><b>${btCount} صفقة</b></div>
+      <div class="pro-hero-stat"><small>الصور المرفقة</small><b>${imgCount} صورة</b></div>
+    </div>
+  </div>
+
+  <div class="card wi-card">
+    <div class="row" style="cursor:pointer" onclick="bkOpen=!bkOpen;render()">
+      <b>☁️ حفظ واسترجاع نسخة احتياطية كاملة (.JSON)</b>
+      <span>${bkOpen?'▴':'▾'}</span>
+    </div>
+    ${bkOpen?`<div style="margin-top:10px">
+      <div style="font-size:13px;color:${bk[1]};font-weight:600;margin-bottom:10px">📌 ${bk[0]}</div>
+      <button type="button" class="go" style="margin-top:0" onclick="backupDownload()">💾 تنزيل نسخة احتياطية كاملة على الجهاز</button>
+      <button type="button" class="go" style="margin-top:8px;background:var(--card2);color:var(--tx);border:1.5px solid var(--pr)" onclick="backupNow()">📤 حفظ / مشاركة إلى Drive أو تيليجرام</button>
+      <label class="go" style="display:block;text-align:center;background:var(--gr);color:#fff;margin:8px 0 0;font-size:16px">📥 استرجاع كل البيانات من ملف نسخة احتياطية<input type="file" accept=".json,application/json" style="display:none" onchange="restoreFile(this)"></label>
+    </div>`:''}
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:6px">
+      <b>🗑️ سلة المحذوفات (حماية من الحذف بالخطأ)</b>
+      <span class="badge ${trash.length?'sell':'be'}">${trash.length} محذوفة</span>
+    </div>
+    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">أي صفقة تحذفها بالخطأ تُحفظ هنا مؤقتاً لتتمكن من استعادتها بضغطة واحدة:</div>
+    ${trash.length?`
+      <div style="display:flex;gap:8px;margin-bottom:10px">
+        <button type="button" class="go" style="margin:0;flex:1;background:var(--gr);padding:10px;font-size:14px" onclick="restoreAllTrash()">♻️ استرجاع الكل (${trash.length})</button>
+        <button type="button" class="go" style="margin:0;flex:1;background:var(--rdb);color:var(--rd);padding:10px;font-size:14px" onclick="emptyTrash(this)">🔥 إفراغ السلة</button>
+      </div>
+      <div style="max-height:220px;overflow-y:auto;border-top:1px solid var(--bd);padding-top:6px">
+        ${trash.slice(0,20).map(t=>`<div class="t">
+          <div>
+            <b>${NM[t.s]||t.s||'صفقة'} ${t.bt?'<span class="badge be">باك تيست</span>':''}</b>
+            <small>${t.d} • <span style="direction:ltr;display:inline-block;color:${t.a<0?'var(--rd)':'var(--gr)'}">${(t.a>0?'+':'')+f(t.a)}</span>${t.delAt?' • حُذفت '+esc(t.delAt):''}</small>
+          </div>
+          <button type="button" class="qchip on" style="background:var(--gr);border-color:var(--gr)" onclick="restoreTrash(${t.id})">♻️ استرجاع</button>
+        </div>`).join('')}
+      </div>
+    `:`<div class="empty" style="padding:12px">سلة المحذوفات فارغة حالياً.</div>`}
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:6px">
+      <b>🕒 نقاط الاستعادة التلقائية السريعة (بدون ملف)</b>
+      <button type="button" class="qchip on" onclick="saveSnapshot('نقطة حفظ يدوية');render();toast('✅ تم إنشاء نقطة استعادة داخلية الآن')">+ حفظ نقطة الآن</button>
+    </div>
+    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">يأخذ التطبيق لقطة احتياطية داخلية تلقائياً قبل أي مسح أو حذف لتستعيدها فوراً:</div>
+    ${snaps.length?snaps.map(s=>`<div class="t">
+      <div>
+        <b>${esc(s.reason)} (${s.count} صفقة)</b>
+        <small>${esc(s.time)} • الصافي: <span style="direction:ltr;display:inline-block">${f(s.net||0)}</span></small>
+      </div>
+      <button type="button" class="qchip" style="color:var(--pr);border-color:var(--pr)" onclick="restoreSnapshot(${s.id})">⚡ استعادة</button>
+    </div>`).join(''):`<div class="empty" style="padding:12px">لا توجد نقاط استعادة مسجلة بعد. اضغط "+ حفظ نقطة الآن" لإنشاء أول نقطة.</div>`}
+  </div>
+
+  <div class="card" style="padding:4px 18px">
+    <div class="row" style="padding:16px 0;border-bottom:1px solid var(--bd);cursor:pointer" onclick="exportXls()"><span>📊 تصدير جدول Excel (.xls)</span><span style="color:var(--mu);font-size:13px">تنزيل</span></div>
+    <div class="row" style="padding:16px 0;border-bottom:1px solid var(--bd);cursor:pointer" onclick="exportPdf(false)"><span>📄 تصدير تقرير PDF مصوّر (.pdf)</span><span style="color:var(--mu);font-size:13px">تنزيل</span></div>
+    <label class="row" style="padding:16px 0;cursor:pointer;margin:0;color:var(--tx);font-size:16px"><span>📥 استيراد صفقات من ملف (CSV / MT4 / MT5)</span><span style="color:var(--pr);font-size:13px;font-weight:700">اختيار ملف</span><input type="file" accept=".csv,text/csv" style="display:none" onchange="importCsvFile(this)"></label>
+  </div>
+
+  <div class="card">
+    <b>إعدادات الحساب والمخاطرة</b>
+    <label>رصيد الحساب المبدئي ($)</label>
+    <input type="number" inputmode="decimal" value="${S.bal||''}" placeholder="مثال: 1000" onchange="S.bal=+this.value||0;persist();render()">
+    <label>أقصى مخاطرة % للصفقة</label>
+    <input type="number" inputmode="decimal" value="${S.maxRk||2}" onchange="S.maxRk=+this.value||2;persist()">
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:12px;font-size:13.5px;color:var(--mu)">عند الضغط على مسح كل البيانات، يتم أخذ نقطة استعادة تلقائية ونقل الصفقات لسلة المحذوفات أولاً لحمايتك من المسح بالخطأ.</div>
+    <button class="go" style="background:var(--rd)" onclick="clr(this)">مسح كل البيانات</button>
+  </div>`;
+}
+
+initThemeAndPriv();
+
+if(lsg(GK.on)&&lsg(GK.cid))gstat='';
+render();
+if(lsg(GK.on)&&lsg(GK.cid))setTimeout(()=>gLogin(true),800);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
