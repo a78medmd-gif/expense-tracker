@@ -1301,12 +1301,11 @@ async function show(id){const t=S.trades.find(x=>x.id===id);if(!t)return;curT=t;
 function zoom(i){lbi.src=curSrc[i];lb.showModal()}
 lb.onclick=()=>lb.close();dd.addEventListener('click',e=>{if(e.target===dd)dd.close()});
 function delAsk(b){if(b.dataset.s){del(curT.id);dd.close()}else{b.dataset.s=1;b.textContent='اضغط تاني للتأكيد'}}
-function clr(b){if(b.dataset.s){saveSnapshot('قبل مسح كل البيانات');const allT=S.trades||[];S.trash=[...allT.map(t=>({...t,delAt:new Date().toLocaleString('ar-EG')})),...(S.trash||[])].slice(0,100);S.del=[...(S.del||[]),...allT.map(t=>t.id)];S.trades=[];persist();render();toastUndo('تم نقل كل الصفقات إلى سلة المحذوفات ونقطة الاستعادة',()=>restoreAllTrash())}else{b.dataset.s=1;b.textContent='اضغط تاني للتأكيد'}}
+function clr(b){if(b.dataset.s){const allT=S.trades||[];S.trash=[...allT.map(t=>({...t,delAt:new Date().toLocaleString('ar-EG')})),...(S.trash||[])].slice(0,100);S.del=[...(S.del||[]),...allT.map(t=>t.id)];S.trades=[];persist();render();toastUndo('تم نقل كل الصفقات إلى سلة المحذوفات ونقطة الاستعادة',()=>restoreAllTrash())}else{b.dataset.s=1;b.textContent='اضغط تاني للتأكيد'}}
 const esc=x=>(x||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 function del(id){
   const target=S.trades.find(t=>t.id===id);
   if(target){
-    saveSnapshot('قبل حذف صفقة '+(target.s||''));
     S.trash=[{...target,delAt:new Date().toLocaleString('ar-EG')},...(S.trash||[]).filter(x=>x.id!==id)].slice(0,100);
   }
   S.trades=S.trades.filter(t=>t.id!==id);
@@ -1604,7 +1603,6 @@ function quickBtLog(outcome){
 
 function clrBt(btn){
   if(btn.dataset.s){
-    saveSnapshot('قبل تصفير الباك تيست');
     const btTrades=S.trades.filter(t=>t.bt);
     const btIds=new Set(btTrades.map(t=>t.id));
     S.trash=[...btTrades.map(t=>({...t,delAt:new Date().toLocaleString('ar-EG')})),...(S.trash||[])].slice(0,100);
@@ -2276,15 +2274,15 @@ function saveSnapshot(reason){
     const copy=JSON.parse(JSON.stringify(S));
     delete copy.trash;
     const snap={
-      id:Date.now(),
+      id:Date.now()+Math.floor(Math.random()*1000),
       time:new Date().toLocaleString('ar-EG'),
-      reason:reason||'حفظ تلقائي',
+      reason:reason||'نقطة استعادة يدوية',
       count:(S.trades||[]).length,
       net:sum((S.trades||[]).filter(t=>!t.bt)),
       data:copy
     };
     snaps.unshift(snap);
-    localStorage.setItem('pnl_snapshots',JSON.stringify(snaps.slice(0,6)));
+    localStorage.setItem('pnl_snapshots',JSON.stringify(snaps.slice(0,3)));
   }catch(e){}
 }
 function restoreSnapshot(id){
@@ -2293,13 +2291,45 @@ function restoreSnapshot(id){
   if(!snap||!snap.data)return;
   S={...snap.data,trash:S.trash||[]};
   persist();render();
-  toast('✅ تمت استعادة البيانات من نقطة الحفظ ('+snap.count+' صفقة)');
+  toast('✅ تمت استعادة البيانات من نقطة الاستعادة ('+snap.count+' صفقة)');
+}
+function delSnapshot(id){
+  try{
+    const snaps=getSnapshots().filter((x,i)=>x.id!==id&&i!==id);
+    if(snaps.length)localStorage.setItem('pnl_snapshots',JSON.stringify(snaps));
+    else localStorage.removeItem('pnl_snapshots');
+    render();
+    toast('🗑️ تم حذف نقطة الاستعادة بنجاح');
+  }catch(e){}
+}
+function clearAllSnapshots(){
+  try{localStorage.removeItem('pnl_snapshots')}catch(e){}
+  render();
+  toast('🗑️ تم حذف جميع نقاط الاستعادة المحفوظة');
+}
+function delTrashItem(id){
+  S.trash=(S.trash||[]).filter(x=>x.id!==id);
+  persist(true);render();
+  toast('🗑️ تم حذف الصفقة نهائياً من السلة');
+}
+async function delSavedBackup(){
+  try{
+    localStorage.removeItem('pnl_lastbk');
+    localStorage.removeItem('pnl_snapshots');
+    if(lsg(GK.on)){
+      try{
+        const id=await gFind();
+        if(id)await gApi('https://www.googleapis.com/drive/v3/files/'+id,{method:'DELETE'});
+      }catch(e){}
+    }
+    render();
+    toast('🗑️ تم حذف النسخة الاحتياطية ونقاط الاستعادة بنجاح');
+  }catch(e){toast('تعذّر حذف النسخة: '+(e&&e.message||e))}
 }
 
 async function backupDownload(){
   toast('جاري تجهيز ملف النسخة الاحتياطية الكاملة...');
   try{
-    saveSnapshot('نسخة احتياطية يدوية');
     const o=await makeBackup();
     const name='trader-diary-backup-'+today+'-'+new Date().toTimeString().slice(0,5).replace(':','')+'.json';
     const blob=new Blob([JSON.stringify(o)],{type:'application/json'});
@@ -2311,7 +2341,7 @@ async function backupDownload(){
 }
 
 function settingsProHtml(){
-  const bk=bkInfo();
+  const bk=bkInfo(),hasBk=!!lsg('pnl_lastbk');
   const liveCount=S.trades.filter(t=>!t.bt).length;
   const btCount=S.trades.filter(t=>t.bt).length;
   const imgCount=imgIds().length;
@@ -2334,7 +2364,7 @@ function settingsProHtml(){
 
   <div class="card wi-card">
     <div class="row" style="cursor:pointer" onclick="bkOpen=!bkOpen;render()">
-      <b>☁️ حفظ واسترجاع نسخة احتياطية كاملة (.JSON)</b>
+      <b>☁️ حفظ واسترجاع وحذف النسخة الاحتياطية (.JSON)</b>
       <span>${bkOpen?'▴':'▾'}</span>
     </div>
     ${bkOpen?`<div style="margin-top:10px">
@@ -2342,6 +2372,7 @@ function settingsProHtml(){
       <button type="button" class="go" style="margin-top:0" onclick="backupDownload()">💾 تنزيل نسخة احتياطية كاملة على الجهاز</button>
       <button type="button" class="go" style="margin-top:8px;background:var(--card2);color:var(--tx);border:1.5px solid var(--pr)" onclick="backupNow()">📤 حفظ / مشاركة إلى Drive أو تيليجرام</button>
       <label class="go" style="display:block;text-align:center;background:var(--gr);color:#fff;margin:8px 0 0;font-size:16px">📥 استرجاع كل البيانات من ملف نسخة احتياطية<input type="file" accept=".json,application/json" style="display:none" onchange="restoreFile(this)"></label>
+      <button type="button" class="go" style="margin-top:8px;background:var(--rdb);color:var(--rd);border:1px solid var(--rd);font-size:15px;padding:12px" onclick="delSavedBackup()">🗑️ حذف النسخة الاحتياطية المسجلة</button>
     </div>`:''}
   </div>
 
@@ -2350,7 +2381,7 @@ function settingsProHtml(){
       <b>🗑️ سلة المحذوفات (حماية من الحذف بالخطأ)</b>
       <span class="badge ${trash.length?'sell':'be'}">${trash.length} محذوفة</span>
     </div>
-    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">أي صفقة تحذفها بالخطأ تُحفظ هنا مؤقتاً لتتمكن من استعادتها بضغطة واحدة:</div>
+    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">أي صفقة تحذفها بالخطأ تُحفظ هنا مؤقتاً لتتمكن من استعادتها أو حذفها نهائياً:</div>
     ${trash.length?`
       <div style="display:flex;gap:8px;margin-bottom:10px">
         <button type="button" class="go" style="margin:0;flex:1;background:var(--gr);padding:10px;font-size:14px" onclick="restoreAllTrash()">♻️ استرجاع الكل (${trash.length})</button>
@@ -2362,25 +2393,34 @@ function settingsProHtml(){
             <b>${NM[t.s]||t.s||'صفقة'} ${t.bt?'<span class="badge be">باك تيست</span>':''}</b>
             <small>${t.d} • <span style="direction:ltr;display:inline-block;color:${t.a<0?'var(--rd)':'var(--gr)'}">${(t.a>0?'+':'')+f(t.a)}</span>${t.delAt?' • حُذفت '+esc(t.delAt):''}</small>
           </div>
-          <button type="button" class="qchip on" style="background:var(--gr);border-color:var(--gr)" onclick="restoreTrash(${t.id})">♻️ استرجاع</button>
+          <div style="display:flex;align-items:center;gap:6px">
+            <button type="button" class="qchip on" style="background:var(--gr);border-color:var(--gr)" onclick="restoreTrash(${t.id})">♻️ استرجاع</button>
+            <button type="button" class="qchip" style="color:var(--rd);border-color:var(--rd);padding:6px 10px" onclick="delTrashItem(${t.id})" title="حذف نهائي">✕</button>
+          </div>
         </div>`).join('')}
       </div>
     `:`<div class="empty" style="padding:12px">سلة المحذوفات فارغة حالياً.</div>`}
   </div>
 
   <div class="card">
-    <div class="row" style="margin-bottom:6px">
-      <b>🕒 نقاط الاستعادة التلقائية السريعة (بدون ملف)</b>
-      <button type="button" class="qchip on" onclick="saveSnapshot('نقطة حفظ يدوية');render();toast('✅ تم إنشاء نقطة استعادة داخلية الآن')">+ حفظ نقطة الآن</button>
+    <div class="row" style="margin-bottom:6px;gap:6px;flex-wrap:wrap">
+      <b>🕒 نقاط الاستعادة اليدوية (${snaps.length})</b>
+      <div style="display:flex;gap:6px">
+        <button type="button" class="qchip on" onclick="saveSnapshot('نقطة استعادة يدوية');render();toast('✅ تم حفظ نقطة استعادة جديدة')">+ حفظ نقطة استعادة</button>
+        ${snaps.length?`<button type="button" class="qchip" style="background:var(--rdb);color:var(--rd);border-color:var(--rd)" onclick="clearAllSnapshots()">🗑️ حذف كل النقاط</button>`:''}
+      </div>
     </div>
-    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">يأخذ التطبيق لقطة احتياطية داخلية تلقائياً قبل أي مسح أو حذف لتستعيدها فوراً:</div>
+    <div style="color:var(--mu);font-size:12.5px;margin-bottom:10px">لا يتم إنشاء نقاط استعادة تلقائياً حتى لا تتراكم في الإعدادات؛ يمكنك حفظ نقطة يدوياً وقتما تشاء أو حذفها بضغطة واحدة:</div>
     ${snaps.length?snaps.map(s=>`<div class="t">
       <div>
         <b>${esc(s.reason)} (${s.count} صفقة)</b>
         <small>${esc(s.time)} • الصافي: <span style="direction:ltr;display:inline-block">${f(s.net||0)}</span></small>
       </div>
-      <button type="button" class="qchip" style="color:var(--pr);border-color:var(--pr)" onclick="restoreSnapshot(${s.id})">⚡ استعادة</button>
-    </div>`).join(''):`<div class="empty" style="padding:12px">لا توجد نقاط استعادة مسجلة بعد. اضغط "+ حفظ نقطة الآن" لإنشاء أول نقطة.</div>`}
+      <div style="display:flex;align-items:center;gap:6px">
+        <button type="button" class="qchip" style="color:var(--pr);border-color:var(--pr)" onclick="restoreSnapshot(${s.id})">⚡ استعادة</button>
+        <button type="button" class="qchip" style="background:var(--rdb);color:var(--rd);border-color:var(--rd);padding:6px 10px" onclick="delSnapshot(${s.id})">🗑️ حذف النقطة</button>
+      </div>
+    </div>`).join(''):`<div class="empty" style="padding:12px">لا توجد نقاط استعادة محفوظة حالياً.</div>`}
   </div>
 
   <div class="card" style="padding:4px 18px">
