@@ -1,0 +1,70 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    paths-ignore:
+      - '*.apk'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-android-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Prepare Web Files & Capacitor Config
+        run: |
+          mkdir -p www
+          for z in *.zip; do
+            if [ -f "$z" ]; then unzip -o "$z" -d www/ || true; fi
+          done
+          if [ -d "www/www" ]; then cp -r www/www/* www/ || true; fi
+          for f in index.html analytics.js manifest.webmanifest sw.js icon-192.png icon-512.png; do
+            if [ -f "$f" ]; then cp "$f" www/; fi
+          done
+          echo '{"name":"trader-diary","version":"1.0.0","dependencies":{"@capacitor/android":"^6.0.0","@capacitor/core":"^6.0.0","@capacitor/filesystem":"^6.0.0","@capacitor/share":"^6.0.0"},"devDependencies":{"@capacitor/cli":"^6.0.0"}}' > package.json
+          echo '{"appId":"com.traderdiary.app","appName":"يوميات المتداول","webDir":"www","bundledWebRuntime":false}' > capacitor.config.json
+
+      - name: Install Capacitor & Build Android Project
+        run: |
+          npm install
+          rm -rf android
+          npx cap add android
+          npx cap sync android
+
+      - name: Build APK with Gradle
+        working-directory: ./android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Save APK to Repository Root for Direct Download
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk ./trader-diary.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ./trader-diary.apk
+          git commit -m "Auto-build trader-diary.apk" || true
+          git push || true
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Trader-Diary-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
